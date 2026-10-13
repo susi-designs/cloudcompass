@@ -1,0 +1,386 @@
+// Global Carbon styles (DESIGN.md §7). All app styles must use Carbon tokens.
+@use '@carbon/react';
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/breakpoint' as *;
+@use '@carbon/react/scss/type';
+
+// Utility classes such as `.cds--type-heading-05` used throughout the app.
+@include type.type-classes;
+
+body {
+  background-color: $background;
+  color: $text-primary;
+}
+
+.cc-app {
+  min-block-size: 100vh;
+  background-color: $background;
+}
+
+.cc-text-secondary {
+  color: $text-secondary;
+}
+
+// Table column alignment (DESIGN.md §4.1): amounts right, text / IDs / dates left.
+// Apply via `alignClass(kind)` from lib/columns.ts on both TableHeader and TableCell.
+.cds--data-table th.cc-cell--start,
+.cds--data-table td.cc-cell--start {
+  text-align: start;
+}
+
+.cds--data-table th.cc-cell--end,
+.cds--data-table td.cc-cell--end,
+.cds--data-table th.cc-cell--end .cds--table-header-label {
+  font-variant-numeric: tabular-nums;
+  text-align: end;
+}
+
+// Amounts never wrap mid-number.
+.cds--data-table td.cc-cell--end {
+  white-space: nowrap;
+}
+
+// Sortable headers render a button; right-align its label so it sits over the values,
+// with the sort icon on the inside edge.
+.cds--data-table th.cc-cell--end .cds--table-sort {
+  padding-inline-end: $spacing-05;
+  text-align: end;
+}
+
+.cds--data-table th.cc-cell--end .cds--table-sort__flex {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  gap: $spacing-03;
+}
+
+// ---- Shell -----------------------------------------------------------------
+
+// Offset content for the fixed side nav, which Carbon shows persistently from lg up.
+.cc-content.cds--content {
+  padding: 0;
+
+  @include breakpoint(lg) {
+    margin-inline-start: 16rem; // Carbon side-nav expanded width
+  }
+}
+
+// Brand mark next to the product name in the header (DESIGN.md §9).
+// HeaderName wraps its children in a span; center the mark against the text.
+.cc-brand > span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.cc-brand .cc-brand__mark {
+  flex-shrink: 0;
+  block-size: $spacing-06;
+  inline-size: $spacing-06;
+  margin-inline-end: $spacing-03;
+}
+
+// Dark theme: the mark's stroke uses the theme's primary interactive blue.
+.cc-app.cds--g100 .cc-brand__mark {
+  stroke: $interactive;
+}
+
+// Light theme only: give the header and side nav a layer fill so they stand apart from the
+// $background page. Dark (g100) keeps Carbon's default shell fill.
+.cc-app.cds--g10 {
+  .cds--header,
+  .cds--side-nav__navigation {
+    background-color: $layer-01;
+  }
+
+  .cds--side-nav__navigation {
+    border-inline-end: 1px solid $border-subtle-01;
+  }
+}
+
+.cc-header-panel__body {
+  padding: $spacing-05;
+}
+
+.cc-search-panel.cds--header-panel--expanded {
+  inline-size: 28rem;
+  max-inline-size: 100vw;
+}
+
+.cc-search-option {
+  display: flex;
+  flex-direction: column;
+}
+
+// ---- Page frame ------------------------------------------------------------
+
+.cc-page {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-06;
+  padding-block: $spacing-07;
+  padding-inline: $spacing-05;
+
+  @include breakpoint(lg) {
+    padding-inline: $spacing-07;
+  }
+}
+
+.cc-page-header {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-03;
+}
+
+.cc-filter-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(12rem, 100%), 1fr));
+  align-items: end;
+  gap: $spacing-05;
+  padding: $spacing-05;
+  background-color: $layer-01;
+}
+
+.cc-filter-bar__dates {
+  @include breakpoint(md) {
+    grid-column: span 2;
+  }
+
+  .cds--date-picker--range {
+    display: flex;
+    gap: $spacing-03;
+  }
+
+  .cds--date-picker-container,
+  .cds--date-picker__input {
+    inline-size: 100%;
+  }
+}
+
+.cc-filter-bar__reset {
+  justify-self: start;
+}
+
+// ---- KPIs ------------------------------------------------------------------
+
+.cc-kpi-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(11rem, 100%), 1fr));
+  gap: $spacing-05;
+}
+
+.cc-kpi {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-03;
+}
+
+.cc-kpi__value {
+  font-variant-numeric: tabular-nums;
+}
+
+.cc-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-02;
+}
+
+// ---- Cost delta (DESIGN.md §5.2) -------------------------------------------
+
+.cc-delta {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-02;
+  font-variant-numeric: tabular-nums;
+}
+
+.cc-delta--increase .cc-delta__icon {
+  fill: $support-error;
+}
+
+.cc-delta--decrease .cc-delta__icon {
+  fill: $support-success;
+}
+
+.cc-delta--flat .cc-delta__icon {
+  fill: $icon-secondary;
+}
+
+// ---- Charts ----------------------------------------------------------------
+
+.cc-chart-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-05;
+
+  @include breakpoint(lg) {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+.cc-chart-card {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-05;
+  min-inline-size: 0;
+}
+
+.cc-chart-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: $spacing-05;
+}
+
+.cc-chart-card__switcher {
+  flex: 0 0 auto;
+  inline-size: auto;
+}
+
+.cc-chart-card__skeleton {
+  inline-size: 100%;
+  block-size: 20rem;
+}
+
+.cc-chart-card__table {
+  max-block-size: 20rem;
+  overflow-y: auto;
+}
+
+.cc-stack {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-06;
+}
+
+.cc-page-loading {
+  margin: $spacing-09 auto;
+}
+
+.cc-code {
+  @include type.font-family('mono');
+
+  font-size: inherit;
+}
+
+// ---- Cost & Usage ------------------------------------------------------------
+
+.cc-tab-panel {
+  padding-inline: 0;
+  padding-block: $spacing-06 0;
+}
+
+.cc-explorer-header {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-05;
+}
+
+.cc-explorer-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: $spacing-05;
+
+  .cds--dropdown__wrapper {
+    min-inline-size: 12rem;
+  }
+}
+
+.cc-explorer-controls__granularity {
+  display: flex;
+  flex-direction: column;
+
+  .cds--content-switcher {
+    inline-size: 20rem;
+  }
+}
+
+.cds--data-table .cds--icon-indicator {
+  white-space: nowrap;
+}
+
+.cc-budget-meter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: $spacing-03;
+  inline-size: 100%;
+  font-variant-numeric: tabular-nums;
+
+  .cds--progress-bar {
+    inline-size: 5rem;
+  }
+}
+
+// ---- Utilization -----------------------------------------------------------
+
+.cc-stack--tight {
+  gap: $spacing-05;
+}
+
+.cc-resource-switcher {
+  max-inline-size: 60rem;
+}
+
+.cc-cell-stack {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-01;
+}
+
+.cc-nowrap {
+  white-space: nowrap;
+}
+
+.cc-commitment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(18rem, 100%), 1fr));
+  gap: $spacing-05;
+}
+
+.cc-commitment {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-04;
+}
+
+.cc-commitment__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: $spacing-03;
+}
+
+.cc-commitment-skeleton {
+  inline-size: 100%;
+  block-size: 12rem;
+}
+
+.cc-comparison-dropdown {
+  max-inline-size: 32rem;
+}
+
+.cc-coming-soon {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-04;
+}
+
+// Expanded-row details (Optimization inbox)
+.cc-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(14rem, 100%), 1fr));
+  gap: $spacing-05;
+  padding-block: $spacing-03;
+}
+
+.cc-details__item {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-02;
+}
+
+// Long recommendation titles get room before amount columns squeeze them.
+.cc-rec-title {
+  min-inline-size: 16rem;
+}

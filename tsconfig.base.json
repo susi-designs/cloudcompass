@@ -1,0 +1,4 @@
+{
+  "//": "Strict TypeScript settings live in packages/config/tsconfig/base.json; workspaces extend @cloudcompass/config presets.",
+  "extends": "./packages/config/tsconfig/base.json"
+}

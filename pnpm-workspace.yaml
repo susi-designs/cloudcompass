@@ -1,0 +1,33 @@
+packages:
+  - 'apps/*'
+  - 'packages/*'
+
+# pnpm 10 blocks dependency install scripts by default. esbuild's is safe and needed;
+# the rest are IBM telemetry / optional native watchers that the app doesn't need.
+onlyBuiltDependencies:
+  - esbuild
+ignoredBuiltDependencies:
+  - '@carbon/charts'
+  - '@carbon/charts-react'
+  - '@carbon/feature-flags'
+  - '@carbon/grid'
+  - '@carbon/icon-helpers'
+  - '@carbon/icons-react'
+  - '@carbon/layout'
+  - '@carbon/motion'
+  - '@carbon/react'
+  - '@carbon/styles'
+  - '@carbon/themes'
+  - '@carbon/type'
+  - '@carbon/utilities'
+  - '@carbon/utils-position'
+  - '@ibm/plex'
+  - '@ibm/plex-mono'
+  - '@ibm/plex-sans'
+  - '@ibm/plex-sans-arabic'
+  - '@ibm/plex-sans-devanagari'
+  - '@ibm/plex-sans-hebrew'
+  - '@ibm/plex-sans-thai'
+  - '@ibm/plex-sans-thai-looped'
+  - '@ibm/plex-serif'
+  - '@parcel/watcher'

@@ -1,0 +1,7 @@
+{
+  "extends": "@cloudcompass/config/tsconfig/library.json",
+  "include": ["src", "scripts"],
+  "compilerOptions": {
+    "types": ["node"]
+  }
+}

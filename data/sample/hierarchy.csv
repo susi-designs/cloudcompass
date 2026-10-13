@@ -1,0 +1,61 @@
+lob_id,lob,application_id,application,cloud,environment,account_id,account_name,app_monthly_budget_usd
+lob-retail,Retail Banking,app-mobile-banking,Mobile Banking,AWS,PROD,400007919113,mobile-banking-prod,140000
+lob-retail,Retail Banking,app-mobile-banking,Mobile Banking,AWS,TEST,400015838226,mobile-banking-test,140000
+lob-retail,Retail Banking,app-mobile-banking,Mobile Banking,AWS,DEV,400023757339,mobile-banking-dev,140000
+lob-retail,Retail Banking,app-online-banking,Online Banking,AWS,PROD,400031676452,online-banking-prod,110000
+lob-retail,Retail Banking,app-online-banking,Online Banking,AWS,TEST,400039595565,online-banking-test,110000
+lob-retail,Retail Banking,app-online-banking,Online Banking,AWS,DEV,400047514678,online-banking-dev,110000
+lob-retail,Retail Banking,app-card-services,Card Services,Azure,PROD,538453d7-0000-4000-8000-000000000007,card-services-prod,85000
+lob-retail,Retail Banking,app-card-services,Card Services,Azure,TEST,f1bbcd88-0000-4000-8000-000000000008,card-services-test,85000
+lob-retail,Retail Banking,app-card-services,Card Services,Azure,DEV,8ff34739-0000-4000-8000-000000000009,card-services-dev,85000
+lob-retail,Retail Banking,app-loan-origination,Loan Origination,GCP,PROD,cc-loan-origination-prod,loan-origination-prod,60000
+lob-retail,Retail Banking,app-loan-origination,Loan Origination,GCP,TEST,cc-loan-origination-test,loan-origination-test,60000
+lob-retail,Retail Banking,app-loan-origination,Loan Origination,GCP,DEV,cc-loan-origination-dev,loan-origination-dev,60000
+lob-wealth,Wealth Management,app-advisor-portal,Advisor Portal,Azure,PROD,08d12dfd-0000-4000-8000-000000000013,advisor-portal-prod,70000
+lob-wealth,Wealth Management,app-advisor-portal,Advisor Portal,Azure,TEST,a708a7ae-0000-4000-8000-000000000014,advisor-portal-test,70000
+lob-wealth,Wealth Management,app-advisor-portal,Advisor Portal,Azure,DEV,4540215f-0000-4000-8000-000000000015,advisor-portal-dev,70000
+lob-wealth,Wealth Management,app-portfolio-analytics,Portfolio Analytics,GCP,PROD,cc-portfolio-analytics-prod,portfolio-analytics-prod,120000
+lob-wealth,Wealth Management,app-portfolio-analytics,Portfolio Analytics,GCP,TEST,cc-portfolio-analytics-test,portfolio-analytics-test,120000
+lob-wealth,Wealth Management,app-portfolio-analytics,Portfolio Analytics,GCP,DEV,cc-portfolio-analytics-dev,portfolio-analytics-dev,120000
+lob-wealth,Wealth Management,app-trading-platform,Trading Platform,AWS,PROD,400150463147,trading-platform-prod,160000
+lob-wealth,Wealth Management,app-trading-platform,Trading Platform,AWS,TEST,400158382260,trading-platform-test,160000
+lob-wealth,Wealth Management,app-trading-platform,Trading Platform,AWS,DEV,400166301373,trading-platform-dev,160000
+lob-wealth,Wealth Management,app-client-reporting,Client Reporting,Azure,PROD,98c47536-0000-4000-8000-000000000022,client-reporting-prod,40000
+lob-wealth,Wealth Management,app-client-reporting,Client Reporting,Azure,TEST,36fbeee7-0000-4000-8000-000000000023,client-reporting-test,40000
+lob-wealth,Wealth Management,app-client-reporting,Client Reporting,Azure,DEV,d5336898-0000-4000-8000-000000000024,client-reporting-dev,40000
+lob-commercial,Commercial Banking,app-treasury-management,Treasury Management,AWS,PROD,400197977825,treasury-management-prod,75000
+lob-commercial,Commercial Banking,app-treasury-management,Treasury Management,AWS,TEST,400205896938,treasury-management-test,75000
+lob-commercial,Commercial Banking,app-treasury-management,Treasury Management,AWS,DEV,400213816051,treasury-management-dev,75000
+lob-commercial,Commercial Banking,app-commercial-lending,Commercial Lending,Azure,PROD,4e114f5c-0000-4000-8000-000000000028,commercial-lending-prod,65000
+lob-commercial,Commercial Banking,app-commercial-lending,Commercial Lending,Azure,TEST,ec48c90d-0000-4000-8000-000000000029,commercial-lending-test,65000
+lob-commercial,Commercial Banking,app-commercial-lending,Commercial Lending,Azure,DEV,8a8042be-0000-4000-8000-000000000030,commercial-lending-dev,65000
+lob-commercial,Commercial Banking,app-trade-finance,Trade Finance,GCP,PROD,cc-trade-finance-prod,trade-finance-prod,45000
+lob-commercial,Commercial Banking,app-trade-finance,Trade Finance,GCP,TEST,cc-trade-finance-test,trade-finance-test,45000
+lob-commercial,Commercial Banking,app-trade-finance,Trade Finance,GCP,DEV,cc-trade-finance-dev,trade-finance-dev,45000
+lob-commercial,Commercial Banking,app-cash-management,Cash Management,AWS,PROD,400269249842,cash-management-prod,55000
+lob-commercial,Commercial Banking,app-cash-management,Cash Management,AWS,TEST,400277168955,cash-management-test,55000
+lob-commercial,Commercial Banking,app-cash-management,Cash Management,AWS,DEV,400285088068,cash-management-dev,55000
+lob-payments,Payments,app-payment-gateway,Payment Gateway,AWS,PROD,400293007181,payment-gateway-prod,150000
+lob-payments,Payments,app-payment-gateway,Payment Gateway,AWS,TEST,400300926294,payment-gateway-test,150000
+lob-payments,Payments,app-payment-gateway,Payment Gateway,AWS,DEV,400308845407,payment-gateway-dev,150000
+lob-payments,Payments,app-fraud-detection,Fraud Detection,GCP,PROD,cc-fraud-detection-prod,fraud-detection-prod,130000
+lob-payments,Payments,app-fraud-detection,Fraud Detection,GCP,TEST,cc-fraud-detection-test,fraud-detection-test,130000
+lob-payments,Payments,app-fraud-detection,Fraud Detection,GCP,DEV,cc-fraud-detection-dev,fraud-detection-dev,130000
+lob-payments,Payments,app-real-time-payments,Real-time Payments,AWS,PROD,400340521859,real-time-payments-prod,95000
+lob-payments,Payments,app-real-time-payments,Real-time Payments,AWS,TEST,400348440972,real-time-payments-test,95000
+lob-payments,Payments,app-real-time-payments,Real-time Payments,AWS,DEV,400356360085,real-time-payments-dev,95000
+lob-payments,Payments,app-merchant-services,Merchant Services,Azure,PROD,6df7ddce-0000-4000-8000-000000000046,merchant-services-prod,50000
+lob-payments,Payments,app-merchant-services,Merchant Services,Azure,TEST,0c2f577f-0000-4000-8000-000000000047,merchant-services-test,50000
+lob-payments,Payments,app-merchant-services,Merchant Services,Azure,DEV,aa66d130-0000-4000-8000-000000000048,merchant-services-dev,50000
+lob-corporate,Corporate Technology,app-data-platform,Data Platform,GCP,PROD,cc-data-platform-prod,data-platform-prod,180000
+lob-corporate,Corporate Technology,app-data-platform,Data Platform,GCP,TEST,cc-data-platform-test,data-platform-test,180000
+lob-corporate,Corporate Technology,app-data-platform,Data Platform,GCP,DEV,cc-data-platform-dev,data-platform-dev,180000
+lob-corporate,Corporate Technology,app-hr-systems,HR Systems,Azure,PROD,2344b7f4-0000-4000-8000-000000000052,hr-systems-prod,30000
+lob-corporate,Corporate Technology,app-hr-systems,HR Systems,Azure,TEST,c17c31a5-0000-4000-8000-000000000053,hr-systems-test,30000
+lob-corporate,Corporate Technology,app-hr-systems,HR Systems,Azure,DEV,5fb3ab56-0000-4000-8000-000000000054,hr-systems-dev,30000
+lob-corporate,Corporate Technology,app-finance-erp,Finance & ERP,Azure,PROD,fdeb2507-0000-4000-8000-000000000055,finance-erp-prod,55000
+lob-corporate,Corporate Technology,app-finance-erp,Finance & ERP,Azure,TEST,9c229eb8-0000-4000-8000-000000000056,finance-erp-test,55000
+lob-corporate,Corporate Technology,app-finance-erp,Finance & ERP,Azure,DEV,3a5a1869-0000-4000-8000-000000000057,finance-erp-dev,55000
+lob-corporate,Corporate Technology,app-security-operations,Security Operations,AWS,PROD,400459308554,security-operations-prod,65000
+lob-corporate,Corporate Technology,app-security-operations,Security Operations,AWS,TEST,400467227667,security-operations-test,65000
+lob-corporate,Corporate Technology,app-security-operations,Security Operations,AWS,DEV,400475146780,security-operations-dev,65000
