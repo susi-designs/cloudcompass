@@ -1,6 +1,7 @@
 import { Tag } from '@carbon/react';
 import { CostDelta } from '../../../components/CostDelta';
 import { KpiTile } from '../../../components/KpiTile';
+import { SeverityCounts } from '../../../components/SeverityCounts';
 import type { OverviewData } from '../../../data/overview';
 import { formatCurrency, formatDate, formatNumber, formatPercentChange } from '../../../lib/format';
 
@@ -101,23 +102,14 @@ export function KpiRow({ data, loading }: Props) {
         loading={loading}
         footer={
           data && (
-            <span className="cc-tag-row">
-              {data.anomalies.bySeverity.Critical > 0 && (
-                <Tag type="red" size="sm">
-                  {data.anomalies.bySeverity.Critical} Critical
-                </Tag>
-              )}
-              {data.anomalies.bySeverity.High > 0 && (
-                <Tag type="magenta" size="sm">
-                  {data.anomalies.bySeverity.High} High
-                </Tag>
-              )}
+            <>
+              <SeverityCounts counts={data.anomalies.bySeverity} />
               {data.anomalies.open === 0 && (
                 <Tag type="green" size="sm">
                   None open
                 </Tag>
               )}
-            </span>
+            </>
           )
         }
         helper={data ? `As of ${formatDate(data.asOf)}` : undefined}

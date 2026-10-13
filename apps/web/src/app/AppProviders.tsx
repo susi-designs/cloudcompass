@@ -1,6 +1,8 @@
 import { Theme } from '@carbon/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useState, type ReactNode } from 'react';
+import { AnomalyTriageProvider } from '../data/AnomalyTriageProvider';
+import { MyCloudCompassProvider } from '../data/MyCloudCompassProvider';
 import { RecommendationWorkflowProvider } from '../data/RecommendationWorkflowProvider';
 import { ScopeProvider } from '../data/ScopeProvider';
 import { ThemePreferenceProvider } from '../shell/ThemePreference';
@@ -24,7 +26,11 @@ export function AppProviders({ children }: { children: ReactNode }) {
       <ThemePreferenceProvider>
         <ScopeProvider>
           <RecommendationWorkflowProvider>
-            <ThemedRoot>{children}</ThemedRoot>
+            <AnomalyTriageProvider>
+              <MyCloudCompassProvider>
+                <ThemedRoot>{children}</ThemedRoot>
+              </MyCloudCompassProvider>
+            </AnomalyTriageProvider>
           </RecommendationWorkflowProvider>
         </ScopeProvider>
       </ThemePreferenceProvider>

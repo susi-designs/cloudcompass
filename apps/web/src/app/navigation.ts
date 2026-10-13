@@ -3,6 +3,7 @@ import {
   Dashboard,
   Meter,
   MachineLearningModel,
+  Home,
   Idea,
   WarningAlt,
   type CarbonIconType,
@@ -13,14 +14,21 @@ export interface NavItem {
   label: string;
   icon: CarbonIconType;
   /** Milestone that delivers the page (CLAUDE.md §6). */
-  milestone: 'M1' | 'M2' | 'M3' | 'M4' | 'M5' | 'M6';
+  milestone: 'M1' | 'M2' | 'M3' | 'M4' | 'M5' | 'M6' | 'M7';
   description: string;
 }
 
-/** Overview + the five product pillars (PRODUCT.md §4). */
+/** My CloudCompass (landing page), Overview + the five product pillars (PRODUCT.md §4–5). */
 export const NAV_ITEMS: readonly NavItem[] = [
   {
     path: '/',
+    label: 'My CloudCompass',
+    icon: Home,
+    milestone: 'M7',
+    description: 'Landing page for one application, with what needs attention first.',
+  },
+  {
+    path: '/overview',
     label: 'Overview',
     icon: Dashboard,
     milestone: 'M1',
@@ -59,6 +67,6 @@ export const NAV_ITEMS: readonly NavItem[] = [
     label: 'Anomalies',
     icon: WarningAlt,
     milestone: 'M6',
-    description: 'Cost anomaly feed with severity and root-cause hints.',
+    description: 'Cost anomaly feed with severity, root-cause hints and triage.',
   },
 ];

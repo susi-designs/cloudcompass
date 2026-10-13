@@ -5,7 +5,17 @@ import { App } from './App';
 describe('App shell', () => {
   beforeEach(() => {
     window.localStorage.clear();
+    window.history.pushState({}, '', '/overview');
+  });
+
+  it('lands on My CloudCompass at /', async () => {
     window.history.pushState({}, '', '/');
+    render(<App />);
+    expect(
+      await screen.findByRole('heading', { level: 1, name: 'My CloudCompass' }),
+    ).toBeInTheDocument();
+    const nav = screen.getByRole('navigation', { name: 'Side navigation' });
+    expect(within(nav).getAllByRole('link')[0]).toHaveTextContent('My CloudCompass');
   });
 
   it('renders the header, side navigation and the Overview dashboard', async () => {
@@ -13,6 +23,7 @@ describe('App shell', () => {
     expect(screen.getByRole('banner', { name: 'CloudCompass' })).toBeInTheDocument();
     const nav = screen.getByRole('navigation', { name: 'Side navigation' });
     for (const label of [
+      'My CloudCompass',
       'Overview',
       'Cost & Usage',
       'Utilization',
@@ -51,12 +62,12 @@ describe('App shell', () => {
     ]);
   });
 
-  it('navigates to a pillar placeholder', async () => {
+  it('navigates to the Anomalies pillar', async () => {
     const user = userEvent.setup();
     render(<App />);
     await user.click(screen.getByRole('link', { name: 'Anomalies' }));
-    expect(screen.getByRole('heading', { level: 1, name: 'Anomalies' })).toBeInTheDocument();
-    expect(screen.getByText('Coming in M6')).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { level: 1, name: 'Anomalies' })).toBeInTheDocument();
+    expect(await screen.findByRole('table', { name: 'Anomaly feed' })).toBeInTheDocument();
   });
 
   it('switches to dark theme and remembers the choice', async () => {

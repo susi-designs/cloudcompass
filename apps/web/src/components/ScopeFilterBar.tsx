@@ -42,12 +42,21 @@ const toLocalDate = (day: string) =>
 /** US-style m/d/Y matches Carbon DatePicker's default `dateFormat`. */
 const toPickerString = (day: string) => `${day.slice(5, 7)}/${day.slice(8, 10)}/${day.slice(0, 4)}`;
 
+interface ScopeFilterBarProps {
+  /**
+   * `application`: only date range and environment, for pages fixed to one application
+   * (My CloudCompass, PRODUCT.md §5.1). Reset then only resets those two.
+   */
+  variant?: 'full' | 'application';
+}
+
 /**
  * Global scope filters (CLAUDE.md §6 M1): date range, cloud, LOB, application,
  * environment and account. Lower levels only offer options inside the levels above them.
  */
-export function ScopeFilterBar() {
+export function ScopeFilterBar({ variant = 'full' }: ScopeFilterBarProps) {
   const { scope, setScope, resetScope } = useScope();
+  const full = variant === 'full';
   const { lobs, applications, accounts } = useHierarchy();
 
   const lobOptions = useMemo(() => lobs.map((l) => ({ id: l.id, text: l.name })), [lobs]);
@@ -128,36 +137,42 @@ export function ScopeFilterBar() {
         <DatePickerInput id="scope-end" labelText="End date" placeholder="mm/dd/yyyy" size="md" />
       </DatePicker>
 
-      <MultiSelect<Option<CloudProvider>>
-        id="scope-cloud"
-        titleText="Cloud"
-        label="All clouds"
-        items={PROVIDERS}
-        itemToString={toText}
-        selectedItems={pick(PROVIDERS, scope.providers)}
-        onChange={({ selectedItems }) => update({ providers: ids(selectedItems ?? []) })}
-        size="md"
-      />
-      <FilterableMultiSelect<Option>
-        id="scope-lob"
-        titleText="Line of business"
-        placeholder="All LOBs"
-        items={lobOptions}
-        itemToString={toText}
-        selectedItems={pick(lobOptions, scope.lobIds)}
-        onChange={({ selectedItems }) => update({ lobIds: ids(selectedItems ?? []) })}
-        size="md"
-      />
-      <FilterableMultiSelect<Option>
-        id="scope-application"
-        titleText="Application"
-        placeholder="All applications"
-        items={appOptions}
-        itemToString={toText}
-        selectedItems={pick(appOptions, scope.applicationIds)}
-        onChange={({ selectedItems }) => update({ applicationIds: ids(selectedItems ?? []) })}
-        size="md"
-      />
+      {full && (
+        <MultiSelect<Option<CloudProvider>>
+          id="scope-cloud"
+          titleText="Cloud"
+          label="All clouds"
+          items={PROVIDERS}
+          itemToString={toText}
+          selectedItems={pick(PROVIDERS, scope.providers)}
+          onChange={({ selectedItems }) => update({ providers: ids(selectedItems ?? []) })}
+          size="md"
+        />
+      )}
+      {full && (
+        <FilterableMultiSelect<Option>
+          id="scope-lob"
+          titleText="Line of business"
+          placeholder="All LOBs"
+          items={lobOptions}
+          itemToString={toText}
+          selectedItems={pick(lobOptions, scope.lobIds)}
+          onChange={({ selectedItems }) => update({ lobIds: ids(selectedItems ?? []) })}
+          size="md"
+        />
+      )}
+      {full && (
+        <FilterableMultiSelect<Option>
+          id="scope-application"
+          titleText="Application"
+          placeholder="All applications"
+          items={appOptions}
+          itemToString={toText}
+          selectedItems={pick(appOptions, scope.applicationIds)}
+          onChange={({ selectedItems }) => update({ applicationIds: ids(selectedItems ?? []) })}
+          size="md"
+        />
+      )}
       <MultiSelect<Option<Environment>>
         id="scope-environment"
         titleText="Environment"
@@ -168,23 +183,34 @@ export function ScopeFilterBar() {
         onChange={({ selectedItems }) => update({ environments: ids(selectedItems ?? []) })}
         size="md"
       />
-      <FilterableMultiSelect<Option>
-        id="scope-account"
-        titleText="Account"
-        placeholder="All accounts"
-        items={accountOptions}
-        itemToString={toText}
-        selectedItems={pick(accountOptions, scope.accountIds)}
-        onChange={({ selectedItems }) => update({ accountIds: ids(selectedItems ?? []) })}
-        size="md"
-      />
+      {full && (
+        <FilterableMultiSelect<Option>
+          id="scope-account"
+          titleText="Account"
+          placeholder="All accounts"
+          items={accountOptions}
+          itemToString={toText}
+          selectedItems={pick(accountOptions, scope.accountIds)}
+          onChange={({ selectedItems }) => update({ accountIds: ids(selectedItems ?? []) })}
+          size="md"
+        />
+      )}
       <Button
         kind="ghost"
         size="md"
         renderIcon={Reset}
         className="cc-filter-bar__reset"
-        disabled={JSON.stringify(scope) === JSON.stringify(defaultScope())}
-        onClick={resetScope}
+        disabled={
+          full
+            ? JSON.stringify(scope) === JSON.stringify(defaultScope())
+            : JSON.stringify([scope.dateRange, scope.environments]) ===
+              JSON.stringify([defaultScope().dateRange, []])
+        }
+        onClick={
+          full
+            ? resetScope
+            : () => setScope({ environments: [], dateRange: defaultScope().dateRange })
+        }
       >
         Reset
       </Button>

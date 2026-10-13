@@ -7,6 +7,11 @@ import { AppProviders } from './AppProviders';
 import { NAV_ITEMS } from './navigation';
 
 // Pages are code-split so each pillar's charts load only when visited.
+const MyCloudCompassPage = lazy(() =>
+  import('../features/my-cloudcompass/pages/MyCloudCompassPage').then((m) => ({
+    default: m.MyCloudCompassPage,
+  })),
+);
 const OverviewPage = lazy(() =>
   import('../features/overview/pages/OverviewPage').then((m) => ({ default: m.OverviewPage })),
 );
@@ -30,7 +35,21 @@ const OptimizationPage = lazy(() =>
   })),
 );
 
-const BUILT_PAGES = new Set(['/', '/cost-usage', '/utilization', '/ai-spend', '/optimization']);
+const AnomaliesPage = lazy(() =>
+  import('../features/anomalies/pages/AnomaliesPage').then((m) => ({
+    default: m.AnomaliesPage,
+  })),
+);
+
+const BUILT_PAGES = new Set([
+  '/',
+  '/overview',
+  '/cost-usage',
+  '/utilization',
+  '/ai-spend',
+  '/optimization',
+  '/anomalies',
+]);
 
 function NotFound() {
   return (
@@ -39,7 +58,7 @@ function NotFound() {
         <h1 className="cds--type-heading-05">Page not found</h1>
         <p className="cds--type-body-01">
           <Link to="/" className="cds--link">
-            Go to Overview
+            Go to My CloudCompass
           </Link>
         </p>
       </Tile>
@@ -58,11 +77,13 @@ export function App() {
             }
           >
             <Routes>
-              <Route path="/" element={<OverviewPage />} />
+              <Route path="/" element={<MyCloudCompassPage />} />
+              <Route path="/overview" element={<OverviewPage />} />
               <Route path="/cost-usage" element={<CostUsagePage />} />
               <Route path="/utilization" element={<UtilizationPage />} />
               <Route path="/ai-spend" element={<AiSpendPage />} />
               <Route path="/optimization" element={<OptimizationPage />} />
+              <Route path="/anomalies" element={<AnomaliesPage />} />
               {NAV_ITEMS.filter((i) => !BUILT_PAGES.has(i.path)).map((item) => (
                 <Route key={item.path} path={item.path} element={<ComingSoonPage item={item} />} />
               ))}

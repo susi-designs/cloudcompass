@@ -1585,7 +1585,7 @@ month,lob,application,environment,account_id,account_name,cloud,service_category
 2026-04,Corporate Technology,Finance & ERP,DEV,3a5a1869-0000-4000-8000-000000000057,finance-erp-dev,Azure,Compute,Azure Functions,634.44,634.44
 2026-04,Corporate Technology,Security Operations,PROD,400459308554,security-operations-prod,AWS,Compute,AWS Lambda,5024.04,3617.27
 2026-04,Corporate Technology,Security Operations,PROD,400459308554,security-operations-prod,AWS,AI and Machine Learning,Amazon SageMaker,22554.25,16239.08
-2026-04,Corporate Technology,Security Operations,PROD,400459308554,security-operations-prod,AWS,Databases,Amazon DynamoDB,7518.91,7518.91
+2026-04,Corporate Technology,Security Operations,PROD,400459308554,security-operations-prod,AWS,Databases,Amazon DynamoDB,8747.13,8747.13
 2026-04,Corporate Technology,Security Operations,PROD,400459308554,security-operations-prod,AWS,Storage,Amazon EBS,7640.50,7640.50
 2026-04,Corporate Technology,Security Operations,TEST,400467227667,security-operations-test,AWS,Compute,AWS Lambda,1370.69,1370.69
 2026-04,Corporate Technology,Security Operations,TEST,400467227667,security-operations-test,AWS,AI and Machine Learning,Amazon SageMaker,6777.48,6777.48
@@ -1677,7 +1677,7 @@ month,lob,application,environment,account_id,account_name,cloud,service_category
 2026-05,Wealth Management,Trading Platform,DEV,400166301373,trading-platform-dev,AWS,Compute,AWS Lambda,1522.13,1522.13
 2026-05,Wealth Management,Trading Platform,DEV,400166301373,trading-platform-dev,AWS,Storage,Amazon EBS,3165.51,3165.51
 2026-05,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,client-reporting-prod,Azure,Compute,Virtual Machines,15456.36,15456.36
-2026-05,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,client-reporting-prod,Azure,AI and Machine Learning,Azure OpenAI Service,6776.52,6776.52
+2026-05,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,client-reporting-prod,Azure,AI and Machine Learning,Azure OpenAI Service,8968.22,8968.22
 2026-05,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,client-reporting-prod,Azure,Management and Governance,Azure Monitor,1387.08,1387.08
 2026-05,Wealth Management,Client Reporting,TEST,36fbeee7-0000-4000-8000-000000000023,client-reporting-test,Azure,Compute,Virtual Machines,4083.56,4083.56
 2026-05,Wealth Management,Client Reporting,TEST,36fbeee7-0000-4000-8000-000000000023,client-reporting-test,Azure,AI and Machine Learning,Azure OpenAI Service,2038.27,2038.27
@@ -1857,9 +1857,9 @@ month,lob,application,environment,account_id,account_name,cloud,service_category
 2026-06,Retail Banking,Card Services,DEV,8ff34739-0000-4000-8000-000000000009,card-services-dev,Azure,Compute,Azure Functions,440.30,440.30
 2026-06,Retail Banking,Card Services,DEV,8ff34739-0000-4000-8000-000000000009,card-services-dev,Azure,Databases,Azure Cosmos DB,3222.73,3222.73
 2026-06,Retail Banking,Loan Origination,PROD,cc-loan-origination-prod,loan-origination-prod,GCP,Compute,Compute Engine,18542.22,18542.22
-2026-06,Retail Banking,Loan Origination,PROD,cc-loan-origination-prod,loan-origination-prod,GCP,Management and Governance,Cloud Logging,1160.46,1160.46
+2026-06,Retail Banking,Loan Origination,PROD,cc-loan-origination-prod,loan-origination-prod,GCP,Management and Governance,Cloud Logging,1268.15,1268.15
 2026-06,Retail Banking,Loan Origination,PROD,cc-loan-origination-prod,loan-origination-prod,GCP,Analytics,BigQuery,17829.07,12836.94
-2026-06,Retail Banking,Loan Origination,TEST,cc-loan-origination-test,loan-origination-test,GCP,Compute,Compute Engine,5185.60,5185.60
+2026-06,Retail Banking,Loan Origination,TEST,cc-loan-origination-test,loan-origination-test,GCP,Compute,Compute Engine,5372.66,5372.66
 2026-06,Retail Banking,Loan Origination,TEST,cc-loan-origination-test,loan-origination-test,GCP,Management and Governance,Cloud Logging,345.70,345.70
 2026-06,Retail Banking,Loan Origination,TEST,cc-loan-origination-test,loan-origination-test,GCP,Analytics,BigQuery,5475.47,5475.47
 2026-06,Retail Banking,Loan Origination,DEV,cc-loan-origination-dev,loan-origination-dev,GCP,Compute,Compute Engine,3067.76,3067.76
@@ -1962,7 +1962,7 @@ month,lob,application,environment,account_id,account_name,cloud,service_category
 2026-06,Payments,Payment Gateway,PROD,400293007181,payment-gateway-prod,AWS,Analytics,Amazon Redshift,28662.06,20636.70
 2026-06,Payments,Payment Gateway,PROD,400293007181,payment-gateway-prod,AWS,AI and Machine Learning,Amazon SageMaker,42005.54,30244.00
 2026-06,Payments,Payment Gateway,PROD,400293007181,payment-gateway-prod,AWS,Networking,AWS Data Transfer,10222.70,10222.70
-2026-06,Payments,Payment Gateway,TEST,400300926294,payment-gateway-test,AWS,Compute,AWS Lambda,1876.21,1876.21
+2026-06,Payments,Payment Gateway,TEST,400300926294,payment-gateway-test,AWS,Compute,AWS Lambda,2007.55,2007.55
 2026-06,Payments,Payment Gateway,TEST,400300926294,payment-gateway-test,AWS,Analytics,Amazon Redshift,8606.63,8606.63
 2026-06,Payments,Payment Gateway,TEST,400300926294,payment-gateway-test,AWS,AI and Machine Learning,Amazon SageMaker,12751.28,12751.28
 2026-06,Payments,Payment Gateway,TEST,400300926294,payment-gateway-test,AWS,Networking,AWS Data Transfer,3090.90,3090.90
@@ -2041,7 +2041,7 @@ month,lob,application,environment,account_id,account_name,cloud,service_category
 2026-06,Corporate Technology,Finance & ERP,DEV,3a5a1869-0000-4000-8000-000000000057,finance-erp-dev,Azure,Compute,Azure Functions,613.07,613.07
 2026-06,Corporate Technology,Security Operations,PROD,400459308554,security-operations-prod,AWS,Compute,AWS Lambda,5069.77,3650.25
 2026-06,Corporate Technology,Security Operations,PROD,400459308554,security-operations-prod,AWS,AI and Machine Learning,Amazon SageMaker,22263.01,16029.36
-2026-06,Corporate Technology,Security Operations,PROD,400459308554,security-operations-prod,AWS,Databases,Amazon DynamoDB,7652.82,7652.82
+2026-06,Corporate Technology,Security Operations,PROD,400459308554,security-operations-prod,AWS,Databases,Amazon DynamoDB,8905.19,8905.19
 2026-06,Corporate Technology,Security Operations,PROD,400459308554,security-operations-prod,AWS,Storage,Amazon EBS,7471.09,7471.09
 2026-06,Corporate Technology,Security Operations,TEST,400467227667,security-operations-test,AWS,Compute,AWS Lambda,1372.31,1372.31
 2026-06,Corporate Technology,Security Operations,TEST,400467227667,security-operations-test,AWS,AI and Machine Learning,Amazon SageMaker,6749.10,6749.10
@@ -2100,7 +2100,7 @@ month,lob,application,environment,account_id,account_name,cloud,service_category
 2026-07,Wealth Management,Advisor Portal,PROD,08d12dfd-0000-4000-8000-000000000013,advisor-portal-prod,Azure,Compute,Azure Kubernetes Service,4646.55,4646.55
 2026-07,Wealth Management,Advisor Portal,TEST,a708a7ae-0000-4000-8000-000000000014,advisor-portal-test,Azure,Compute,Azure Functions,311.93,311.93
 2026-07,Wealth Management,Advisor Portal,TEST,a708a7ae-0000-4000-8000-000000000014,advisor-portal-test,Azure,Networking,Azure Bandwidth,841.73,841.73
-2026-07,Wealth Management,Advisor Portal,TEST,a708a7ae-0000-4000-8000-000000000014,advisor-portal-test,Azure,Compute,Virtual Machines,5594.36,5594.36
+2026-07,Wealth Management,Advisor Portal,TEST,a708a7ae-0000-4000-8000-000000000014,advisor-portal-test,Azure,Compute,Virtual Machines,6581.33,6581.33
 2026-07,Wealth Management,Advisor Portal,TEST,a708a7ae-0000-4000-8000-000000000014,advisor-portal-test,Azure,Databases,Azure SQL Database,4412.63,4412.63
 2026-07,Wealth Management,Advisor Portal,TEST,a708a7ae-0000-4000-8000-000000000014,advisor-portal-test,Azure,Compute,Azure Kubernetes Service,1265.69,1265.69
 2026-07,Wealth Management,Advisor Portal,DEV,4540215f-0000-4000-8000-000000000015,advisor-portal-dev,Azure,Compute,Azure Functions,185.13,185.13
@@ -2137,7 +2137,7 @@ month,lob,application,environment,account_id,account_name,cloud,service_category
 2026-07,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,client-reporting-prod,Azure,Management and Governance,Azure Monitor,1421.30,1421.30
 2026-07,Wealth Management,Client Reporting,TEST,36fbeee7-0000-4000-8000-000000000023,client-reporting-test,Azure,Compute,Virtual Machines,4343.26,4343.26
 2026-07,Wealth Management,Client Reporting,TEST,36fbeee7-0000-4000-8000-000000000023,client-reporting-test,Azure,AI and Machine Learning,Azure OpenAI Service,2107.96,2107.96
-2026-07,Wealth Management,Client Reporting,TEST,36fbeee7-0000-4000-8000-000000000023,client-reporting-test,Azure,Management and Governance,Azure Monitor,428.43,428.43
+2026-07,Wealth Management,Client Reporting,TEST,36fbeee7-0000-4000-8000-000000000023,client-reporting-test,Azure,Management and Governance,Azure Monitor,470.43,470.43
 2026-07,Wealth Management,Client Reporting,DEV,d5336898-0000-4000-8000-000000000024,client-reporting-dev,Azure,Compute,Virtual Machines,2600.45,2600.45
 2026-07,Wealth Management,Client Reporting,DEV,d5336898-0000-4000-8000-000000000024,client-reporting-dev,Azure,AI and Machine Learning,Azure OpenAI Service,1260.90,1260.90
 2026-07,Wealth Management,Client Reporting,DEV,d5336898-0000-4000-8000-000000000024,client-reporting-dev,Azure,Management and Governance,Azure Monitor,261.67,261.67
@@ -2316,7 +2316,7 @@ month,lob,application,environment,account_id,account_name,cloud,service_category
 2026-08,Retail Banking,Loan Origination,PROD,cc-loan-origination-prod,loan-origination-prod,GCP,Management and Governance,Cloud Logging,1192.27,1192.27
 2026-08,Retail Banking,Loan Origination,PROD,cc-loan-origination-prod,loan-origination-prod,GCP,Analytics,BigQuery,18370.40,13226.70
 2026-08,Retail Banking,Loan Origination,TEST,cc-loan-origination-test,loan-origination-test,GCP,Compute,Compute Engine,5070.75,5070.75
-2026-08,Retail Banking,Loan Origination,TEST,cc-loan-origination-test,loan-origination-test,GCP,Management and Governance,Cloud Logging,362.09,362.09
+2026-08,Retail Banking,Loan Origination,TEST,cc-loan-origination-test,loan-origination-test,GCP,Management and Governance,Cloud Logging,388.69,388.69
 2026-08,Retail Banking,Loan Origination,TEST,cc-loan-origination-test,loan-origination-test,GCP,Analytics,BigQuery,5512.15,5512.15
 2026-08,Retail Banking,Loan Origination,DEV,cc-loan-origination-dev,loan-origination-dev,GCP,Compute,Compute Engine,2992.56,2992.56
 2026-08,Retail Banking,Loan Origination,DEV,cc-loan-origination-dev,loan-origination-dev,GCP,Management and Governance,Cloud Logging,214.26,214.26
@@ -2361,7 +2361,7 @@ month,lob,application,environment,account_id,account_name,cloud,service_category
 2026-08,Wealth Management,Trading Platform,DEV,400166301373,trading-platform-dev,AWS,Compute,AWS Lambda,1488.20,1488.20
 2026-08,Wealth Management,Trading Platform,DEV,400166301373,trading-platform-dev,AWS,Storage,Amazon EBS,3091.59,3091.59
 2026-08,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,client-reporting-prod,Azure,Compute,Virtual Machines,15884.91,15884.91
-2026-08,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,client-reporting-prod,Azure,AI and Machine Learning,Azure OpenAI Service,6999.15,6999.15
+2026-08,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,client-reporting-prod,Azure,AI and Machine Learning,Azure OpenAI Service,8050.35,8050.35
 2026-08,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,client-reporting-prod,Azure,Management and Governance,Azure Monitor,1425.46,1425.46
 2026-08,Wealth Management,Client Reporting,TEST,36fbeee7-0000-4000-8000-000000000023,client-reporting-test,Azure,Compute,Virtual Machines,4247.61,4247.61
 2026-08,Wealth Management,Client Reporting,TEST,36fbeee7-0000-4000-8000-000000000023,client-reporting-test,Azure,AI and Machine Learning,Azure OpenAI Service,2116.84,2116.84
@@ -2512,8 +2512,8 @@ month,lob,application,environment,account_id,account_name,cloud,service_category
 2026-09,Retail Banking,Mobile Banking,PROD,400007919113,mobile-banking-prod,AWS,Security,AWS WAF,3304.60,3304.60
 2026-09,Retail Banking,Mobile Banking,PROD,400007919113,mobile-banking-prod,AWS,Compute,Amazon EC2,61394.34,44203.92
 2026-09,Retail Banking,Mobile Banking,PROD,400007919113,mobile-banking-prod,AWS,Management and Governance,Amazon CloudWatch,3269.48,3269.48
-2026-09,Retail Banking,Mobile Banking,TEST,400015838226,mobile-banking-test,AWS,Compute,Amazon EKS,1817.02,1817.02
-2026-09,Retail Banking,Mobile Banking,TEST,400015838226,mobile-banking-test,AWS,Storage,Amazon S3,5219.49,5219.49
+2026-09,Retail Banking,Mobile Banking,TEST,400015838226,mobile-banking-test,AWS,Compute,Amazon EKS,1926.20,1926.20
+2026-09,Retail Banking,Mobile Banking,TEST,400015838226,mobile-banking-test,AWS,Storage,Amazon S3,5549.46,5549.46
 2026-09,Retail Banking,Mobile Banking,TEST,400015838226,mobile-banking-test,AWS,Security,AWS WAF,1002.33,1002.33
 2026-09,Retail Banking,Mobile Banking,TEST,400015838226,mobile-banking-test,AWS,Compute,Amazon EC2,16886.91,16886.91
 2026-09,Retail Banking,Mobile Banking,TEST,400015838226,mobile-banking-test,AWS,Management and Governance,Amazon CloudWatch,972.35,972.35
@@ -2618,7 +2618,7 @@ month,lob,application,environment,account_id,account_name,cloud,service_category
 2026-09,Commercial Banking,Commercial Lending,PROD,4e114f5c-0000-4000-8000-000000000028,commercial-lending-prod,Azure,Compute,Virtual Machines,23151.51,16669.12
 2026-09,Commercial Banking,Commercial Lending,TEST,ec48c90d-0000-4000-8000-000000000029,commercial-lending-test,Azure,Compute,Azure Kubernetes Service,1551.55,1551.55
 2026-09,Commercial Banking,Commercial Lending,TEST,ec48c90d-0000-4000-8000-000000000029,commercial-lending-test,Azure,Storage,Azure Blob Storage,1506.76,1506.76
-2026-09,Commercial Banking,Commercial Lending,TEST,ec48c90d-0000-4000-8000-000000000029,commercial-lending-test,Azure,Networking,Azure Bandwidth,579.63,579.63
+2026-09,Commercial Banking,Commercial Lending,TEST,ec48c90d-0000-4000-8000-000000000029,commercial-lending-test,Azure,Networking,Azure Bandwidth,787.07,787.07
 2026-09,Commercial Banking,Commercial Lending,TEST,ec48c90d-0000-4000-8000-000000000029,commercial-lending-test,Azure,Compute,Virtual Machines,6496.78,6496.78
 2026-09,Commercial Banking,Commercial Lending,DEV,8a8042be-0000-4000-8000-000000000030,commercial-lending-dev,Azure,Compute,Azure Kubernetes Service,941.97,941.97
 2026-09,Commercial Banking,Commercial Lending,DEV,8a8042be-0000-4000-8000-000000000030,commercial-lending-dev,Azure,Storage,Azure Blob Storage,892.16,892.16
@@ -2669,7 +2669,7 @@ month,lob,application,environment,account_id,account_name,cloud,service_category
 2026-09,Payments,Fraud Detection,DEV,cc-fraud-detection-dev,fraud-detection-dev,GCP,AI and Machine Learning,Vertex AI,5633.31,5633.31
 2026-09,Payments,Fraud Detection,DEV,cc-fraud-detection-dev,fraud-detection-dev,GCP,Management and Governance,Cloud Logging,281.04,281.04
 2026-09,Payments,Fraud Detection,DEV,cc-fraud-detection-dev,fraud-detection-dev,GCP,Compute,Compute Engine,4758.13,4758.13
-2026-09,Payments,Real-time Payments,PROD,400340521859,real-time-payments-prod,AWS,Compute,AWS Lambda,6022.53,4336.19
+2026-09,Payments,Real-time Payments,PROD,400340521859,real-time-payments-prod,AWS,Compute,AWS Lambda,6653.38,4790.41
 2026-09,Payments,Real-time Payments,PROD,400340521859,real-time-payments-prod,AWS,Management and Governance,Amazon CloudWatch,7173.16,7173.16
 2026-09,Payments,Real-time Payments,PROD,400340521859,real-time-payments-prod,AWS,AI and Machine Learning,Amazon SageMaker,51681.93,37210.96
 2026-09,Payments,Real-time Payments,TEST,400348440972,real-time-payments-test,AWS,Compute,AWS Lambda,1657.76,1657.76
@@ -2754,7 +2754,7 @@ month,lob,application,environment,account_id,account_name,cloud,service_category
 2026-10,Retail Banking,Online Banking,PROD,400031676452,online-banking-prod,AWS,Databases,Amazon RDS,12386.57,12386.57
 2026-10,Retail Banking,Online Banking,PROD,400031676452,online-banking-prod,AWS,Management and Governance,Amazon CloudWatch,3484.12,3484.12
 2026-10,Retail Banking,Online Banking,TEST,400039595565,online-banking-test,AWS,Compute,Amazon EKS,963.40,963.40
-2026-10,Retail Banking,Online Banking,TEST,400039595565,online-banking-test,AWS,Databases,Amazon RDS,3863.47,3863.47
+2026-10,Retail Banking,Online Banking,TEST,400039595565,online-banking-test,AWS,Databases,Amazon RDS,6126.32,6126.32
 2026-10,Retail Banking,Online Banking,TEST,400039595565,online-banking-test,AWS,Management and Governance,Amazon CloudWatch,1012.79,1012.79
 2026-10,Retail Banking,Online Banking,DEV,400047514678,online-banking-dev,AWS,Compute,Amazon EKS,560.88,560.88
 2026-10,Retail Banking,Online Banking,DEV,400047514678,online-banking-dev,AWS,Databases,Amazon RDS,2223.95,2223.95
@@ -2782,7 +2782,7 @@ month,lob,application,environment,account_id,account_name,cloud,service_category
 2026-10,Wealth Management,Advisor Portal,PROD,08d12dfd-0000-4000-8000-000000000013,advisor-portal-prod,Azure,Compute,Virtual Machines,6255.82,4504.19
 2026-10,Wealth Management,Advisor Portal,PROD,08d12dfd-0000-4000-8000-000000000013,advisor-portal-prod,Azure,Databases,Azure SQL Database,4417.42,3180.54
 2026-10,Wealth Management,Advisor Portal,PROD,08d12dfd-0000-4000-8000-000000000013,advisor-portal-prod,Azure,Compute,Azure Kubernetes Service,1358.50,1358.50
-2026-10,Wealth Management,Advisor Portal,TEST,a708a7ae-0000-4000-8000-000000000014,advisor-portal-test,Azure,Compute,Azure Functions,92.68,92.68
+2026-10,Wealth Management,Advisor Portal,TEST,a708a7ae-0000-4000-8000-000000000014,advisor-portal-test,Azure,Compute,Azure Functions,158.56,158.56
 2026-10,Wealth Management,Advisor Portal,TEST,a708a7ae-0000-4000-8000-000000000014,advisor-portal-test,Azure,Networking,Azure Bandwidth,255.33,255.33
 2026-10,Wealth Management,Advisor Portal,TEST,a708a7ae-0000-4000-8000-000000000014,advisor-portal-test,Azure,Compute,Virtual Machines,1734.45,1734.45
 2026-10,Wealth Management,Advisor Portal,TEST,a708a7ae-0000-4000-8000-000000000014,advisor-portal-test,Azure,Databases,Azure SQL Database,1307.84,1307.84
@@ -2805,7 +2805,7 @@ month,lob,application,environment,account_id,account_name,cloud,service_category
 2026-10,Wealth Management,Trading Platform,PROD,400150463147,trading-platform-prod,AWS,Analytics,Amazon Redshift,13621.10,13621.10
 2026-10,Wealth Management,Trading Platform,PROD,400150463147,trading-platform-prod,AWS,Security,AWS WAF,858.45,858.45
 2026-10,Wealth Management,Trading Platform,PROD,400150463147,trading-platform-prod,AWS,Compute,AWS Lambda,2678.63,2678.63
-2026-10,Wealth Management,Trading Platform,PROD,400150463147,trading-platform-prod,AWS,Storage,Amazon EBS,4981.41,4981.41
+2026-10,Wealth Management,Trading Platform,PROD,400150463147,trading-platform-prod,AWS,Storage,Amazon EBS,10734.67,10734.67
 2026-10,Wealth Management,Trading Platform,TEST,400158382260,trading-platform-test,AWS,Compute,Amazon EKS,1242.99,1242.99
 2026-10,Wealth Management,Trading Platform,TEST,400158382260,trading-platform-test,AWS,Analytics,Amazon Redshift,4124.90,4124.90
 2026-10,Wealth Management,Trading Platform,TEST,400158382260,trading-platform-test,AWS,Security,AWS WAF,349.20,349.20
@@ -2827,7 +2827,7 @@ month,lob,application,environment,account_id,account_name,cloud,service_category
 2026-10,Wealth Management,Client Reporting,DEV,d5336898-0000-4000-8000-000000000024,client-reporting-dev,Azure,Management and Governance,Azure Monitor,76.57,76.57
 2026-10,Commercial Banking,Treasury Management,PROD,400197977825,treasury-management-prod,AWS,Compute,Amazon EKS,1126.28,1126.28
 2026-10,Commercial Banking,Treasury Management,PROD,400197977825,treasury-management-prod,AWS,Databases,Amazon DynamoDB,2176.21,2176.21
-2026-10,Commercial Banking,Treasury Management,PROD,400197977825,treasury-management-prod,AWS,Storage,Amazon S3,2581.72,2581.72
+2026-10,Commercial Banking,Treasury Management,PROD,400197977825,treasury-management-prod,AWS,Storage,Amazon S3,3957.85,3957.85
 2026-10,Commercial Banking,Treasury Management,PROD,400197977825,treasury-management-prod,AWS,Compute,Amazon EC2,6956.44,5008.63
 2026-10,Commercial Banking,Treasury Management,PROD,400197977825,treasury-management-prod,AWS,Networking,AWS Data Transfer,1445.07,1445.07
 2026-10,Commercial Banking,Treasury Management,TEST,400205896938,treasury-management-test,AWS,Compute,Amazon EKS,315.62,315.62
@@ -2852,7 +2852,7 @@ month,lob,application,environment,account_id,account_name,cloud,service_category
 2026-10,Commercial Banking,Commercial Lending,DEV,8a8042be-0000-4000-8000-000000000030,commercial-lending-dev,Azure,Storage,Azure Blob Storage,278.73,278.73
 2026-10,Commercial Banking,Commercial Lending,DEV,8a8042be-0000-4000-8000-000000000030,commercial-lending-dev,Azure,Networking,Azure Bandwidth,108.72,108.72
 2026-10,Commercial Banking,Commercial Lending,DEV,8a8042be-0000-4000-8000-000000000030,commercial-lending-dev,Azure,Compute,Virtual Machines,1232.27,1232.27
-2026-10,Commercial Banking,Trade Finance,PROD,cc-trade-finance-prod,trade-finance-prod,GCP,Compute,Google Kubernetes Engine,1490.76,1490.76
+2026-10,Commercial Banking,Trade Finance,PROD,cc-trade-finance-prod,trade-finance-prod,GCP,Compute,Google Kubernetes Engine,2378.89,2378.89
 2026-10,Commercial Banking,Trade Finance,PROD,cc-trade-finance-prod,trade-finance-prod,GCP,Storage,Cloud Storage,1670.29,1670.29
 2026-10,Commercial Banking,Trade Finance,PROD,cc-trade-finance-prod,trade-finance-prod,GCP,Compute,Compute Engine,5853.66,5853.66
 2026-10,Commercial Banking,Trade Finance,TEST,cc-trade-finance-test,trade-finance-test,GCP,Compute,Google Kubernetes Engine,421.53,421.53
@@ -2885,7 +2885,7 @@ month,lob,application,environment,account_id,account_name,cloud,service_category
 2026-10,Payments,Fraud Detection,PROD,cc-fraud-detection-prod,fraud-detection-prod,GCP,Compute,Google Kubernetes Engine,2907.33,2907.33
 2026-10,Payments,Fraud Detection,PROD,cc-fraud-detection-prod,fraud-detection-prod,GCP,Storage,Cloud Storage,1964.28,1964.28
 2026-10,Payments,Fraud Detection,PROD,cc-fraud-detection-prod,fraud-detection-prod,GCP,AI and Machine Learning,Vertex AI,9644.87,9644.87
-2026-10,Payments,Fraud Detection,PROD,cc-fraud-detection-prod,fraud-detection-prod,GCP,Management and Governance,Cloud Logging,461.80,461.80
+2026-10,Payments,Fraud Detection,PROD,cc-fraud-detection-prod,fraud-detection-prod,GCP,Management and Governance,Cloud Logging,665.00,665.00
 2026-10,Payments,Fraud Detection,PROD,cc-fraud-detection-prod,fraud-detection-prod,GCP,Compute,Compute Engine,8653.77,6230.71
 2026-10,Payments,Fraud Detection,TEST,cc-fraud-detection-test,fraud-detection-test,GCP,Compute,Google Kubernetes Engine,804.81,804.81
 2026-10,Payments,Fraud Detection,TEST,cc-fraud-detection-test,fraud-detection-test,GCP,Storage,Cloud Storage,601.35,601.35
@@ -2933,13 +2933,13 @@ month,lob,application,environment,account_id,account_name,cloud,service_category
 2026-10,Corporate Technology,HR Systems,PROD,2344b7f4-0000-4000-8000-000000000052,hr-systems-prod,Azure,Compute,Azure Functions,348.82,348.82
 2026-10,Corporate Technology,HR Systems,PROD,2344b7f4-0000-4000-8000-000000000052,hr-systems-prod,Azure,Databases,Azure SQL Database,3025.68,3025.68
 2026-10,Corporate Technology,HR Systems,PROD,2344b7f4-0000-4000-8000-000000000052,hr-systems-prod,Azure,AI and Machine Learning,Azure OpenAI Service,2744.25,2744.25
-2026-10,Corporate Technology,HR Systems,TEST,c17c31a5-0000-4000-8000-000000000053,hr-systems-test,Azure,Compute,Azure Functions,98.53,98.53
+2026-10,Corporate Technology,HR Systems,TEST,c17c31a5-0000-4000-8000-000000000053,hr-systems-test,Azure,Compute,Azure Functions,150.39,150.39
 2026-10,Corporate Technology,HR Systems,TEST,c17c31a5-0000-4000-8000-000000000053,hr-systems-test,Azure,Databases,Azure SQL Database,899.81,899.81
 2026-10,Corporate Technology,HR Systems,TEST,c17c31a5-0000-4000-8000-000000000053,hr-systems-test,Azure,AI and Machine Learning,Azure OpenAI Service,811.71,811.71
 2026-10,Corporate Technology,HR Systems,DEV,5fb3ab56-0000-4000-8000-000000000054,hr-systems-dev,Azure,Compute,Azure Functions,57.69,57.69
 2026-10,Corporate Technology,HR Systems,DEV,5fb3ab56-0000-4000-8000-000000000054,hr-systems-dev,Azure,Databases,Azure SQL Database,524.33,524.33
 2026-10,Corporate Technology,HR Systems,DEV,5fb3ab56-0000-4000-8000-000000000054,hr-systems-dev,Azure,AI and Machine Learning,Azure OpenAI Service,493.60,493.60
-2026-10,Corporate Technology,Finance & ERP,PROD,fdeb2507-0000-4000-8000-000000000055,finance-erp-prod,Azure,Compute,Azure Kubernetes Service,4979.93,4979.93
+2026-10,Corporate Technology,Finance & ERP,PROD,fdeb2507-0000-4000-8000-000000000055,finance-erp-prod,Azure,Compute,Azure Kubernetes Service,5574.34,5574.34
 2026-10,Corporate Technology,Finance & ERP,PROD,fdeb2507-0000-4000-8000-000000000055,finance-erp-prod,Azure,Networking,Azure Bandwidth,1927.40,1927.40
 2026-10,Corporate Technology,Finance & ERP,PROD,fdeb2507-0000-4000-8000-000000000055,finance-erp-prod,Azure,Management and Governance,Azure Monitor,1904.81,1904.81
 2026-10,Corporate Technology,Finance & ERP,PROD,fdeb2507-0000-4000-8000-000000000055,finance-erp-prod,Azure,Compute,Azure Functions,1219.29,1219.29

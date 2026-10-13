@@ -44,5 +44,6 @@ vi.mock('@carbon/charts-react', () => {
     GroupedBarChart: stub('GroupedBarChart'),
     HeatmapChart: stub('HeatmapChart'),
     MeterChart: stub('MeterChart'),
+    ScatterChart: stub('ScatterChart'),
   };
 });

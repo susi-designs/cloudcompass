@@ -11456,7 +11456,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-04-18,Corporate Technology,Finance & ERP,PROD,fdeb2507-0000-4000-8000-000000000055,Azure,1101.93
 2026-04-18,Corporate Technology,Finance & ERP,TEST,9c229eb8-0000-4000-8000-000000000056,Azure,249.36
 2026-04-18,Corporate Technology,Finance & ERP,DEV,3a5a1869-0000-4000-8000-000000000057,Azure,147.74
-2026-04-18,Corporate Technology,Security Operations,PROD,400459308554,AWS,1385.48
+2026-04-18,Corporate Technology,Security Operations,PROD,400459308554,AWS,1986.12
 2026-04-18,Corporate Technology,Security Operations,TEST,400467227667,AWS,425.30
 2026-04-18,Corporate Technology,Security Operations,DEV,400475146780,AWS,241.28
 2026-04-19,Retail Banking,Mobile Banking,PROD,400007919113,AWS,2793.12
@@ -11516,7 +11516,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-04-19,Corporate Technology,Finance & ERP,PROD,fdeb2507-0000-4000-8000-000000000055,Azure,1115.20
 2026-04-19,Corporate Technology,Finance & ERP,TEST,9c229eb8-0000-4000-8000-000000000056,Azure,256.19
 2026-04-19,Corporate Technology,Finance & ERP,DEV,3a5a1869-0000-4000-8000-000000000057,Azure,148.28
-2026-04-19,Corporate Technology,Security Operations,PROD,400459308554,AWS,1416.93
+2026-04-19,Corporate Technology,Security Operations,PROD,400459308554,AWS,2044.51
 2026-04-19,Corporate Technology,Security Operations,TEST,400467227667,AWS,407.93
 2026-04-19,Corporate Technology,Security Operations,DEV,400475146780,AWS,233.67
 2026-04-20,Retail Banking,Mobile Banking,PROD,400007919113,AWS,3076.77
@@ -13760,7 +13760,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-05-27,Wealth Management,Trading Platform,PROD,400150463147,AWS,2928.76
 2026-05-27,Wealth Management,Trading Platform,TEST,400158382260,AWS,884.53
 2026-05-27,Wealth Management,Trading Platform,DEV,400166301373,AWS,563.26
-2026-05-27,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,Azure,770.77
+2026-05-27,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,Azure,1318.39
 2026-05-27,Wealth Management,Client Reporting,TEST,36fbeee7-0000-4000-8000-000000000023,Azure,236.21
 2026-05-27,Wealth Management,Client Reporting,DEV,d5336898-0000-4000-8000-000000000024,Azure,136.73
 2026-05-27,Commercial Banking,Treasury Management,PROD,400197977825,AWS,1694.30
@@ -13820,7 +13820,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-05-28,Wealth Management,Trading Platform,PROD,400150463147,AWS,3033.26
 2026-05-28,Wealth Management,Trading Platform,TEST,400158382260,AWS,910.33
 2026-05-28,Wealth Management,Trading Platform,DEV,400166301373,AWS,561.40
-2026-05-28,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,Azure,786.87
+2026-05-28,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,Azure,1339.43
 2026-05-28,Wealth Management,Client Reporting,TEST,36fbeee7-0000-4000-8000-000000000023,Azure,234.91
 2026-05-28,Wealth Management,Client Reporting,DEV,d5336898-0000-4000-8000-000000000024,Azure,137.41
 2026-05-28,Commercial Banking,Treasury Management,PROD,400197977825,AWS,1788.54
@@ -13880,7 +13880,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-05-29,Wealth Management,Trading Platform,PROD,400150463147,AWS,2949.86
 2026-05-29,Wealth Management,Trading Platform,TEST,400158382260,AWS,871.88
 2026-05-29,Wealth Management,Trading Platform,DEV,400166301373,AWS,550.27
-2026-05-29,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,Azure,788.32
+2026-05-29,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,Azure,1335.29
 2026-05-29,Wealth Management,Client Reporting,TEST,36fbeee7-0000-4000-8000-000000000023,Azure,223.81
 2026-05-29,Wealth Management,Client Reporting,DEV,d5336898-0000-4000-8000-000000000024,Azure,136.54
 2026-05-29,Commercial Banking,Treasury Management,PROD,400197977825,AWS,1699.98
@@ -13940,7 +13940,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-05-30,Wealth Management,Trading Platform,PROD,400150463147,AWS,2893.92
 2026-05-30,Wealth Management,Trading Platform,TEST,400158382260,AWS,801.92
 2026-05-30,Wealth Management,Trading Platform,DEV,400166301373,AWS,495.37
-2026-05-30,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,Azure,706.00
+2026-05-30,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,Azure,1250.55
 2026-05-30,Wealth Management,Client Reporting,TEST,36fbeee7-0000-4000-8000-000000000023,Azure,163.58
 2026-05-30,Wealth Management,Client Reporting,DEV,d5336898-0000-4000-8000-000000000024,Azure,95.75
 2026-05-30,Commercial Banking,Treasury Management,PROD,400197977825,AWS,1609.29
@@ -14216,7 +14216,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-06-03,Corporate Technology,Finance & ERP,PROD,fdeb2507-0000-4000-8000-000000000055,Azure,1151.67
 2026-06-03,Corporate Technology,Finance & ERP,TEST,9c229eb8-0000-4000-8000-000000000056,Azure,360.41
 2026-06-03,Corporate Technology,Finance & ERP,DEV,3a5a1869-0000-4000-8000-000000000057,Azure,207.48
-2026-06-03,Corporate Technology,Security Operations,PROD,400459308554,AWS,1338.89
+2026-06-03,Corporate Technology,Security Operations,PROD,400459308554,AWS,1728.98
 2026-06-03,Corporate Technology,Security Operations,TEST,400467227667,AWS,415.06
 2026-06-03,Corporate Technology,Security Operations,DEV,400475146780,AWS,247.56
 2026-06-04,Retail Banking,Mobile Banking,PROD,400007919113,AWS,2917.81
@@ -14276,7 +14276,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-06-04,Corporate Technology,Finance & ERP,PROD,fdeb2507-0000-4000-8000-000000000055,Azure,1157.86
 2026-06-04,Corporate Technology,Finance & ERP,TEST,9c229eb8-0000-4000-8000-000000000056,Azure,327.12
 2026-06-04,Corporate Technology,Finance & ERP,DEV,3a5a1869-0000-4000-8000-000000000057,Azure,210.05
-2026-06-04,Corporate Technology,Security Operations,PROD,400459308554,AWS,1428.29
+2026-06-04,Corporate Technology,Security Operations,PROD,400459308554,AWS,1859.83
 2026-06-04,Corporate Technology,Security Operations,TEST,400467227667,AWS,451.85
 2026-06-04,Corporate Technology,Security Operations,DEV,400475146780,AWS,263.39
 2026-06-05,Retail Banking,Mobile Banking,PROD,400007919113,AWS,2996.89
@@ -14336,7 +14336,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-06-05,Corporate Technology,Finance & ERP,PROD,fdeb2507-0000-4000-8000-000000000055,Azure,1160.92
 2026-06-05,Corporate Technology,Finance & ERP,TEST,9c229eb8-0000-4000-8000-000000000056,Azure,350.33
 2026-06-05,Corporate Technology,Finance & ERP,DEV,3a5a1869-0000-4000-8000-000000000057,Azure,205.96
-2026-06-05,Corporate Technology,Security Operations,PROD,400459308554,AWS,1419.06
+2026-06-05,Corporate Technology,Security Operations,PROD,400459308554,AWS,1849.80
 2026-06-05,Corporate Technology,Security Operations,TEST,400467227667,AWS,411.96
 2026-06-05,Corporate Technology,Security Operations,DEV,400475146780,AWS,264.19
 2026-06-06,Retail Banking,Mobile Banking,PROD,400007919113,AWS,2805.61
@@ -14708,7 +14708,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-06-12,Retail Banking,Card Services,PROD,538453d7-0000-4000-8000-000000000007,Azure,2194.22
 2026-06-12,Retail Banking,Card Services,TEST,f1bbcd88-0000-4000-8000-000000000008,Azure,615.21
 2026-06-12,Retail Banking,Card Services,DEV,8ff34739-0000-4000-8000-000000000009,Azure,359.53
-2026-06-12,Retail Banking,Loan Origination,PROD,cc-loan-origination-prod,GCP,1378.59
+2026-06-12,Retail Banking,Loan Origination,PROD,cc-loan-origination-prod,GCP,1437.77
 2026-06-12,Retail Banking,Loan Origination,TEST,cc-loan-origination-test,GCP,404.41
 2026-06-12,Retail Banking,Loan Origination,DEV,cc-loan-origination-dev,GCP,239.45
 2026-06-12,Wealth Management,Advisor Portal,PROD,08d12dfd-0000-4000-8000-000000000013,Azure,1467.06
@@ -14768,7 +14768,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-06-13,Retail Banking,Card Services,PROD,538453d7-0000-4000-8000-000000000007,Azure,1952.59
 2026-06-13,Retail Banking,Card Services,TEST,f1bbcd88-0000-4000-8000-000000000008,Azure,402.54
 2026-06-13,Retail Banking,Card Services,DEV,8ff34739-0000-4000-8000-000000000009,Azure,232.82
-2026-06-13,Retail Banking,Loan Origination,PROD,cc-loan-origination-prod,GCP,1219.27
+2026-06-13,Retail Banking,Loan Origination,PROD,cc-loan-origination-prod,GCP,1267.78
 2026-06-13,Retail Banking,Loan Origination,TEST,cc-loan-origination-test,GCP,299.89
 2026-06-13,Retail Banking,Loan Origination,DEV,cc-loan-origination-dev,GCP,182.35
 2026-06-13,Wealth Management,Advisor Portal,PROD,08d12dfd-0000-4000-8000-000000000013,Azure,1835.50
@@ -15156,7 +15156,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-06-19,Commercial Banking,Cash Management,TEST,400277168955,AWS,333.63
 2026-06-19,Commercial Banking,Cash Management,DEV,400285088068,AWS,193.68
 2026-06-19,Payments,Payment Gateway,PROD,400293007181,AWS,2943.15
-2026-06-19,Payments,Payment Gateway,TEST,400300926294,AWS,877.75
+2026-06-19,Payments,Payment Gateway,TEST,400300926294,AWS,942.90
 2026-06-19,Payments,Payment Gateway,DEV,400308845407,AWS,531.64
 2026-06-19,Payments,Fraud Detection,PROD,cc-fraud-detection-prod,GCP,2816.87
 2026-06-19,Payments,Fraud Detection,TEST,cc-fraud-detection-test,GCP,863.33
@@ -15189,7 +15189,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-06-20,Retail Banking,Card Services,TEST,f1bbcd88-0000-4000-8000-000000000008,Azure,394.71
 2026-06-20,Retail Banking,Card Services,DEV,8ff34739-0000-4000-8000-000000000009,Azure,262.43
 2026-06-20,Retail Banking,Loan Origination,PROD,cc-loan-origination-prod,GCP,1264.56
-2026-06-20,Retail Banking,Loan Origination,TEST,cc-loan-origination-test,GCP,300.80
+2026-06-20,Retail Banking,Loan Origination,TEST,cc-loan-origination-test,GCP,487.86
 2026-06-20,Retail Banking,Loan Origination,DEV,cc-loan-origination-dev,GCP,171.13
 2026-06-20,Wealth Management,Advisor Portal,PROD,08d12dfd-0000-4000-8000-000000000013,Azure,1310.57
 2026-06-20,Wealth Management,Advisor Portal,TEST,a708a7ae-0000-4000-8000-000000000014,Azure,310.25
@@ -15216,7 +15216,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-06-20,Commercial Banking,Cash Management,TEST,400277168955,AWS,269.53
 2026-06-20,Commercial Banking,Cash Management,DEV,400285088068,AWS,163.48
 2026-06-20,Payments,Payment Gateway,PROD,400293007181,AWS,2984.82
-2026-06-20,Payments,Payment Gateway,TEST,400300926294,AWS,852.60
+2026-06-20,Payments,Payment Gateway,TEST,400300926294,AWS,885.58
 2026-06-20,Payments,Payment Gateway,DEV,400308845407,AWS,547.21
 2026-06-20,Payments,Fraud Detection,PROD,cc-fraud-detection-prod,GCP,2765.32
 2026-06-20,Payments,Fraud Detection,TEST,cc-fraud-detection-test,GCP,672.60
@@ -15276,7 +15276,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-06-21,Commercial Banking,Cash Management,TEST,400277168955,AWS,290.01
 2026-06-21,Commercial Banking,Cash Management,DEV,400285088068,AWS,166.35
 2026-06-21,Payments,Payment Gateway,PROD,400293007181,AWS,2827.28
-2026-06-21,Payments,Payment Gateway,TEST,400300926294,AWS,846.50
+2026-06-21,Payments,Payment Gateway,TEST,400300926294,AWS,879.71
 2026-06-21,Payments,Payment Gateway,DEV,400308845407,AWS,509.76
 2026-06-21,Payments,Fraud Detection,PROD,cc-fraud-detection-prod,GCP,2611.04
 2026-06-21,Payments,Fraud Detection,TEST,cc-fraud-detection-test,GCP,635.71
@@ -16572,7 +16572,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-07-13,Retail Banking,Loan Origination,TEST,cc-loan-origination-test,GCP,387.64
 2026-07-13,Retail Banking,Loan Origination,DEV,cc-loan-origination-dev,GCP,233.50
 2026-07-13,Wealth Management,Advisor Portal,PROD,08d12dfd-0000-4000-8000-000000000013,Azure,1373.97
-2026-07-13,Wealth Management,Advisor Portal,TEST,a708a7ae-0000-4000-8000-000000000014,Azure,426.61
+2026-07-13,Wealth Management,Advisor Portal,TEST,a708a7ae-0000-4000-8000-000000000014,Azure,909.77
 2026-07-13,Wealth Management,Advisor Portal,DEV,4540215f-0000-4000-8000-000000000015,Azure,259.95
 2026-07-13,Wealth Management,Portfolio Analytics,PROD,cc-portfolio-analytics-prod,GCP,2505.89
 2026-07-13,Wealth Management,Portfolio Analytics,TEST,cc-portfolio-analytics-test,GCP,709.54
@@ -16632,7 +16632,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-07-14,Retail Banking,Loan Origination,TEST,cc-loan-origination-test,GCP,357.65
 2026-07-14,Retail Banking,Loan Origination,DEV,cc-loan-origination-dev,GCP,234.52
 2026-07-14,Wealth Management,Advisor Portal,PROD,08d12dfd-0000-4000-8000-000000000013,Azure,1452.82
-2026-07-14,Wealth Management,Advisor Portal,TEST,a708a7ae-0000-4000-8000-000000000014,Azure,427.89
+2026-07-14,Wealth Management,Advisor Portal,TEST,a708a7ae-0000-4000-8000-000000000014,Azure,931.70
 2026-07-14,Wealth Management,Advisor Portal,DEV,4540215f-0000-4000-8000-000000000015,Azure,254.29
 2026-07-14,Wealth Management,Portfolio Analytics,PROD,cc-portfolio-analytics-prod,GCP,2553.75
 2026-07-14,Wealth Management,Portfolio Analytics,TEST,cc-portfolio-analytics-test,GCP,713.61
@@ -17361,7 +17361,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-07-26,Wealth Management,Trading Platform,TEST,400158382260,AWS,791.59
 2026-07-26,Wealth Management,Trading Platform,DEV,400166301373,AWS,478.54
 2026-07-26,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,Azure,710.61
-2026-07-26,Wealth Management,Client Reporting,TEST,36fbeee7-0000-4000-8000-000000000023,Azure,171.71
+2026-07-26,Wealth Management,Client Reporting,TEST,36fbeee7-0000-4000-8000-000000000023,Azure,193.34
 2026-07-26,Wealth Management,Client Reporting,DEV,d5336898-0000-4000-8000-000000000024,Azure,99.21
 2026-07-26,Commercial Banking,Treasury Management,PROD,400197977825,AWS,1575.04
 2026-07-26,Commercial Banking,Treasury Management,TEST,400205896938,AWS,393.11
@@ -17421,7 +17421,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-07-27,Wealth Management,Trading Platform,TEST,400158382260,AWS,896.53
 2026-07-27,Wealth Management,Trading Platform,DEV,400166301373,AWS,543.07
 2026-07-27,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,Azure,803.95
-2026-07-27,Wealth Management,Client Reporting,TEST,36fbeee7-0000-4000-8000-000000000023,Azure,244.18
+2026-07-27,Wealth Management,Client Reporting,TEST,36fbeee7-0000-4000-8000-000000000023,Azure,264.55
 2026-07-27,Wealth Management,Client Reporting,DEV,d5336898-0000-4000-8000-000000000024,Azure,154.17
 2026-07-27,Commercial Banking,Treasury Management,PROD,400197977825,AWS,1724.65
 2026-07-27,Commercial Banking,Treasury Management,TEST,400205896938,AWS,471.98
@@ -18080,7 +18080,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-08-07,Wealth Management,Trading Platform,PROD,400150463147,AWS,3142.12
 2026-08-07,Wealth Management,Trading Platform,TEST,400158382260,AWS,936.14
 2026-08-07,Wealth Management,Trading Platform,DEV,400166301373,AWS,548.84
-2026-08-07,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,Azure,818.30
+2026-08-07,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,Azure,1077.21
 2026-08-07,Wealth Management,Client Reporting,TEST,36fbeee7-0000-4000-8000-000000000023,Azure,247.16
 2026-08-07,Wealth Management,Client Reporting,DEV,d5336898-0000-4000-8000-000000000024,Azure,144.32
 2026-08-07,Commercial Banking,Treasury Management,PROD,400197977825,AWS,1642.62
@@ -18140,7 +18140,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-08-08,Wealth Management,Trading Platform,PROD,400150463147,AWS,2965.25
 2026-08-08,Wealth Management,Trading Platform,TEST,400158382260,AWS,738.48
 2026-08-08,Wealth Management,Trading Platform,DEV,400166301373,AWS,480.92
-2026-08-08,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,Azure,728.98
+2026-08-08,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,Azure,996.30
 2026-08-08,Wealth Management,Client Reporting,TEST,36fbeee7-0000-4000-8000-000000000023,Azure,172.40
 2026-08-08,Wealth Management,Client Reporting,DEV,d5336898-0000-4000-8000-000000000024,Azure,101.10
 2026-08-08,Commercial Banking,Treasury Management,PROD,400197977825,AWS,1579.18
@@ -18200,7 +18200,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-08-09,Wealth Management,Trading Platform,PROD,400150463147,AWS,2837.64
 2026-08-09,Wealth Management,Trading Platform,TEST,400158382260,AWS,777.06
 2026-08-09,Wealth Management,Trading Platform,DEV,400166301373,AWS,493.00
-2026-08-09,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,Azure,767.79
+2026-08-09,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,Azure,1031.43
 2026-08-09,Wealth Management,Client Reporting,TEST,36fbeee7-0000-4000-8000-000000000023,Azure,165.36
 2026-08-09,Wealth Management,Client Reporting,DEV,d5336898-0000-4000-8000-000000000024,Azure,100.82
 2026-08-09,Commercial Banking,Treasury Management,PROD,400197977825,AWS,1531.43
@@ -18260,7 +18260,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-08-10,Wealth Management,Trading Platform,PROD,400150463147,AWS,2827.88
 2026-08-10,Wealth Management,Trading Platform,TEST,400158382260,AWS,884.26
 2026-08-10,Wealth Management,Trading Platform,DEV,400166301373,AWS,557.32
-2026-08-10,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,Azure,791.01
+2026-08-10,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,Azure,1052.34
 2026-08-10,Wealth Management,Client Reporting,TEST,36fbeee7-0000-4000-8000-000000000023,Azure,261.82
 2026-08-10,Wealth Management,Client Reporting,DEV,d5336898-0000-4000-8000-000000000024,Azure,152.16
 2026-08-10,Commercial Banking,Treasury Management,PROD,400197977825,AWS,1570.94
@@ -19329,7 +19329,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-08-28,Retail Banking,Card Services,TEST,f1bbcd88-0000-4000-8000-000000000008,Azure,602.98
 2026-08-28,Retail Banking,Card Services,DEV,8ff34739-0000-4000-8000-000000000009,Azure,348.06
 2026-08-28,Retail Banking,Loan Origination,PROD,cc-loan-origination-prod,GCP,1288.72
-2026-08-28,Retail Banking,Loan Origination,TEST,cc-loan-origination-test,GCP,401.00
+2026-08-28,Retail Banking,Loan Origination,TEST,cc-loan-origination-test,GCP,414.85
 2026-08-28,Retail Banking,Loan Origination,DEV,cc-loan-origination-dev,GCP,215.54
 2026-08-28,Wealth Management,Advisor Portal,PROD,08d12dfd-0000-4000-8000-000000000013,Azure,1477.68
 2026-08-28,Wealth Management,Advisor Portal,TEST,a708a7ae-0000-4000-8000-000000000014,Azure,435.81
@@ -19389,7 +19389,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-08-29,Retail Banking,Card Services,TEST,f1bbcd88-0000-4000-8000-000000000008,Azure,387.78
 2026-08-29,Retail Banking,Card Services,DEV,8ff34739-0000-4000-8000-000000000009,Azure,241.87
 2026-08-29,Retail Banking,Loan Origination,PROD,cc-loan-origination-prod,GCP,1179.58
-2026-08-29,Retail Banking,Loan Origination,TEST,cc-loan-origination-test,GCP,287.41
+2026-08-29,Retail Banking,Loan Origination,TEST,cc-loan-origination-test,GCP,300.16
 2026-08-29,Retail Banking,Loan Origination,DEV,cc-loan-origination-dev,GCP,168.14
 2026-08-29,Wealth Management,Advisor Portal,PROD,08d12dfd-0000-4000-8000-000000000013,Azure,1406.18
 2026-08-29,Wealth Management,Advisor Portal,TEST,a708a7ae-0000-4000-8000-000000000014,Azure,317.29
@@ -20021,7 +20021,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-09-08,Payments,Fraud Detection,PROD,cc-fraud-detection-prod,GCP,2807.80
 2026-09-08,Payments,Fraud Detection,TEST,cc-fraud-detection-test,GCP,766.93
 2026-09-08,Payments,Fraud Detection,DEV,cc-fraud-detection-dev,GCP,471.51
-2026-09-08,Payments,Real-time Payments,PROD,400340521859,AWS,2137.44
+2026-09-08,Payments,Real-time Payments,PROD,400340521859,AWS,2271.29
 2026-09-08,Payments,Real-time Payments,TEST,400348440972,AWS,622.76
 2026-09-08,Payments,Real-time Payments,DEV,400356360085,AWS,401.67
 2026-09-08,Payments,Merchant Services,PROD,6df7ddce-0000-4000-8000-000000000046,Azure,1075.96
@@ -20081,7 +20081,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-09-09,Payments,Fraud Detection,PROD,cc-fraud-detection-prod,GCP,2603.62
 2026-09-09,Payments,Fraud Detection,TEST,cc-fraud-detection-test,GCP,836.96
 2026-09-09,Payments,Fraud Detection,DEV,cc-fraud-detection-dev,GCP,486.02
-2026-09-09,Payments,Real-time Payments,PROD,400340521859,AWS,2258.97
+2026-09-09,Payments,Real-time Payments,PROD,400340521859,AWS,2383.20
 2026-09-09,Payments,Real-time Payments,TEST,400348440972,AWS,641.50
 2026-09-09,Payments,Real-time Payments,DEV,400356360085,AWS,381.40
 2026-09-09,Payments,Merchant Services,PROD,6df7ddce-0000-4000-8000-000000000046,Azure,1063.08
@@ -20141,7 +20141,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-09-10,Payments,Fraud Detection,PROD,cc-fraud-detection-prod,GCP,2538.35
 2026-09-10,Payments,Fraud Detection,TEST,cc-fraud-detection-test,GCP,794.64
 2026-09-10,Payments,Fraud Detection,DEV,cc-fraud-detection-dev,GCP,468.07
-2026-09-10,Payments,Real-time Payments,PROD,400340521859,AWS,2156.60
+2026-09-10,Payments,Real-time Payments,PROD,400340521859,AWS,2287.03
 2026-09-10,Payments,Real-time Payments,TEST,400348440972,AWS,649.33
 2026-09-10,Payments,Real-time Payments,DEV,400356360085,AWS,395.17
 2026-09-10,Payments,Merchant Services,PROD,6df7ddce-0000-4000-8000-000000000046,Azure,1020.54
@@ -20201,7 +20201,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-09-11,Payments,Fraud Detection,PROD,cc-fraud-detection-prod,GCP,2633.66
 2026-09-11,Payments,Fraud Detection,TEST,cc-fraud-detection-test,GCP,790.24
 2026-09-11,Payments,Fraud Detection,DEV,cc-fraud-detection-dev,GCP,470.50
-2026-09-11,Payments,Real-time Payments,PROD,400340521859,AWS,2048.60
+2026-09-11,Payments,Real-time Payments,PROD,400340521859,AWS,2176.64
 2026-09-11,Payments,Real-time Payments,TEST,400348440972,AWS,638.61
 2026-09-11,Payments,Real-time Payments,DEV,400356360085,AWS,378.47
 2026-09-11,Payments,Merchant Services,PROD,6df7ddce-0000-4000-8000-000000000046,Azure,1107.38
@@ -20220,7 +20220,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-09-11,Corporate Technology,Security Operations,TEST,400467227667,AWS,417.77
 2026-09-11,Corporate Technology,Security Operations,DEV,400475146780,AWS,259.14
 2026-09-12,Retail Banking,Mobile Banking,PROD,400007919113,AWS,2910.88
-2026-09-12,Retail Banking,Mobile Banking,TEST,400015838226,AWS,619.75
+2026-09-12,Retail Banking,Mobile Banking,TEST,400015838226,AWS,949.72
 2026-09-12,Retail Banking,Mobile Banking,DEV,400023757339,AWS,384.63
 2026-09-12,Retail Banking,Online Banking,PROD,400031676452,AWS,2060.28
 2026-09-12,Retail Banking,Online Banking,TEST,400039595565,AWS,602.03
@@ -20261,7 +20261,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-09-12,Payments,Fraud Detection,PROD,cc-fraud-detection-prod,GCP,2480.52
 2026-09-12,Payments,Fraud Detection,TEST,cc-fraud-detection-test,GCP,644.34
 2026-09-12,Payments,Fraud Detection,DEV,cc-fraud-detection-dev,GCP,393.39
-2026-09-12,Payments,Real-time Payments,PROD,400340521859,AWS,2189.13
+2026-09-12,Payments,Real-time Payments,PROD,400340521859,AWS,2303.43
 2026-09-12,Payments,Real-time Payments,TEST,400348440972,AWS,579.10
 2026-09-12,Payments,Real-time Payments,DEV,400356360085,AWS,354.73
 2026-09-12,Payments,Merchant Services,PROD,6df7ddce-0000-4000-8000-000000000046,Azure,956.74
@@ -20487,7 +20487,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-09-16,Commercial Banking,Treasury Management,TEST,400205896938,AWS,486.57
 2026-09-16,Commercial Banking,Treasury Management,DEV,400213816051,AWS,292.79
 2026-09-16,Commercial Banking,Commercial Lending,PROD,4e114f5c-0000-4000-8000-000000000028,Azure,1260.50
-2026-09-16,Commercial Banking,Commercial Lending,TEST,ec48c90d-0000-4000-8000-000000000029,Azure,372.77
+2026-09-16,Commercial Banking,Commercial Lending,TEST,ec48c90d-0000-4000-8000-000000000029,Azure,411.02
 2026-09-16,Commercial Banking,Commercial Lending,DEV,8a8042be-0000-4000-8000-000000000030,Azure,215.03
 2026-09-16,Commercial Banking,Trade Finance,PROD,cc-trade-finance-prod,GCP,975.58
 2026-09-16,Commercial Banking,Trade Finance,TEST,cc-trade-finance-test,GCP,302.63
@@ -20520,7 +20520,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-09-16,Corporate Technology,Security Operations,TEST,400467227667,AWS,440.80
 2026-09-16,Corporate Technology,Security Operations,DEV,400475146780,AWS,260.25
 2026-09-17,Retail Banking,Mobile Banking,PROD,400007919113,AWS,3155.09
-2026-09-17,Retail Banking,Mobile Banking,TEST,400015838226,AWS,946.66
+2026-09-17,Retail Banking,Mobile Banking,TEST,400015838226,AWS,1001.34
 2026-09-17,Retail Banking,Mobile Banking,DEV,400023757339,AWS,572.66
 2026-09-17,Retail Banking,Online Banking,PROD,400031676452,AWS,2174.55
 2026-09-17,Retail Banking,Online Banking,TEST,400039595565,AWS,661.15
@@ -20547,7 +20547,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-09-17,Commercial Banking,Treasury Management,TEST,400205896938,AWS,503.84
 2026-09-17,Commercial Banking,Treasury Management,DEV,400213816051,AWS,300.64
 2026-09-17,Commercial Banking,Commercial Lending,PROD,4e114f5c-0000-4000-8000-000000000028,Azure,1242.75
-2026-09-17,Commercial Banking,Commercial Lending,TEST,ec48c90d-0000-4000-8000-000000000029,Azure,389.70
+2026-09-17,Commercial Banking,Commercial Lending,TEST,ec48c90d-0000-4000-8000-000000000029,Azure,428.55
 2026-09-17,Commercial Banking,Commercial Lending,DEV,8a8042be-0000-4000-8000-000000000030,Azure,209.67
 2026-09-17,Commercial Banking,Trade Finance,PROD,cc-trade-finance-prod,GCP,1029.53
 2026-09-17,Commercial Banking,Trade Finance,TEST,cc-trade-finance-test,GCP,313.43
@@ -20580,7 +20580,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-09-17,Corporate Technology,Security Operations,TEST,400467227667,AWS,424.71
 2026-09-17,Corporate Technology,Security Operations,DEV,400475146780,AWS,269.25
 2026-09-18,Retail Banking,Mobile Banking,PROD,400007919113,AWS,3211.22
-2026-09-18,Retail Banking,Mobile Banking,TEST,400015838226,AWS,966.84
+2026-09-18,Retail Banking,Mobile Banking,TEST,400015838226,AWS,1021.34
 2026-09-18,Retail Banking,Mobile Banking,DEV,400023757339,AWS,576.89
 2026-09-18,Retail Banking,Online Banking,PROD,400031676452,AWS,2205.93
 2026-09-18,Retail Banking,Online Banking,TEST,400039595565,AWS,634.42
@@ -20607,7 +20607,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-09-18,Commercial Banking,Treasury Management,TEST,400205896938,AWS,486.77
 2026-09-18,Commercial Banking,Treasury Management,DEV,400213816051,AWS,285.45
 2026-09-18,Commercial Banking,Commercial Lending,PROD,4e114f5c-0000-4000-8000-000000000028,Azure,1214.36
-2026-09-18,Commercial Banking,Commercial Lending,TEST,ec48c90d-0000-4000-8000-000000000029,Azure,377.65
+2026-09-18,Commercial Banking,Commercial Lending,TEST,ec48c90d-0000-4000-8000-000000000029,Azure,420.01
 2026-09-18,Commercial Banking,Commercial Lending,DEV,8a8042be-0000-4000-8000-000000000030,Azure,228.98
 2026-09-18,Commercial Banking,Trade Finance,PROD,cc-trade-finance-prod,GCP,954.30
 2026-09-18,Commercial Banking,Trade Finance,TEST,cc-trade-finance-test,GCP,298.80
@@ -20667,7 +20667,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-09-19,Commercial Banking,Treasury Management,TEST,400205896938,AWS,348.51
 2026-09-19,Commercial Banking,Treasury Management,DEV,400213816051,AWS,221.99
 2026-09-19,Commercial Banking,Commercial Lending,PROD,4e114f5c-0000-4000-8000-000000000028,Azure,1089.50
-2026-09-19,Commercial Banking,Commercial Lending,TEST,ec48c90d-0000-4000-8000-000000000029,Azure,251.03
+2026-09-19,Commercial Banking,Commercial Lending,TEST,ec48c90d-0000-4000-8000-000000000029,Azure,294.96
 2026-09-19,Commercial Banking,Commercial Lending,DEV,8a8042be-0000-4000-8000-000000000030,Azure,148.54
 2026-09-19,Commercial Banking,Trade Finance,PROD,cc-trade-finance-prod,GCP,952.65
 2026-09-19,Commercial Banking,Trade Finance,TEST,cc-trade-finance-test,GCP,185.10
@@ -20727,7 +20727,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-09-20,Commercial Banking,Treasury Management,TEST,400205896938,AWS,350.90
 2026-09-20,Commercial Banking,Treasury Management,DEV,400213816051,AWS,219.57
 2026-09-20,Commercial Banking,Commercial Lending,PROD,4e114f5c-0000-4000-8000-000000000028,Azure,1110.99
-2026-09-20,Commercial Banking,Commercial Lending,TEST,ec48c90d-0000-4000-8000-000000000029,Azure,231.90
+2026-09-20,Commercial Banking,Commercial Lending,TEST,ec48c90d-0000-4000-8000-000000000029,Azure,275.95
 2026-09-20,Commercial Banking,Commercial Lending,DEV,8a8042be-0000-4000-8000-000000000030,Azure,140.28
 2026-09-20,Commercial Banking,Trade Finance,PROD,cc-trade-finance-prod,GCP,914.14
 2026-09-20,Commercial Banking,Trade Finance,TEST,cc-trade-finance-test,GCP,187.35
@@ -21389,7 +21389,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-01,Commercial Banking,Commercial Lending,PROD,4e114f5c-0000-4000-8000-000000000028,Azure,1276.89
 2026-10-01,Commercial Banking,Commercial Lending,TEST,ec48c90d-0000-4000-8000-000000000029,Azure,356.11
 2026-10-01,Commercial Banking,Commercial Lending,DEV,8a8042be-0000-4000-8000-000000000030,Azure,233.47
-2026-10-01,Commercial Banking,Trade Finance,PROD,cc-trade-finance-prod,GCP,1070.16
+2026-10-01,Commercial Banking,Trade Finance,PROD,cc-trade-finance-prod,GCP,1545.08
 2026-10-01,Commercial Banking,Trade Finance,TEST,cc-trade-finance-test,GCP,312.10
 2026-10-01,Commercial Banking,Trade Finance,DEV,cc-trade-finance-dev,GCP,176.17
 2026-10-01,Commercial Banking,Cash Management,PROD,400269249842,AWS,1274.10
@@ -21449,7 +21449,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-02,Commercial Banking,Commercial Lending,PROD,4e114f5c-0000-4000-8000-000000000028,Azure,1257.99
 2026-10-02,Commercial Banking,Commercial Lending,TEST,ec48c90d-0000-4000-8000-000000000029,Azure,372.77
 2026-10-02,Commercial Banking,Commercial Lending,DEV,8a8042be-0000-4000-8000-000000000030,Azure,237.27
-2026-10-02,Commercial Banking,Trade Finance,PROD,cc-trade-finance-prod,GCP,974.87
+2026-10-02,Commercial Banking,Trade Finance,PROD,cc-trade-finance-prod,GCP,1388.08
 2026-10-02,Commercial Banking,Trade Finance,TEST,cc-trade-finance-test,GCP,295.25
 2026-10-02,Commercial Banking,Trade Finance,DEV,cc-trade-finance-dev,GCP,174.22
 2026-10-02,Commercial Banking,Cash Management,PROD,400269249842,AWS,1302.10
@@ -21458,7 +21458,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-02,Payments,Payment Gateway,PROD,400293007181,AWS,3001.52
 2026-10-02,Payments,Payment Gateway,TEST,400300926294,AWS,863.62
 2026-10-02,Payments,Payment Gateway,DEV,400308845407,AWS,553.03
-2026-10-02,Payments,Fraud Detection,PROD,cc-fraud-detection-prod,GCP,2616.09
+2026-10-02,Payments,Fraud Detection,PROD,cc-fraud-detection-prod,GCP,2680.29
 2026-10-02,Payments,Fraud Detection,TEST,cc-fraud-detection-test,GCP,765.56
 2026-10-02,Payments,Fraud Detection,DEV,cc-fraud-detection-dev,GCP,492.96
 2026-10-02,Payments,Real-time Payments,PROD,400340521859,AWS,2266.09
@@ -21473,7 +21473,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-02,Corporate Technology,HR Systems,PROD,2344b7f4-0000-4000-8000-000000000052,Azure,680.69
 2026-10-02,Corporate Technology,HR Systems,TEST,c17c31a5-0000-4000-8000-000000000053,Azure,198.86
 2026-10-02,Corporate Technology,HR Systems,DEV,5fb3ab56-0000-4000-8000-000000000054,Azure,120.41
-2026-10-02,Corporate Technology,Finance & ERP,PROD,fdeb2507-0000-4000-8000-000000000055,Azure,1126.82
+2026-10-02,Corporate Technology,Finance & ERP,PROD,fdeb2507-0000-4000-8000-000000000055,Azure,1721.23
 2026-10-02,Corporate Technology,Finance & ERP,TEST,9c229eb8-0000-4000-8000-000000000056,Azure,325.34
 2026-10-02,Corporate Technology,Finance & ERP,DEV,3a5a1869-0000-4000-8000-000000000057,Azure,198.80
 2026-10-02,Corporate Technology,Security Operations,PROD,400459308554,AWS,1358.00
@@ -21503,7 +21503,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-03,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,Azure,756.96
 2026-10-03,Wealth Management,Client Reporting,TEST,36fbeee7-0000-4000-8000-000000000023,Azure,177.31
 2026-10-03,Wealth Management,Client Reporting,DEV,d5336898-0000-4000-8000-000000000024,Azure,97.86
-2026-10-03,Commercial Banking,Treasury Management,PROD,400197977825,AWS,1518.55
+2026-10-03,Commercial Banking,Treasury Management,PROD,400197977825,AWS,2224.23
 2026-10-03,Commercial Banking,Treasury Management,TEST,400205896938,AWS,351.74
 2026-10-03,Commercial Banking,Treasury Management,DEV,400213816051,AWS,218.14
 2026-10-03,Commercial Banking,Commercial Lending,PROD,4e114f5c-0000-4000-8000-000000000028,Azure,1160.35
@@ -21518,7 +21518,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-03,Payments,Payment Gateway,PROD,400293007181,AWS,2946.32
 2026-10-03,Payments,Payment Gateway,TEST,400300926294,AWS,867.32
 2026-10-03,Payments,Payment Gateway,DEV,400308845407,AWS,513.95
-2026-10-03,Payments,Fraud Detection,PROD,cc-fraud-detection-prod,GCP,2521.17
+2026-10-03,Payments,Fraud Detection,PROD,cc-fraud-detection-prod,GCP,2589.83
 2026-10-03,Payments,Fraud Detection,TEST,cc-fraud-detection-test,GCP,645.17
 2026-10-03,Payments,Fraud Detection,DEV,cc-fraud-detection-dev,GCP,351.66
 2026-10-03,Payments,Real-time Payments,PROD,400340521859,AWS,2217.54
@@ -21543,7 +21543,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-04,Retail Banking,Mobile Banking,TEST,400015838226,AWS,629.07
 2026-10-04,Retail Banking,Mobile Banking,DEV,400023757339,AWS,356.15
 2026-10-04,Retail Banking,Online Banking,PROD,400031676452,AWS,2117.26
-2026-10-04,Retail Banking,Online Banking,TEST,400039595565,AWS,558.88
+2026-10-04,Retail Banking,Online Banking,TEST,400039595565,AWS,957.88
 2026-10-04,Retail Banking,Online Banking,DEV,400047514678,AWS,360.35
 2026-10-04,Retail Banking,Card Services,PROD,538453d7-0000-4000-8000-000000000007,Azure,1883.94
 2026-10-04,Retail Banking,Card Services,TEST,f1bbcd88-0000-4000-8000-000000000008,Azure,388.33
@@ -21563,7 +21563,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-04,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,Azure,721.88
 2026-10-04,Wealth Management,Client Reporting,TEST,36fbeee7-0000-4000-8000-000000000023,Azure,161.22
 2026-10-04,Wealth Management,Client Reporting,DEV,d5336898-0000-4000-8000-000000000024,Azure,102.09
-2026-10-04,Commercial Banking,Treasury Management,PROD,400197977825,AWS,1484.45
+2026-10-04,Commercial Banking,Treasury Management,PROD,400197977825,AWS,2154.90
 2026-10-04,Commercial Banking,Treasury Management,TEST,400205896938,AWS,361.62
 2026-10-04,Commercial Banking,Treasury Management,DEV,400213816051,AWS,206.36
 2026-10-04,Commercial Banking,Commercial Lending,PROD,4e114f5c-0000-4000-8000-000000000028,Azure,1156.01
@@ -21578,7 +21578,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-04,Payments,Payment Gateway,PROD,400293007181,AWS,2892.03
 2026-10-04,Payments,Payment Gateway,TEST,400300926294,AWS,861.93
 2026-10-04,Payments,Payment Gateway,DEV,400308845407,AWS,500.93
-2026-10-04,Payments,Fraud Detection,PROD,cc-fraud-detection-prod,GCP,2482.52
+2026-10-04,Payments,Fraud Detection,PROD,cc-fraud-detection-prod,GCP,2552.86
 2026-10-04,Payments,Fraud Detection,TEST,cc-fraud-detection-test,GCP,616.70
 2026-10-04,Payments,Fraud Detection,DEV,cc-fraud-detection-dev,GCP,364.59
 2026-10-04,Payments,Real-time Payments,PROD,400340521859,AWS,2415.70
@@ -21591,7 +21591,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-04,Corporate Technology,Data Platform,TEST,cc-data-platform-test,GCP,865.95
 2026-10-04,Corporate Technology,Data Platform,DEV,cc-data-platform-dev,GCP,489.39
 2026-10-04,Corporate Technology,HR Systems,PROD,2344b7f4-0000-4000-8000-000000000052,Azure,686.44
-2026-10-04,Corporate Technology,HR Systems,TEST,c17c31a5-0000-4000-8000-000000000053,Azure,204.87
+2026-10-04,Corporate Technology,HR Systems,TEST,c17c31a5-0000-4000-8000-000000000053,Azure,215.47
 2026-10-04,Corporate Technology,HR Systems,DEV,5fb3ab56-0000-4000-8000-000000000054,Azure,123.42
 2026-10-04,Corporate Technology,Finance & ERP,PROD,fdeb2507-0000-4000-8000-000000000055,Azure,1024.85
 2026-10-04,Corporate Technology,Finance & ERP,TEST,9c229eb8-0000-4000-8000-000000000056,Azure,235.17
@@ -21603,7 +21603,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-05,Retail Banking,Mobile Banking,TEST,400015838226,AWS,964.91
 2026-10-05,Retail Banking,Mobile Banking,DEV,400023757339,AWS,575.21
 2026-10-05,Retail Banking,Online Banking,PROD,400031676452,AWS,2216.65
-2026-10-05,Retail Banking,Online Banking,TEST,400039595565,AWS,707.54
+2026-10-05,Retail Banking,Online Banking,TEST,400039595565,AWS,1212.60
 2026-10-05,Retail Banking,Online Banking,DEV,400047514678,AWS,354.40
 2026-10-05,Retail Banking,Card Services,PROD,538453d7-0000-4000-8000-000000000007,Azure,2079.26
 2026-10-05,Retail Banking,Card Services,TEST,f1bbcd88-0000-4000-8000-000000000008,Azure,584.70
@@ -21617,7 +21617,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-05,Wealth Management,Portfolio Analytics,PROD,cc-portfolio-analytics-prod,GCP,2504.02
 2026-10-05,Wealth Management,Portfolio Analytics,TEST,cc-portfolio-analytics-test,GCP,738.60
 2026-10-05,Wealth Management,Portfolio Analytics,DEV,cc-portfolio-analytics-dev,GCP,437.29
-2026-10-05,Wealth Management,Trading Platform,PROD,400150463147,AWS,2997.48
+2026-10-05,Wealth Management,Trading Platform,PROD,400150463147,AWS,4047.15
 2026-10-05,Wealth Management,Trading Platform,TEST,400158382260,AWS,878.62
 2026-10-05,Wealth Management,Trading Platform,DEV,400166301373,AWS,534.68
 2026-10-05,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,Azure,751.71
@@ -21651,7 +21651,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-05,Corporate Technology,Data Platform,TEST,cc-data-platform-test,GCP,1052.75
 2026-10-05,Corporate Technology,Data Platform,DEV,cc-data-platform-dev,GCP,686.46
 2026-10-05,Corporate Technology,HR Systems,PROD,2344b7f4-0000-4000-8000-000000000052,Azure,664.82
-2026-10-05,Corporate Technology,HR Systems,TEST,c17c31a5-0000-4000-8000-000000000053,Azure,203.65
+2026-10-05,Corporate Technology,HR Systems,TEST,c17c31a5-0000-4000-8000-000000000053,Azure,224.90
 2026-10-05,Corporate Technology,HR Systems,DEV,5fb3ab56-0000-4000-8000-000000000054,Azure,118.12
 2026-10-05,Corporate Technology,Finance & ERP,PROD,fdeb2507-0000-4000-8000-000000000055,Azure,1174.94
 2026-10-05,Corporate Technology,Finance & ERP,TEST,9c229eb8-0000-4000-8000-000000000056,Azure,336.12
@@ -21663,7 +21663,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-06,Retail Banking,Mobile Banking,TEST,400015838226,AWS,952.06
 2026-10-06,Retail Banking,Mobile Banking,DEV,400023757339,AWS,581.18
 2026-10-06,Retail Banking,Online Banking,PROD,400031676452,AWS,2138.73
-2026-10-06,Retail Banking,Online Banking,TEST,400039595565,AWS,666.13
+2026-10-06,Retail Banking,Online Banking,TEST,400039595565,AWS,1130.96
 2026-10-06,Retail Banking,Online Banking,DEV,400047514678,AWS,401.77
 2026-10-06,Retail Banking,Card Services,PROD,538453d7-0000-4000-8000-000000000007,Azure,1882.09
 2026-10-06,Retail Banking,Card Services,TEST,f1bbcd88-0000-4000-8000-000000000008,Azure,620.79
@@ -21672,12 +21672,12 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-06,Retail Banking,Loan Origination,TEST,cc-loan-origination-test,GCP,381.65
 2026-10-06,Retail Banking,Loan Origination,DEV,cc-loan-origination-dev,GCP,237.47
 2026-10-06,Wealth Management,Advisor Portal,PROD,08d12dfd-0000-4000-8000-000000000013,Azure,1564.75
-2026-10-06,Wealth Management,Advisor Portal,TEST,a708a7ae-0000-4000-8000-000000000014,Azure,465.65
+2026-10-06,Wealth Management,Advisor Portal,TEST,a708a7ae-0000-4000-8000-000000000014,Azure,481.31
 2026-10-06,Wealth Management,Advisor Portal,DEV,4540215f-0000-4000-8000-000000000015,Azure,270.85
 2026-10-06,Wealth Management,Portfolio Analytics,PROD,cc-portfolio-analytics-prod,GCP,2395.80
 2026-10-06,Wealth Management,Portfolio Analytics,TEST,cc-portfolio-analytics-test,GCP,743.78
 2026-10-06,Wealth Management,Portfolio Analytics,DEV,cc-portfolio-analytics-dev,GCP,444.96
-2026-10-06,Wealth Management,Trading Platform,PROD,400150463147,AWS,3099.23
+2026-10-06,Wealth Management,Trading Platform,PROD,400150463147,AWS,4272.93
 2026-10-06,Wealth Management,Trading Platform,TEST,400158382260,AWS,1015.90
 2026-10-06,Wealth Management,Trading Platform,DEV,400166301373,AWS,549.68
 2026-10-06,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,Azure,739.37
@@ -21711,7 +21711,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-06,Corporate Technology,Data Platform,TEST,cc-data-platform-test,GCP,1114.18
 2026-10-06,Corporate Technology,Data Platform,DEV,cc-data-platform-dev,GCP,657.47
 2026-10-06,Corporate Technology,HR Systems,PROD,2344b7f4-0000-4000-8000-000000000052,Azure,643.21
-2026-10-06,Corporate Technology,HR Systems,TEST,c17c31a5-0000-4000-8000-000000000053,Azure,202.58
+2026-10-06,Corporate Technology,HR Systems,TEST,c17c31a5-0000-4000-8000-000000000053,Azure,222.59
 2026-10-06,Corporate Technology,HR Systems,DEV,5fb3ab56-0000-4000-8000-000000000054,Azure,116.78
 2026-10-06,Corporate Technology,Finance & ERP,PROD,fdeb2507-0000-4000-8000-000000000055,Azure,1096.87
 2026-10-06,Corporate Technology,Finance & ERP,TEST,9c229eb8-0000-4000-8000-000000000056,Azure,332.46
@@ -21723,7 +21723,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-07,Retail Banking,Mobile Banking,TEST,400015838226,AWS,973.90
 2026-10-07,Retail Banking,Mobile Banking,DEV,400023757339,AWS,546.54
 2026-10-07,Retail Banking,Online Banking,PROD,400031676452,AWS,2110.63
-2026-10-07,Retail Banking,Online Banking,TEST,400039595565,AWS,676.02
+2026-10-07,Retail Banking,Online Banking,TEST,400039595565,AWS,1136.62
 2026-10-07,Retail Banking,Online Banking,DEV,400047514678,AWS,406.41
 2026-10-07,Retail Banking,Card Services,PROD,538453d7-0000-4000-8000-000000000007,Azure,1853.42
 2026-10-07,Retail Banking,Card Services,TEST,f1bbcd88-0000-4000-8000-000000000008,Azure,564.30
@@ -21732,12 +21732,12 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-07,Retail Banking,Loan Origination,TEST,cc-loan-origination-test,GCP,371.22
 2026-10-07,Retail Banking,Loan Origination,DEV,cc-loan-origination-dev,GCP,226.63
 2026-10-07,Wealth Management,Advisor Portal,PROD,08d12dfd-0000-4000-8000-000000000013,Azure,1452.47
-2026-10-07,Wealth Management,Advisor Portal,TEST,a708a7ae-0000-4000-8000-000000000014,Azure,455.11
+2026-10-07,Wealth Management,Advisor Portal,TEST,a708a7ae-0000-4000-8000-000000000014,Azure,472.16
 2026-10-07,Wealth Management,Advisor Portal,DEV,4540215f-0000-4000-8000-000000000015,Azure,275.19
 2026-10-07,Wealth Management,Portfolio Analytics,PROD,cc-portfolio-analytics-prod,GCP,2482.37
 2026-10-07,Wealth Management,Portfolio Analytics,TEST,cc-portfolio-analytics-test,GCP,750.83
 2026-10-07,Wealth Management,Portfolio Analytics,DEV,cc-portfolio-analytics-dev,GCP,443.64
-2026-10-07,Wealth Management,Trading Platform,PROD,400150463147,AWS,2958.89
+2026-10-07,Wealth Management,Trading Platform,PROD,400150463147,AWS,4219.24
 2026-10-07,Wealth Management,Trading Platform,TEST,400158382260,AWS,920.58
 2026-10-07,Wealth Management,Trading Platform,DEV,400166301373,AWS,537.82
 2026-10-07,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,Azure,835.93
@@ -21783,7 +21783,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-08,Retail Banking,Mobile Banking,TEST,400015838226,AWS,977.42
 2026-10-08,Retail Banking,Mobile Banking,DEV,400023757339,AWS,595.99
 2026-10-08,Retail Banking,Online Banking,PROD,400031676452,AWS,2065.44
-2026-10-08,Retail Banking,Online Banking,TEST,400039595565,AWS,640.13
+2026-10-08,Retail Banking,Online Banking,TEST,400039595565,AWS,1073.49
 2026-10-08,Retail Banking,Online Banking,DEV,400047514678,AWS,392.46
 2026-10-08,Retail Banking,Card Services,PROD,538453d7-0000-4000-8000-000000000007,Azure,1837.26
 2026-10-08,Retail Banking,Card Services,TEST,f1bbcd88-0000-4000-8000-000000000008,Azure,597.46
@@ -21792,12 +21792,12 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-08,Retail Banking,Loan Origination,TEST,cc-loan-origination-test,GCP,369.60
 2026-10-08,Retail Banking,Loan Origination,DEV,cc-loan-origination-dev,GCP,242.53
 2026-10-08,Wealth Management,Advisor Portal,PROD,08d12dfd-0000-4000-8000-000000000013,Azure,1514.25
-2026-10-08,Wealth Management,Advisor Portal,TEST,a708a7ae-0000-4000-8000-000000000014,Azure,446.76
+2026-10-08,Wealth Management,Advisor Portal,TEST,a708a7ae-0000-4000-8000-000000000014,Azure,462.85
 2026-10-08,Wealth Management,Advisor Portal,DEV,4540215f-0000-4000-8000-000000000015,Azure,262.76
 2026-10-08,Wealth Management,Portfolio Analytics,PROD,cc-portfolio-analytics-prod,GCP,2274.82
 2026-10-08,Wealth Management,Portfolio Analytics,TEST,cc-portfolio-analytics-test,GCP,763.84
 2026-10-08,Wealth Management,Portfolio Analytics,DEV,cc-portfolio-analytics-dev,GCP,477.99
-2026-10-08,Wealth Management,Trading Platform,PROD,400150463147,AWS,3047.03
+2026-10-08,Wealth Management,Trading Platform,PROD,400150463147,AWS,4194.93
 2026-10-08,Wealth Management,Trading Platform,TEST,400158382260,AWS,824.97
 2026-10-08,Wealth Management,Trading Platform,DEV,400166301373,AWS,526.04
 2026-10-08,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,Azure,799.12
@@ -21852,12 +21852,12 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-09,Retail Banking,Loan Origination,TEST,cc-loan-origination-test,GCP,384.99
 2026-10-09,Retail Banking,Loan Origination,DEV,cc-loan-origination-dev,GCP,219.42
 2026-10-09,Wealth Management,Advisor Portal,PROD,08d12dfd-0000-4000-8000-000000000013,Azure,1519.93
-2026-10-09,Wealth Management,Advisor Portal,TEST,a708a7ae-0000-4000-8000-000000000014,Azure,444.56
+2026-10-09,Wealth Management,Advisor Portal,TEST,a708a7ae-0000-4000-8000-000000000014,Azure,461.64
 2026-10-09,Wealth Management,Advisor Portal,DEV,4540215f-0000-4000-8000-000000000015,Azure,278.42
 2026-10-09,Wealth Management,Portfolio Analytics,PROD,cc-portfolio-analytics-prod,GCP,2472.97
 2026-10-09,Wealth Management,Portfolio Analytics,TEST,cc-portfolio-analytics-test,GCP,704.21
 2026-10-09,Wealth Management,Portfolio Analytics,DEV,cc-portfolio-analytics-dev,GCP,437.89
-2026-10-09,Wealth Management,Trading Platform,PROD,400150463147,AWS,2971.50
+2026-10-09,Wealth Management,Trading Platform,PROD,400150463147,AWS,4093.14
 2026-10-09,Wealth Management,Trading Platform,TEST,400158382260,AWS,925.39
 2026-10-09,Wealth Management,Trading Platform,DEV,400166301373,AWS,519.78
 2026-10-09,Wealth Management,Client Reporting,PROD,98c47536-0000-4000-8000-000000000022,Azure,855.30

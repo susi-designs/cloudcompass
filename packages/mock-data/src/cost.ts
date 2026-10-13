@@ -121,6 +121,27 @@ export function buildSpikes(rng: Rng, workloads: readonly Workload[], days: numb
   })).filter((s) => s.startIndex >= 0);
 }
 
+/**
+ * More spikes from an independent RNG, so adding them doesn't shift the base noise stream.
+ * Only the spiked workload-days change; everything else in the dataset stays identical.
+ */
+export function buildExtraSpikes(
+  seed: number,
+  workloads: readonly Workload[],
+  days: number,
+): Spike[] {
+  const rng = createRng(seed);
+  const candidates = workloads.filter((w) => w.environment !== 'DEV');
+  const window = Math.min(180, days);
+  return Array.from({ length: 22 }, (_, i) => ({
+    workloadId: rng.pick(candidates).id,
+    // A few more recent ones keep a realistic triage queue.
+    startIndex: days - (i < 5 ? rng.int(1, Math.min(12, days)) : rng.int(2, window)),
+    durationDays: rng.int(1, 5),
+    multiplier: rng.range(1.5, 3.6),
+  })).filter((s) => s.startIndex >= 0);
+}
+
 export function spikeMultiplier(
   spikes: readonly Spike[],
   workloadId: string,
@@ -166,7 +187,10 @@ export function generateCostRecords(
 ): { records: FocusCostRecord[]; workloads: Workload[]; spikes: Spike[] } {
   const rng = createRng(seed);
   const workloads = buildWorkloads(rng);
-  const spikes = buildSpikes(rng, workloads, days);
+  const spikes = [
+    ...buildSpikes(rng, workloads, days),
+    ...buildExtraSpikes(seed + 101, workloads, days),
+  ];
   const dates = dayRange(parseDay(endDate), days);
   const records: FocusCostRecord[] = [];
 

@@ -60,7 +60,8 @@ cloudcompass/
 │   │       ├── app/              # App root, <Theme>, router, providers
 │   │       ├── shell/            # Carbon UI Shell: Header, SideNav, theme switch
 │   │       ├── features/         # One folder per pillar
-│   │       │   ├── overview/
+│   │       │   ├── my-cloudcompass/  # Landing page for one application (route `/`)
+│   │       │   ├── overview/         # Executive Overview (route `/overview`)
 │   │       │   ├── cost-usage/
 │   │       │   ├── utilization/
 │   │       │   ├── ai-spend/
@@ -118,7 +119,10 @@ If the repo has no `package.json` yet, bootstrap in this order. Finish and verif
 - **M3 Utilization** ✅ (done 2026-10-10): utilization heatmaps, idle resources table, commitment coverage meters.
 - **M4 AI Spend** ✅ (done 2026-10-10): spend by provider/model, token trends, cost per feature, GPU utilization, model cost comparison.
 - **M5 Optimization** ✅ (done 2026-10-10): recommendations inbox (DataTable with batch actions), savings ledger.
-- **M6 Anomalies**: anomaly feed, severity tags, detail side panel with root-cause hints.
+- **M6 Anomalies** ✅ (done 2026-10-12): anomaly feed with triage (acknowledge, mark expected, resolve, reopen), severity indicators, anomaly timeline, detail side panel with root-cause hints.
+
+### M7: My CloudCompass ✅ (done 2026-10-12)
+- Landing page at `/` for one application (Overview moved to `/overview`): application switcher with My applications and a default, KPI strip, adaptive **Needs attention** band, and the five pillar sections in a fixed order whose emphasis follows the application's signals (PRODUCT.md §5.1).
 
 Scope details for each pillar are in `PRODUCT.md` §4–5.
 
@@ -147,10 +151,16 @@ Scope details for each pillar are in `PRODUCT.md` §4–5.
 ### Reusable building blocks (use these before writing new ones)
 - `components/SortableDataTable.tsx`: Carbon table with sorting, search and pagination across all rows. Every column declares a `kind`, which also enforces the alignment rule (DESIGN.md §4.2). Optional `selection` (checkboxes + `TableBatchActions`) and `expandedContent` (expandable details row).
 - `data/RecommendationWorkflowProvider.tsx` + `data/optimization.ts`: recommendation workflow (assign, accept, snooze, dismiss, implement, reopen) with allowed transitions in `canApply`. Until the API exists, changes are stored in this browser (`cloudcompass.recommendations.v1`) and layered over the mock data; read recommendations through `useEffectiveRecommendations()` so every page sees the same state.
+- `data/AnomalyTriageProvider.tsx` + `data/anomalies.ts`: anomaly triage (acknowledge, mark expected, resolve, reopen) with allowed transitions in `canTriage`. Same local-storage approach (`cloudcompass.anomalies.v1`); read anomalies through `useEffectiveAnomalies()` so the Overview's open-anomalies KPI matches the Anomalies page.
+- `components/SidePanel.tsx`: non-modal detail panel that slides over the right edge (focus management, Escape to close). Pages keep the open item in the URL (e.g. `?anomaly=anom-17`).
 - `components/ChartCard.tsx`: chart + text summary + "View as table".
 - `components/KpiTile.tsx`, `components/CostDelta.tsx`, `components/PageLayout.tsx` (header + global filters).
 - `data/forecast.ts`: the single month-end forecast formula (MTD + trailing 7-day run-rate). Don't re-implement it.
 - Pages are lazy-loaded in `app/App.tsx`; add new pillar pages the same way.
+- `data/myCloudCompass.ts` (`computeAppSnapshot`): every data set for one application, computed with the pillar functions so numbers match. `data/signals.ts`: the adaptive layout engine: `buildSignals` (scores, PRODUCT.md §5.1 table), `composeLayout` (band, hysteresis, section states, mutes/pins) and visit memory (`advanceVisit` / `recordSeen`). Pure and unit tested; words for signals live in `features/my-cloudcompass/components/signalCopy.ts`.
+- `data/MyCloudCompassProvider.tsx` + `data/myCloudCompassStore.ts`: My applications, default application, per-application pins/mutes and visit memory, stored in this browser (`cloudcompass.myCloudCompass.v1`) until the API exists.
+- `ScopeFilterBar` / `PageLayout` take `variant` / `filters="application"` to show only date range and environment on pages fixed to one application.
+- My CloudCompass reuses pillar components (charts, KPI rows, status indicators) from other `features/` folders, so the snapshot always looks and reads like the pillar page it links to.
 
 ### Code conventions
 - TypeScript strict; no `any` without a comment explaining why.

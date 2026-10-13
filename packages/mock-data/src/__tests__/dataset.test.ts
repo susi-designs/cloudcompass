@@ -109,6 +109,34 @@ describe('generateDataset', () => {
     }
   });
 
+  it('gives anomalies root-cause details and triage fields that match their status', () => {
+    const ds = generateDataset();
+    const end = `${ds.meta.endDate}T23:59:59.999Z`;
+    expect(ds.anomalies.length).toBeGreaterThan(20);
+    expect(ds.anomalies.filter((a) => a.status === 'Open').length).toBeGreaterThan(3);
+    for (const a of ds.anomalies) {
+      expect(a.endedAt >= a.detectedAt).toBe(true);
+      expect(a.endedAt <= end).toBe(true);
+      expect(a.durationDays).toBeGreaterThanOrEqual(1);
+      expect(a.impact).toBeCloseTo(a.actualCost - a.expectedCost, 1);
+      expect(a.usageDrivers.reduce((s, d) => s + d.impact, 0)).toBeCloseTo(a.impact, 0);
+      expect(a.usageDrivers.reduce((s, d) => s + d.share, 0)).toBeCloseTo(100, 0);
+      expect(a.acknowledgedAt !== null).toBe(a.status !== 'Open');
+      const closed = a.status === 'Resolved' || a.status === 'Expected';
+      expect(a.resolvedAt !== null).toBe(closed);
+      expect(a.expectedReason !== null).toBe(a.status === 'Expected');
+      if (a.resolvedAt) {
+        expect(a.resolvedAt >= a.endedAt).toBe(true);
+        expect(a.resolvedAt <= end).toBe(true);
+      }
+      // The spike is visible in the billed cost of the resource that drove it.
+      const billed = ds.costs
+        .filter((c) => c.ResourceId === a.resourceId && c.ChargePeriodStart === a.detectedAt)
+        .reduce((s, c) => s + c.BilledCost, 0);
+      expect(billed).toBeGreaterThan(a.expectedCost / a.durationDays);
+    }
+  });
+
   it('gives recommendations workflow details that match their status', () => {
     const ds = generateDataset();
     const end = `${ds.meta.endDate}T23:59:59.999Z`;

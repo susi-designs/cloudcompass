@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { computeOverview, type OverviewData } from './overview';
 import { useScope } from './scopeContext';
 import { useDataset } from './useDataset';
+import { useEffectiveAnomalies } from './useAnomalies';
 import { useEffectiveRecommendations } from './useOptimization';
 
 export function useOverview(): {
@@ -13,12 +14,14 @@ export function useOverview(): {
   const { scope } = useScope();
   // Savings KPIs reflect workflow changes made on the Optimization page.
   const recommendations = useEffectiveRecommendations();
+  // Open anomalies reflect triage on the Anomalies page.
+  const anomalies = useEffectiveAnomalies();
   const data = useMemo(
     () =>
-      dataset && recommendations
-        ? computeOverview({ ...dataset, recommendations }, scope)
+      dataset && recommendations && anomalies
+        ? computeOverview({ ...dataset, recommendations, anomalies }, scope)
         : undefined,
-    [dataset, recommendations, scope],
+    [dataset, recommendations, anomalies, scope],
   );
   return { data, isPending, error };
 }

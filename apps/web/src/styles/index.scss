@@ -4,6 +4,7 @@
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/react/scss/breakpoint' as *;
 @use '@carbon/react/scss/type';
+@use '@carbon/react/scss/motion' as *;
 
 // Utility classes such as `.cds--type-heading-05` used throughout the app.
 @include type.type-classes;
@@ -383,4 +384,306 @@ body {
 // Long recommendation titles get room before amount columns squeeze them.
 .cc-rec-title {
   min-inline-size: 16rem;
+}
+
+// ---- Anomalies ---------------------------------------------------------------
+
+.cc-severity-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-03 $spacing-05;
+}
+
+.cc-severity-count {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-02;
+}
+
+.cc-severity-count__value {
+  font-variant-numeric: tabular-nums;
+}
+
+// Likely-cause text wraps but keeps a readable measure.
+.cc-anomaly-hint {
+  display: block;
+  min-inline-size: 14rem;
+  max-inline-size: 28rem;
+}
+
+.cc-break {
+  overflow-wrap: anywhere;
+}
+
+// Side panel (DESIGN.md §9): non-modal, slides over the page from the right, under the 3rem
+// UI shell header. It overlays rather than reflows: the feed table needs its full width.
+$cc-side-panel-width: 32rem;
+
+.cc-side-panel {
+  position: fixed;
+  z-index: 7000; // above page content, below the UI shell header (8000) and modals (9000)
+  display: flex;
+  flex-direction: column;
+  inset-block: $spacing-09 0;
+  inset-inline-end: 0;
+  inline-size: min(#{$cc-side-panel-width}, 100vw);
+  background-color: $layer-01;
+  border-inline-start: 1px solid $border-subtle-01;
+  animation: cc-side-panel-in $duration-moderate-02 motion(entrance, productive);
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@keyframes cc-side-panel-in {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.cc-side-panel__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: $spacing-03;
+  padding: $spacing-05 $spacing-03 $spacing-05 $spacing-05;
+  border-block-end: 1px solid $border-subtle-01;
+}
+
+.cc-side-panel__titles {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-02;
+  min-inline-size: 0;
+
+  h2:focus {
+    outline: none;
+  }
+}
+
+.cc-side-panel__body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: $spacing-06;
+  padding: $spacing-05;
+  overflow-y: auto;
+
+  // Scroll the body instead of squashing sections (charts have a fixed height).
+  > * {
+    flex-shrink: 0;
+  }
+}
+
+.cc-side-panel__actions {
+  border-block-start: 1px solid $border-subtle-01;
+}
+
+.cc-side-panel__buttons.cds--btn-set {
+  inline-size: 100%;
+
+  .cds--btn {
+    flex: 1 1 0;
+    max-inline-size: none;
+  }
+}
+
+.cc-panel-section {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-05;
+}
+
+.cc-panel-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $spacing-03 $spacing-05;
+}
+
+.cc-details--panel {
+  grid-template-columns: repeat(auto-fit, minmax(min(9rem, 100%), 1fr));
+  padding-block: 0;
+}
+
+.cc-panel-notification.cds--inline-notification {
+  max-inline-size: none;
+  margin: 0;
+}
+
+.cc-panel-table-label {
+  padding-block-end: $spacing-03;
+}
+
+// ---- My CloudCompass (PRODUCT.md §5.1, DESIGN.md §9) --------------------------
+
+.cc-app-switcher {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-04;
+}
+
+.cc-app-switcher__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: $spacing-03 $spacing-05;
+}
+
+.cc-app-switcher__combo {
+  inline-size: min(24rem, 100%);
+}
+
+.cc-app-switcher__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $spacing-03;
+}
+
+.cc-app-switcher__mine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $spacing-03;
+}
+
+.cc-app-details {
+  grid-template-columns: repeat(auto-fit, minmax(min(10rem, 100%), 1fr));
+  padding-block: 0;
+}
+
+.cc-kpi-budget {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-03;
+}
+
+// Needs attention band
+.cc-attention {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-05;
+}
+
+.cc-attention__header {
+  display: flex;
+  align-items: center;
+  gap: $spacing-03;
+}
+
+.cc-attention__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(17rem, 100%), 1fr));
+  gap: $spacing-05;
+
+  > li {
+    display: flex;
+  }
+}
+
+.cc-attention__skeleton {
+  inline-size: 100%;
+  block-size: 12rem;
+}
+
+.cc-attention__resolved ul {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-03;
+  margin-block-start: $spacing-03;
+}
+
+.cc-attention__resolved-item,
+.cc-attention__muted,
+.cc-attention__muted-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $spacing-03;
+}
+
+.cc-signal {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: $spacing-03;
+}
+
+.cc-signal__top {
+  display: flex;
+  align-items: center;
+  gap: $spacing-03;
+  min-block-size: $spacing-07;
+}
+
+.cc-signal__mute {
+  margin-inline-start: auto;
+}
+
+.cc-signal__why {
+  font-weight: 600;
+}
+
+// Adaptive sections: fixed order, emphasis follows the application's signals.
+.cc-app-section {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-05;
+  padding-block-start: $spacing-05;
+  border-block-start: 1px solid $border-subtle-01;
+}
+
+.cc-app-section__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: $spacing-03;
+}
+
+.cc-app-section__title,
+.cc-app-section__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $spacing-03;
+}
+
+.cc-app-section__quiet {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: $spacing-03;
+}
+
+.cc-empty {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-03;
+}
+
+.cc-empty--start {
+  gap: $spacing-05;
+  max-inline-size: 48rem;
+  padding: $spacing-07;
+}
+
+// Six application KPIs: 2 × 3 on small screens, 3 × 2 from md, one row from xlg.
+.cc-kpi-row--six {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  @include breakpoint(md) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @include breakpoint(xlg) {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
 }

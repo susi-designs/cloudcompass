@@ -61,7 +61,8 @@ export function GlobalSearchPanel({
       ...(item.kind === 'Account' && { accountIds: [item.id] }),
     });
     onClose();
-    navigate('/');
+    // The Executive Overview reflects the global scope; My CloudCompass is fixed to one app.
+    navigate('/overview');
   };
 
   return (
