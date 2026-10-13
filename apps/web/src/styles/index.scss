@@ -110,6 +110,22 @@ body {
 .cc-search-option {
   display: flex;
   flex-direction: column;
+
+  > span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+// Carbon list-box menu items are one row tall and clip overflow; let two-line options
+// (name + secondary detail) grow so the second line isn't cut off.
+.cds--list-box__menu-item:has(.cc-search-option) {
+  block-size: auto;
+
+  .cds--list-box__menu-item__option {
+    block-size: auto;
+    padding-block: $spacing-03;
+  }
 }
 
 // ---- Page frame ------------------------------------------------------------
