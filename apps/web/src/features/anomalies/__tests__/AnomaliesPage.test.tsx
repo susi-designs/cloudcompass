@@ -32,7 +32,7 @@ describe('Anomalies page', () => {
     expect(within(table).getByRole('columnheader', { name: /Impact/ })).toHaveClass('cc-cell--end');
     expect(within(table).getAllByText('Critical').length).toBeGreaterThan(0);
     const rows = within(table).getAllByRole('row').slice(1);
-    expect(rows).toHaveLength(countIn(/^Needs triage \(/));
+    expect(rows).toHaveLength(Math.min(10, countIn(/^Needs triage \(/))); // 10 per page
   });
 
   it('opens the detail panel with root-cause hints and closes it with Escape', async () => {

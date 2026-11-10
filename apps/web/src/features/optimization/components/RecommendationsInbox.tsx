@@ -1,10 +1,8 @@
 import {
   ActionableNotification,
   Button,
-  ContentSwitcher,
   DataTableSkeleton,
   InlineNotification,
-  Switch,
   TableBatchAction,
 } from '@carbon/react';
 import {
@@ -17,7 +15,6 @@ import {
   UserFollow,
 } from '@carbon/icons-react';
 import type { CarbonIconType } from '@carbon/icons-react';
-import type { RecommendationStatus } from '@cloudcompass/types';
 import { useMemo, useState, type ReactNode } from 'react';
 import { SortableDataTable, type TableColumn } from '../../../components/SortableDataTable';
 import {
@@ -33,9 +30,6 @@ import { downloadText } from '../../../lib/download';
 import { formatCurrency, formatDate } from '../../../lib/format';
 import { RecommendationStatusIndicator } from './RecommendationStatusIndicator';
 import { WorkflowModal, type ModalAction } from './WorkflowModal';
-
-type View = RecommendationStatus | 'All';
-const VIEWS: readonly View[] = ['Open', 'Accepted', 'Snoozed', 'Dismissed', 'Implemented', 'All'];
 
 const BATCH_ACTIONS: { type: WorkflowActionType; label: string; icon: CarbonIconType }[] = [
   { type: 'assign', label: 'Assign', icon: UserFollow },
@@ -94,16 +88,12 @@ export function RecommendationsInbox({
   loading: boolean;
 }) {
   const { apply, reset, changeCount } = useRecommendationWorkflow();
-  const [view, setView] = useState<View>('Open');
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [modal, setModal] = useState<ModalAction | null>(null);
   const [notice, setNotice] = useState<{ title: string; subtitle?: string } | null>(null);
   const c = data?.currency ?? 'USD';
 
-  const rows = useMemo(
-    () => (data?.rows ?? []).filter((r) => view === 'All' || r.status === view),
-    [data, view],
-  );
+  const rows = useMemo(() => data?.rows ?? [], [data]);
   const selectedRows = useMemo(() => rows.filter((r) => selected.has(r.id)), [rows, selected]);
   const eligible = (type: WorkflowActionType) =>
     selectedRows.filter((r) => canApply(type, r.status));
@@ -192,7 +182,6 @@ export function RecommendationsInbox({
 
   if (loading || !data) return <DataTableSkeleton columnCount={8} rowCount={8} showToolbar />;
 
-  const counts: Record<View, number> = { ...data.counts, All: data.rows.length };
   const available = BATCH_ACTIONS.filter((a) => eligible(a.type).length > 0);
   const modalRows = modal ? eligible(modal) : [];
 
@@ -222,22 +211,7 @@ export function RecommendationsInbox({
           onClose={() => setNotice(null)}
         />
       )}
-      <ContentSwitcher
-        size="md"
-        selectedIndex={VIEWS.indexOf(view)}
-        onChange={({ name }) => {
-          setView(name as View);
-          setSelected(new Set());
-        }}
-        className="cc-resource-switcher"
-        aria-label="Recommendation status"
-      >
-        {VIEWS.map((v) => (
-          <Switch key={v} name={v} text={`${v} (${counts[v]})`} />
-        ))}
-      </ContentSwitcher>
       <SortableDataTable
-        key={view}
         title="Recommendations"
         description="Select recommendations to assign, accept, snooze, dismiss or mark them implemented. Expand a row for details."
         columns={columns}
@@ -246,7 +220,7 @@ export function RecommendationsInbox({
         initialSort={{ key: 'estimatedMonthlySavings', direction: 'DESC' }}
         searchable
         size="md"
-        emptyMessage={`No ${view === 'All' ? '' : `${view.toLowerCase()} `}recommendations in scope.`}
+        emptyMessage="No recommendations in scope."
         expandedContent={(r) => <Details row={r} currency={c} />}
         selection={{
           selectedIds: selected,
@@ -272,7 +246,7 @@ export function RecommendationsInbox({
             renderIcon={Download}
             onClick={() =>
               downloadText(
-                `cloudcompass-recommendations-${view.toLowerCase()}-${data.asOf}.csv`,
+                `cloudcompass-recommendations-${data.asOf}.csv`,
                 recommendationsCsv(rows),
               )
             }

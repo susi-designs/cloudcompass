@@ -115,7 +115,6 @@ export function ExplorerTable({ data, settings, loading, onDrill }: Props) {
       rowId={(r) => r.id}
       initialSort={{ key: 'total', direction: 'DESC' }}
       searchable
-      pageSize={25}
       toolbarActions={
         <Button
           kind="ghost"

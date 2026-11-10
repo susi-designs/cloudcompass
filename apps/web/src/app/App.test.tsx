@@ -15,23 +15,19 @@ describe('App shell', () => {
       await screen.findByRole('heading', { level: 1, name: 'My CloudCompass' }),
     ).toBeInTheDocument();
     const nav = screen.getByRole('navigation', { name: 'Side navigation' });
-    expect(within(nav).getAllByRole('link')[0]).toHaveTextContent('My CloudCompass');
+    expect(within(nav).getAllByRole('link')[0]).toHaveTextContent('Cost & Usage');
   });
 
   it('renders the header, side navigation and the Overview dashboard', async () => {
     render(<App />);
     expect(screen.getByRole('banner', { name: 'CloudCompass' })).toBeInTheDocument();
     const nav = screen.getByRole('navigation', { name: 'Side navigation' });
-    for (const label of [
-      'My CloudCompass',
-      'Overview',
-      'Cost & Usage',
-      'Utilization',
-      'AI Spend',
-      'Optimization',
-      'Anomalies',
-    ]) {
+    for (const label of ['Cost & Usage', 'Utilization', 'Optimization']) {
       expect(within(nav).getByRole('link', { name: label })).toBeInTheDocument();
+    }
+    // Temporarily hidden from the side nav.
+    for (const label of ['My CloudCompass', 'Overview', 'AI Spend', 'Anomalies']) {
+      expect(within(nav).queryByRole('link', { name: label })).not.toBeInTheDocument();
     }
     expect(await screen.findByRole('heading', { level: 1, name: 'Overview' })).toBeInTheDocument();
     expect(await screen.findByText('Month-to-date spend')).toBeInTheDocument();
@@ -62,12 +58,13 @@ describe('App shell', () => {
     ]);
   });
 
-  it('navigates to the Anomalies pillar', async () => {
+  it('navigates to the Optimization pillar', async () => {
     const user = userEvent.setup();
     render(<App />);
-    await user.click(screen.getByRole('link', { name: 'Anomalies' }));
-    expect(await screen.findByRole('heading', { level: 1, name: 'Anomalies' })).toBeInTheDocument();
-    expect(await screen.findByRole('table', { name: 'Anomaly feed' })).toBeInTheDocument();
+    await user.click(screen.getByRole('link', { name: 'Optimization' }));
+    expect(
+      await screen.findByRole('heading', { level: 1, name: 'Optimization' }),
+    ).toBeInTheDocument();
   });
 
   it('switches to dark theme and remembers the choice', async () => {

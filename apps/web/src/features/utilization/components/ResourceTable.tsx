@@ -1,24 +1,11 @@
-import { Button, ContentSwitcher, DataTableSkeleton, Switch } from '@carbon/react';
+import { Button, DataTableSkeleton } from '@carbon/react';
 import { Download } from '@carbon/icons-react';
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { SortableDataTable, type TableColumn } from '../../../components/SortableDataTable';
 import type { ResourceRow, UtilizationData } from '../../../data/utilization';
 import { downloadText } from '../../../lib/download';
 import { formatCurrency } from '../../../lib/format';
 import { ResourceStatusIndicator } from './ResourceStatusIndicator';
-
-type View = 'waste' | 'idle' | 'underutilized' | 'all';
-
-const VIEWS: { id: View; label: string; match: (r: ResourceRow) => boolean }[] = [
-  {
-    id: 'waste',
-    label: 'Idle + under-utilized',
-    match: (r) => r.status === 'Idle' || r.status === 'Underutilized',
-  },
-  { id: 'idle', label: 'Idle', match: (r) => r.status === 'Idle' },
-  { id: 'underutilized', label: 'Under-utilized', match: (r) => r.status === 'Underutilized' },
-  { id: 'all', label: 'All resources', match: () => true },
-];
 
 const pct = (v: number | null) => (v == null ? '—' : `${v.toFixed(1)}%`);
 
@@ -72,10 +59,8 @@ export function ResourceTable({
   data: UtilizationData | undefined;
   loading: boolean;
 }) {
-  const [view, setView] = useState<View>('waste');
   const c = data?.currency ?? 'USD';
-  const active = VIEWS.find((v) => v.id === view) ?? VIEWS[0]!;
-  const rows = useMemo(() => (data?.resources ?? []).filter(active.match), [data, active]);
+  const rows = useMemo(() => data?.resources ?? [], [data]);
 
   const columns = useMemo<TableColumn<ResourceRow>[]>(
     () => [
@@ -151,25 +136,9 @@ export function ResourceTable({
 
   if (loading || !data) return <DataTableSkeleton columnCount={9} rowCount={8} showToolbar />;
 
-  const counts = Object.fromEntries(
-    VIEWS.map((v) => [v.id, data.resources.filter(v.match).length]),
-  );
-
   return (
     <div className="cc-stack cc-stack--tight">
-      <ContentSwitcher
-        size="md"
-        selectedIndex={VIEWS.findIndex((v) => v.id === view)}
-        onChange={({ name }) => setView(name as View)}
-        className="cc-resource-switcher"
-        aria-label="Resource filter"
-      >
-        {VIEWS.map((v) => (
-          <Switch key={v.id} name={v.id} text={`${v.label} (${counts[v.id]})`} />
-        ))}
-      </ContentSwitcher>
       <SortableDataTable
-        key={view}
         title="Resources"
         description="Averages over the last 30 days. Savings: idle resources at full monthly cost; under-utilized at ~40% from rightsizing one size down."
         columns={columns}
@@ -182,9 +151,7 @@ export function ResourceTable({
           <Button
             kind="ghost"
             renderIcon={Download}
-            onClick={() =>
-              downloadText(`cloudcompass-resources-${view}-${data.asOf}.csv`, toCsv(rows))
-            }
+            onClick={() => downloadText(`cloudcompass-resources-${data.asOf}.csv`, toCsv(rows))}
           >
             Download CSV
           </Button>

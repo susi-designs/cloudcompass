@@ -82,7 +82,7 @@ export function SortableDataTable<Row>({
   initialSort,
   searchable = false,
   toolbarActions,
-  pageSize: initialPageSize = 25,
+  pageSize: initialPageSize = 10,
   size = 'md',
   emptyMessage = 'No data for the selected scope.',
   selection,

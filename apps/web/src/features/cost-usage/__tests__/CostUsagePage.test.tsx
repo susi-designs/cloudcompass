@@ -41,7 +41,7 @@ describe('Cost & Usage', () => {
   it('paginates and shows account IDs left-aligned when grouped by account', async () => {
     renderAt('/cost-usage?groupBy=account');
     const table = await screen.findByRole('table', { name: 'Cost by account' });
-    expect(within(table).getAllByRole('row')).toHaveLength(26); // header + 25 per page
+    expect(within(table).getAllByRole('row')).toHaveLength(11); // header + 10 per page
     const idHeader = within(table).getByRole('columnheader', { name: /Account ID/ });
     expect(idHeader).toHaveClass('cc-cell--start');
     expect(within(table).getByRole('columnheader', { name: /Selected period/ })).toHaveClass(
@@ -63,10 +63,9 @@ describe('Cost & Usage', () => {
   it('shows budgets for every application with a status', async () => {
     renderAt('/cost-usage?view=budgets');
     const table = await screen.findByRole('table', { name: 'Application budgets' });
-    expect(within(table).getAllByRole('row')).toHaveLength(21);
-    expect(
-      within(table).getAllByText(/On track|At risk|Over budget/).length,
-    ).toBeGreaterThanOrEqual(20);
+    expect(within(table).getAllByRole('row')).toHaveLength(11); // header + 10 per page
+    expect(within(table).getAllByText(/On track|At risk|Over budget/)).toHaveLength(10);
+    expect(screen.getByText(/of 20 items/)).toBeInTheDocument();
     expect(screen.getByTestId('GroupedBarChart')).toBeInTheDocument();
   });
 });

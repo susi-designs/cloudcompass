@@ -162,32 +162,21 @@ test.describe('Cost & Usage', () => {
     await page.goto('/cost-usage');
     await page.getByRole('tab', { name: 'Budgets' }).click();
     const table = page.getByRole('table', { name: 'Application budgets' });
-    await expect(table.getByRole('row')).toHaveCount(21);
+    await expect(table.getByRole('row')).toHaveCount(11);
+    await expect(page.getByText(/of 20 items/)).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Budget vs. actual by month' })).toBeVisible();
   });
 });
 
 test.describe('Utilization', () => {
-  test('renders heatmaps, resource table and commitment meters', async ({ page }) => {
+  test('renders only the resource table', async ({ page }) => {
     await page.goto('/utilization');
     await expect(page.getByRole('heading', { level: 1, name: 'Utilization' })).toBeVisible();
-    await expect(page.getByRole('heading', { name: /CPU by application over time/ })).toBeVisible();
-    await expect(page.getByRole('heading', { name: 'CPU by hour of week' })).toBeVisible();
-    await expect(page.locator('.cc-chart-card svg').first()).toBeVisible();
     const table = page.getByRole('table', { name: 'Resources' });
     await expect(table.getByRole('row').nth(1)).toBeVisible();
-    await expect(page.locator('.cc-commitment').first()).toBeVisible();
-  });
-
-  test('selecting one application shows its resources in the heatmap', async ({ page }) => {
-    await page.goto('/utilization');
-    await page.getByRole('combobox', { name: /Application/ }).click();
-    await page.getByRole('option', { name: 'Payment Gateway' }).click();
-    await page.keyboard.press('Escape');
-    await expect(page.getByRole('heading', { name: /CPU by resource over time/ })).toBeVisible();
-    await page.getByRole('tab', { name: /^All resources/ }).click();
-    const rows = page.getByRole('table', { name: 'Resources' }).getByRole('row');
-    await expect(rows.nth(1)).toContainText('Payment Gateway');
+    await expect(page.getByRole('region', { name: 'Scope filters' })).toHaveCount(0);
+    await expect(page.locator('.cc-chart-card')).toHaveCount(0);
+    await expect(page.locator('.cc-commitment')).toHaveCount(0);
   });
 });
 
@@ -222,10 +211,8 @@ test.describe('Optimization', () => {
   test('snoozes a recommendation and the change survives a reload', async ({ page }) => {
     await page.goto('/optimization');
     await expect(page.getByRole('heading', { level: 1, name: 'Optimization' })).toBeVisible();
-    await expect(page.locator('.cc-chart-card svg').first()).toBeVisible();
-    const openTab = page.getByRole('tab', { name: /^Open \(/ });
-    const openCount = Number(/\((\d+)\)/.exec((await openTab.textContent()) ?? '')?.[1]);
-    const table = page.getByRole('table', { name: 'Recommendations' });
+    await expect(page.locator('.cc-chart-card')).toHaveCount(0);
+    const table = page.getByRole('table', { name: 'Recommendations', exact: true });
     await table.getByRole('row').nth(1).locator('label').first().click();
     await page.getByRole('button', { name: 'Snooze' }).click();
     const dialog = page.getByRole('dialog');
@@ -233,24 +220,15 @@ test.describe('Optimization', () => {
     await dialog.getByRole('button', { name: 'Snooze' }).click();
     await expect(page.getByText('1 recommendation snoozed')).toBeVisible();
     await page.reload();
-    await expect(page.getByRole('tab', { name: `Open (${openCount - 1})` })).toBeVisible();
-    await page.getByRole('tab', { name: /^Snoozed/ }).click();
     await expect(table).toContainText('Until Dec 8, 2026');
   });
 
-  test('expands a row and opens the savings ledger', async ({ page }) => {
+  test('expands a row to show its details', async ({ page }) => {
     await page.goto('/optimization');
-    const table = page.getByRole('table', { name: 'Recommendations' });
+    const table = page.getByRole('table', { name: 'Recommendations', exact: true });
     await table.getByRole('button', { name: 'Expand row' }).first().click();
     await expect(table.getByText('Resource ID')).toBeVisible();
-    await page.getByRole('tab', { name: 'Savings ledger' }).click();
-    await expect(page).toHaveURL(/view=ledger/);
-    await expect(
-      page.getByRole('heading', { name: 'Projected vs. realized savings by month' }),
-    ).toBeVisible();
-    await expect(
-      page.getByRole('table', { name: 'Implemented recommendations' }).getByRole('row').nth(1),
-    ).toBeVisible();
+    await expect(page.getByRole('table', { name: 'Implemented recommendations' })).toHaveCount(0);
   });
 });
 

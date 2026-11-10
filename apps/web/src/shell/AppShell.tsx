@@ -23,6 +23,14 @@ import { UserPanel } from './UserPanel';
 
 type PanelId = 'search' | 'theme' | 'user' | null;
 
+// Temporarily hidden from the side nav; the routes stay reachable by URL.
+const HIDDEN_NAV_PATHS: ReadonlySet<string> = new Set([
+  '/',
+  '/overview',
+  '/ai-spend',
+  '/anomalies',
+]);
+
 export function AppShell({ children }: { children: ReactNode }) {
   const { pathname } = useLocation();
   const { theme } = useThemePreference();
@@ -86,7 +94,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               href="#main-content"
             >
               <SideNavItems>
-                {NAV_ITEMS.map((item) => (
+                {NAV_ITEMS.filter((item) => !HIDDEN_NAV_PATHS.has(item.path)).map((item) => (
                   <SideNavLink
                     key={item.path}
                     as={Link}

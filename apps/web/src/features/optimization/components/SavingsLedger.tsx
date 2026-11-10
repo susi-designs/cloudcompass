@@ -1,24 +1,14 @@
 import { DataTableSkeleton, InlineNotification } from '@carbon/react';
 import { useMemo } from 'react';
-import { KpiTile } from '../../../components/KpiTile';
 import { SortableDataTable, type TableColumn } from '../../../components/SortableDataTable';
 import type { LedgerRow } from '../../../data/optimization';
 import { useSavingsLedger } from '../../../data/useOptimization';
-import {
-  formatCurrency,
-  formatDate,
-  formatNumber,
-  formatPercent,
-  formatPercentChange,
-} from '../../../lib/format';
-import { LedgerChart } from './LedgerChart';
+import { formatCurrency, formatDate, formatPercentChange } from '../../../lib/format';
 
 export function SavingsLedger() {
   const { data, isPending, error } = useSavingsLedger();
   const loading = isPending || !data;
   const c = data?.currency ?? 'USD';
-  const k = data?.kpis;
-  const money = (v: number | undefined) => formatCurrency(v ?? 0, c, 'compact');
 
   const columns = useMemo<TableColumn<LedgerRow>[]>(
     () => [
@@ -97,39 +87,6 @@ export function SavingsLedger() {
           hideCloseButton
         />
       )}
-      <section className="cc-kpi-row" aria-label="Savings ledger summary">
-        <KpiTile
-          label="Realized savings · selected period"
-          value={money(k?.realizedInPeriod)}
-          loading={loading}
-          helper={k ? `vs. ${money(k.projectedInPeriod)} projected` : undefined}
-        />
-        <KpiTile
-          label="Realization rate"
-          value={k?.realizationPercent == null ? '—' : formatPercent(k.realizationPercent)}
-          loading={loading}
-          helper="Realized ÷ projected savings of implemented recommendations"
-        />
-        <KpiTile
-          label="Savings run-rate · per month"
-          value={money(k?.runRate)}
-          loading={loading}
-          helper={
-            k ? `${money(k.runRate * 12)} a year from implemented recommendations` : undefined
-          }
-        />
-        <KpiTile
-          label="Pipeline · per month"
-          value={money(k?.pipeline)}
-          loading={loading}
-          helper={
-            k
-              ? `${formatNumber(k.pipelineCount)} accepted recommendations not yet implemented`
-              : undefined
-          }
-        />
-      </section>
-      <LedgerChart data={data} loading={loading} />
       {loading ? (
         <DataTableSkeleton columnCount={8} rowCount={6} showToolbar />
       ) : (

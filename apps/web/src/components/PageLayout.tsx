@@ -5,8 +5,8 @@ import { ScopeFilterBar } from './ScopeFilterBar';
 interface PageLayoutProps {
   title: string;
   description?: ReactNode;
-  /** Filters shown under the header; `application` keeps only date range and environment. */
-  filters?: 'full' | 'application';
+  /** Filters shown under the header; `application` keeps only date range and environment, `none` hides them. */
+  filters?: 'full' | 'application' | 'none';
   /** Content between the header and the filters, e.g. an application switcher. */
   headerExtra?: ReactNode;
   children: ReactNode;
@@ -24,7 +24,7 @@ export function PageLayout({
     <div className="cc-page">
       <PageHeader title={title} description={description} />
       {headerExtra}
-      <ScopeFilterBar variant={filters} />
+      {filters !== 'none' && <ScopeFilterBar variant={filters} />}
       {children}
     </div>
   );
