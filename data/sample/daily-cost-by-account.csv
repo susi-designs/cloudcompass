@@ -17687,7 +17687,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-07-31,Payments,Merchant Services,PROD,6df7ddce-0000-4000-8000-000000000046,Azure,1024.66
 2026-07-31,Payments,Merchant Services,TEST,0c2f577f-0000-4000-8000-000000000047,Azure,304.80
 2026-07-31,Payments,Merchant Services,DEV,aa66d130-0000-4000-8000-000000000048,Azure,188.38
-2026-07-31,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,GCP,3583.62
+2026-07-31,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,GCP,4213.60
 2026-07-31,Corporate Technology,Data Platform,TEST,cc-data-platform-test,GCP,1009.99
 2026-07-31,Corporate Technology,Data Platform,DEV,cc-data-platform-dev,GCP,619.85
 2026-07-31,Corporate Technology,HR Systems,PROD,2344b7f4-0000-4000-8000-000000000052,Azure,684.11
@@ -19787,7 +19787,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-09-04,Payments,Merchant Services,PROD,6df7ddce-0000-4000-8000-000000000046,Azure,1043.75
 2026-09-04,Payments,Merchant Services,TEST,0c2f577f-0000-4000-8000-000000000047,Azure,307.94
 2026-09-04,Payments,Merchant Services,DEV,aa66d130-0000-4000-8000-000000000048,Azure,188.33
-2026-09-04,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,GCP,3520.66
+2026-09-04,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,GCP,6126.70
 2026-09-04,Corporate Technology,Data Platform,TEST,cc-data-platform-test,GCP,1144.74
 2026-09-04,Corporate Technology,Data Platform,DEV,cc-data-platform-dev,GCP,634.47
 2026-09-04,Corporate Technology,HR Systems,PROD,2344b7f4-0000-4000-8000-000000000052,Azure,726.64
@@ -19847,7 +19847,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-09-05,Payments,Merchant Services,PROD,6df7ddce-0000-4000-8000-000000000046,Azure,916.04
 2026-09-05,Payments,Merchant Services,TEST,0c2f577f-0000-4000-8000-000000000047,Azure,203.68
 2026-09-05,Payments,Merchant Services,DEV,aa66d130-0000-4000-8000-000000000048,Azure,134.93
-2026-09-05,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,GCP,3145.83
+2026-09-05,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,GCP,5196.74
 2026-09-05,Corporate Technology,Data Platform,TEST,cc-data-platform-test,GCP,845.22
 2026-09-05,Corporate Technology,Data Platform,DEV,cc-data-platform-dev,GCP,487.53
 2026-09-05,Corporate Technology,HR Systems,PROD,2344b7f4-0000-4000-8000-000000000052,Azure,695.82
@@ -21348,7 +21348,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-09-30,Payments,Merchant Services,TEST,0c2f577f-0000-4000-8000-000000000047,Azure,315.90
 2026-09-30,Payments,Merchant Services,DEV,aa66d130-0000-4000-8000-000000000048,Azure,201.31
 2026-09-30,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,GCP,3688.83
-2026-09-30,Corporate Technology,Data Platform,TEST,cc-data-platform-test,GCP,1053.93
+2026-09-30,Corporate Technology,Data Platform,TEST,cc-data-platform-test,GCP,1202.09
 2026-09-30,Corporate Technology,Data Platform,DEV,cc-data-platform-dev,GCP,612.70
 2026-09-30,Corporate Technology,HR Systems,PROD,2344b7f4-0000-4000-8000-000000000052,Azure,694.77
 2026-09-30,Corporate Technology,HR Systems,TEST,c17c31a5-0000-4000-8000-000000000053,Azure,201.42
@@ -21408,7 +21408,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-01,Payments,Merchant Services,TEST,0c2f577f-0000-4000-8000-000000000047,Azure,326.52
 2026-10-01,Payments,Merchant Services,DEV,aa66d130-0000-4000-8000-000000000048,Azure,189.35
 2026-10-01,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,GCP,3760.64
-2026-10-01,Corporate Technology,Data Platform,TEST,cc-data-platform-test,GCP,1120.85
+2026-10-01,Corporate Technology,Data Platform,TEST,cc-data-platform-test,GCP,1288.70
 2026-10-01,Corporate Technology,Data Platform,DEV,cc-data-platform-dev,GCP,628.08
 2026-10-01,Corporate Technology,HR Systems,PROD,2344b7f4-0000-4000-8000-000000000052,Azure,694.44
 2026-10-01,Corporate Technology,HR Systems,TEST,c17c31a5-0000-4000-8000-000000000053,Azure,219.48
@@ -21468,7 +21468,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-02,Payments,Merchant Services,TEST,0c2f577f-0000-4000-8000-000000000047,Azure,321.76
 2026-10-02,Payments,Merchant Services,DEV,aa66d130-0000-4000-8000-000000000048,Azure,183.69
 2026-10-02,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,GCP,3625.51
-2026-10-02,Corporate Technology,Data Platform,TEST,cc-data-platform-test,GCP,1086.19
+2026-10-02,Corporate Technology,Data Platform,TEST,cc-data-platform-test,GCP,1266.41
 2026-10-02,Corporate Technology,Data Platform,DEV,cc-data-platform-dev,GCP,668.36
 2026-10-02,Corporate Technology,HR Systems,PROD,2344b7f4-0000-4000-8000-000000000052,Azure,680.69
 2026-10-02,Corporate Technology,HR Systems,TEST,c17c31a5-0000-4000-8000-000000000053,Azure,198.86
@@ -21647,7 +21647,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-05,Payments,Merchant Services,PROD,6df7ddce-0000-4000-8000-000000000046,Azure,1089.29
 2026-10-05,Payments,Merchant Services,TEST,0c2f577f-0000-4000-8000-000000000047,Azure,312.58
 2026-10-05,Payments,Merchant Services,DEV,aa66d130-0000-4000-8000-000000000048,Azure,193.56
-2026-10-05,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,GCP,3657.35
+2026-10-05,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,GCP,4162.40
 2026-10-05,Corporate Technology,Data Platform,TEST,cc-data-platform-test,GCP,1052.75
 2026-10-05,Corporate Technology,Data Platform,DEV,cc-data-platform-dev,GCP,686.46
 2026-10-05,Corporate Technology,HR Systems,PROD,2344b7f4-0000-4000-8000-000000000052,Azure,664.82
@@ -21707,7 +21707,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-06,Payments,Merchant Services,PROD,6df7ddce-0000-4000-8000-000000000046,Azure,1045.99
 2026-10-06,Payments,Merchant Services,TEST,0c2f577f-0000-4000-8000-000000000047,Azure,318.21
 2026-10-06,Payments,Merchant Services,DEV,aa66d130-0000-4000-8000-000000000048,Azure,188.03
-2026-10-06,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,GCP,3628.33
+2026-10-06,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,GCP,4078.50
 2026-10-06,Corporate Technology,Data Platform,TEST,cc-data-platform-test,GCP,1114.18
 2026-10-06,Corporate Technology,Data Platform,DEV,cc-data-platform-dev,GCP,657.47
 2026-10-06,Corporate Technology,HR Systems,PROD,2344b7f4-0000-4000-8000-000000000052,Azure,643.21
@@ -21827,7 +21827,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-08,Payments,Merchant Services,PROD,6df7ddce-0000-4000-8000-000000000046,Azure,1041.72
 2026-10-08,Payments,Merchant Services,TEST,0c2f577f-0000-4000-8000-000000000047,Azure,313.62
 2026-10-08,Payments,Merchant Services,DEV,aa66d130-0000-4000-8000-000000000048,Azure,191.20
-2026-10-08,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,GCP,3578.31
+2026-10-08,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,GCP,4760.04
 2026-10-08,Corporate Technology,Data Platform,TEST,cc-data-platform-test,GCP,1087.51
 2026-10-08,Corporate Technology,Data Platform,DEV,cc-data-platform-dev,GCP,639.99
 2026-10-08,Corporate Technology,HR Systems,PROD,2344b7f4-0000-4000-8000-000000000052,Azure,689.00
@@ -21887,7 +21887,7 @@ date,lob,application,environment,account_id,cloud,billed_cost_usd
 2026-10-09,Payments,Merchant Services,PROD,6df7ddce-0000-4000-8000-000000000046,Azure,1000.65
 2026-10-09,Payments,Merchant Services,TEST,0c2f577f-0000-4000-8000-000000000047,Azure,315.42
 2026-10-09,Payments,Merchant Services,DEV,aa66d130-0000-4000-8000-000000000048,Azure,180.40
-2026-10-09,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,GCP,3441.79
+2026-10-09,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,GCP,4513.79
 2026-10-09,Corporate Technology,Data Platform,TEST,cc-data-platform-test,GCP,1143.55
 2026-10-09,Corporate Technology,Data Platform,DEV,cc-data-platform-dev,GCP,659.70
 2026-10-09,Corporate Technology,HR Systems,PROD,2344b7f4-0000-4000-8000-000000000052,Azure,672.55

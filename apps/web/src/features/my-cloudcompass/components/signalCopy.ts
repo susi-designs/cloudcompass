@@ -1,5 +1,5 @@
 import type { AnomalySeverity } from '@cloudcompass/types';
-import { SECTION_LABELS, SECTION_PATHS } from '../../../data/myCloudCompass';
+import { SECTION_LABELS, SECTION_PATHS, type SectionId } from '../../../data/myCloudCompass';
 import type { Signal, SignalKind } from '../../../data/signals';
 import { formatCurrency, formatPercent, formatPercentChange } from '../../../lib/format';
 
@@ -20,6 +20,15 @@ export const SIGNAL_KIND_LABELS: Record<SignalKind, string> = {
 
 /** Signals that are savings opportunities rather than risks. */
 export const OPPORTUNITY_KINDS: readonly SignalKind[] = ['recommendation', 'idle', 'commitment'];
+
+/** "Needs attention" tone per section: red for risks, blue for savings opportunities. */
+export const SECTION_ATTENTION_TONE: Record<SectionId, 'red' | 'blue'> = {
+  cost: 'red',
+  utilization: 'blue',
+  optimization: 'blue',
+  ai: 'red',
+  anomalies: 'red',
+};
 
 const money = (v: number, currency: string) => formatCurrency(v, currency, 'compact');
 const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`;
@@ -119,6 +128,23 @@ export function signalIndicator(
     case 'idle':
     case 'commitment':
       return { kind: 'informative', label: 'Savings opportunity' };
+  }
+}
+
+/** Carbon notification kind for a signal's banner on its pillar tab. */
+export function signalNotificationKind(s: Signal): 'error' | 'warning' | 'info' {
+  switch (s.kind) {
+    case 'anomaly':
+      return s.severity === 'Critical' || s.severity === 'High' ? 'error' : 'warning';
+    case 'budget':
+      return s.status === 'Over budget' ? 'error' : 'warning';
+    case 'spend-growth':
+    case 'ai-growth':
+      return 'warning';
+    case 'recommendation':
+    case 'idle':
+    case 'commitment':
+      return 'info';
   }
 }
 

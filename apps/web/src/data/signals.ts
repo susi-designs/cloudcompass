@@ -382,7 +382,6 @@ export type SectionState = 'attention' | 'steady' | 'quiet';
 export interface SectionLayout {
   id: SectionId;
   state: SectionState;
-  pinned: boolean;
   /** Active, unmuted signals in this section. */
   signalCount: number;
   /** Of those, how many are in the band. */
@@ -404,11 +403,10 @@ export interface MutedKind {
 }
 
 export interface PagePrefs {
-  pinned: readonly SectionId[];
   muted: readonly SignalKind[];
 }
 
-export const EMPTY_PREFS: PagePrefs = { pinned: [], muted: [] };
+export const EMPTY_PREFS: PagePrefs = { muted: [] };
 
 export interface AdaptiveLayout {
   band: BandItem[];
@@ -423,9 +421,9 @@ export interface AdaptiveLayout {
 /**
  * Pick what the page brings forward. Rules (PRODUCT.md §5.1):
  * - band: unmuted signals ≥ ENTER_SCORE, or ≥ STAY_SCORE if shown last visit, top BAND_MAX;
- * - section: "attention" if it has a band signal, "steady" if it has any other signal or is
- *   pinned, otherwise "quiet";
- * - mutes and pins always win over scores.
+ * - section: "attention" if it has a band signal, "steady" if it has any other signal,
+ *   otherwise "quiet";
+ * - mutes always win over scores.
  */
 export function composeLayout(
   signals: readonly Signal[],
@@ -458,15 +456,13 @@ export function composeLayout(
     SECTION_IDS.map((id) => {
       const inSection = visible.filter((s) => s.section === id);
       const bandCount = inSection.filter((s) => bandIds.has(s.id)).length;
-      const pinned = prefs.pinned.includes(id);
       const state: SectionState =
-        bandCount > 0 ? 'attention' : inSection.length > 0 || pinned ? 'steady' : 'quiet';
+        bandCount > 0 ? 'attention' : inSection.length > 0 ? 'steady' : 'quiet';
       return [
         id,
         {
           id,
           state,
-          pinned,
           signalCount: inSection.length,
           bandCount,
           topScore: inSection.reduce((m, s) => Math.max(m, s.score), 0),

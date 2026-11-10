@@ -109,6 +109,12 @@ describe('generateDataset', () => {
     }
   });
 
+  it('gives Data Platform a few anomalies, some still to triage', () => {
+    const dp = generateDataset().anomalies.filter((a) => a.applicationId === 'app-data-platform');
+    expect(dp).toHaveLength(5);
+    expect(dp.filter((a) => a.status === 'Open' || a.status === 'Acknowledged')).toHaveLength(3);
+  });
+
   it('gives anomalies root-cause details and triage fields that match their status', () => {
     const ds = generateDataset();
     const end = `${ds.meta.endDate}T23:59:59.999Z`;

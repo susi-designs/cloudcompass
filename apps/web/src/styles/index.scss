@@ -646,13 +646,32 @@ $cc-side-panel-width: 32rem;
   font-weight: 600;
 }
 
-// Adaptive sections: fixed order, emphasis follows the application's signals.
+.cc-signal__tab {
+  align-self: flex-start;
+  margin-block-start: auto;
+}
+
+// My CloudCompass tabs: contained Tabs whose panel continues the selected tab's $layer-01.
+// A pillar tab that needs attention shows "Needs attention (n)" as its secondary label, in
+// the section's tone (red for risks, blue for savings opportunities).
+.cc-app-tabs__panel {
+  padding: $spacing-06 $spacing-05;
+  background-color: $layer-01;
+}
+
+.cc-app-tabs__tab--red .cds--tabs__nav-item-secondary-label {
+  color: $text-error;
+}
+
+.cc-app-tabs__tab--blue .cds--tabs__nav-item-secondary-label {
+  color: $link-primary;
+}
+
+// Adaptive sections (a pillar tab's content): emphasis follows the application's signals.
 .cc-app-section {
   display: flex;
   flex-direction: column;
   gap: $spacing-05;
-  padding-block-start: $spacing-05;
-  border-block-start: 1px solid $border-subtle-01;
 }
 
 .cc-app-section__header {
@@ -663,20 +682,24 @@ $cc-side-panel-width: 32rem;
   gap: $spacing-03;
 }
 
-.cc-app-section__title,
-.cc-app-section__actions {
+.cc-app-section__title {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: $spacing-03;
 }
 
-.cc-app-section__quiet {
+// "Needs attention" banner: one low-contrast inline actionable notification per band signal,
+// as wide as the tab panel (Carbon caps inline notifications at 832px).
+.cc-app-section__attention {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   gap: $spacing-03;
+
+  .cds--actionable-notification {
+    max-inline-size: none;
+    margin: 0;
+  }
 }
 
 .cc-empty {

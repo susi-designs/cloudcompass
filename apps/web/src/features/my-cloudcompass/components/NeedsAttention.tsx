@@ -1,5 +1,5 @@
 import { Button, Layer, SkeletonPlaceholder, Tag, Tile } from '@carbon/react';
-import type { AppSnapshot } from '../../../data/myCloudCompass';
+import type { AppSnapshot, SectionId } from '../../../data/myCloudCompass';
 import type { AdaptiveLayout, SeenSignal, Signal, SignalKind } from '../../../data/signals';
 import { SignalCard } from './SignalCard';
 import { OPPORTUNITY_KINDS, SIGNAL_KIND_LABELS, bandSummary } from './signalCopy';
@@ -9,6 +9,7 @@ interface Props {
   layout: AdaptiveLayout | undefined;
   onOpen: (pathname: string, search: string) => void;
   onToggleMute: (kind: SignalKind) => void;
+  onShowTab: (section: SectionId) => void;
 }
 
 /** What happened to a signal that left the band, from the current data ("Cleared" for totals). */
@@ -30,7 +31,7 @@ function resolvedStatus(seen: SeenSignal, snapshot: AppSnapshot): string {
  * The adaptive "Needs attention" band (PRODUCT.md §5.1): a rule-based one-sentence summary,
  * up to five ranked signal cards, what was handled since the last visit, and muted alert types.
  */
-export function NeedsAttention({ snapshot, layout, onOpen, onToggleMute }: Props) {
+export function NeedsAttention({ snapshot, layout, onOpen, onToggleMute, onShowTab }: Props) {
   if (!snapshot || !layout) {
     return <SkeletonPlaceholder className="cc-attention__skeleton" />;
   }
@@ -71,6 +72,7 @@ export function NeedsAttention({ snapshot, layout, onOpen, onToggleMute }: Props
                   currency={currency}
                   onOpen={onOpen}
                   onMute={(s) => onToggleMute(s.kind)}
+                  onShowTab={onShowTab}
                 />
               </li>
             ))}
@@ -80,7 +82,7 @@ export function NeedsAttention({ snapshot, layout, onOpen, onToggleMute }: Props
       {layout.overflow > 0 && (
         <p className="cds--type-helper-text-01 cc-text-secondary">
           + {layout.overflow} more {layout.overflow === 1 ? 'signal' : 'signals'} below the top{' '}
-          {band.length}; see the sections below.
+          {band.length}; see the pillar tabs.
         </p>
       )}
 

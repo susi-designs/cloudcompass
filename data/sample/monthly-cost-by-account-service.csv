@@ -2235,7 +2235,7 @@ month,lob,application,environment,account_id,account_name,cloud,service_category
 2026-07,Payments,Merchant Services,DEV,aa66d130-0000-4000-8000-000000000048,merchant-services-dev,Azure,Compute,Virtual Machines,2845.97,2845.97
 2026-07,Payments,Merchant Services,DEV,aa66d130-0000-4000-8000-000000000048,merchant-services-dev,Azure,Networking,Azure Bandwidth,468.85,468.85
 2026-07,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,data-platform-prod,GCP,Compute,Google Kubernetes Engine,14473.77,14473.77
-2026-07,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,data-platform-prod,GCP,Storage,Cloud Storage,9757.30,9757.30
+2026-07,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,data-platform-prod,GCP,Storage,Cloud Storage,10387.28,10387.28
 2026-07,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,data-platform-prod,GCP,Compute,Compute Engine,45906.80,33052.89
 2026-07,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,data-platform-prod,GCP,Analytics,BigQuery,33080.69,23818.11
 2026-07,Corporate Technology,Data Platform,TEST,cc-data-platform-test,data-platform-test,GCP,Compute,Google Kubernetes Engine,3922.66,3922.66
@@ -2692,9 +2692,9 @@ month,lob,application,environment,account_id,account_name,cloud,service_category
 2026-09,Payments,Merchant Services,DEV,aa66d130-0000-4000-8000-000000000048,merchant-services-dev,Azure,Networking,Azure Bandwidth,455.19,455.19
 2026-09,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,data-platform-prod,GCP,Compute,Google Kubernetes Engine,14726.86,14726.86
 2026-09,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,data-platform-prod,GCP,Storage,Cloud Storage,10144.34,10144.34
-2026-09,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,data-platform-prod,GCP,Compute,Compute Engine,47202.14,33985.51
+2026-09,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,data-platform-prod,GCP,Compute,Compute Engine,51859.09,37338.52
 2026-09,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,data-platform-prod,GCP,Analytics,BigQuery,34328.49,24716.51
-2026-09,Corporate Technology,Data Platform,TEST,cc-data-platform-test,data-platform-test,GCP,Compute,Google Kubernetes Engine,4081.71,4081.71
+2026-09,Corporate Technology,Data Platform,TEST,cc-data-platform-test,data-platform-test,GCP,Compute,Google Kubernetes Engine,4229.87,4229.87
 2026-09,Corporate Technology,Data Platform,TEST,cc-data-platform-test,data-platform-test,GCP,Storage,Cloud Storage,3021.27,3021.27
 2026-09,Corporate Technology,Data Platform,TEST,cc-data-platform-test,data-platform-test,GCP,Compute,Compute Engine,13025.42,13025.42
 2026-09,Corporate Technology,Data Platform,TEST,cc-data-platform-test,data-platform-test,GCP,Analytics,BigQuery,10460.05,10460.05
@@ -2918,11 +2918,11 @@ month,lob,application,environment,account_id,account_name,cloud,service_category
 2026-10,Payments,Merchant Services,DEV,aa66d130-0000-4000-8000-000000000048,merchant-services-dev,Azure,Databases,Azure Cosmos DB,376.08,376.08
 2026-10,Payments,Merchant Services,DEV,aa66d130-0000-4000-8000-000000000048,merchant-services-dev,Azure,Compute,Virtual Machines,841.11,841.11
 2026-10,Payments,Merchant Services,DEV,aa66d130-0000-4000-8000-000000000048,merchant-services-dev,Azure,Networking,Azure Bandwidth,138.17,138.17
-2026-10,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,data-platform-prod,GCP,Compute,Google Kubernetes Engine,4609.11,4609.11
-2026-10,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,data-platform-prod,GCP,Storage,Cloud Storage,3045.57,3045.57
+2026-10,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,data-platform-prod,GCP,Compute,Google Kubernetes Engine,6862.84,6862.84
+2026-10,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,data-platform-prod,GCP,Storage,Cloud Storage,4000.79,4000.79
 2026-10,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,data-platform-prod,GCP,Compute,Compute Engine,14302.67,10297.92
 2026-10,Corporate Technology,Data Platform,PROD,cc-data-platform-prod,data-platform-prod,GCP,Analytics,BigQuery,10406.34,7492.58
-2026-10,Corporate Technology,Data Platform,TEST,cc-data-platform-test,data-platform-test,GCP,Compute,Google Kubernetes Engine,1300.86,1300.86
+2026-10,Corporate Technology,Data Platform,TEST,cc-data-platform-test,data-platform-test,GCP,Compute,Google Kubernetes Engine,1648.93,1648.93
 2026-10,Corporate Technology,Data Platform,TEST,cc-data-platform-test,data-platform-test,GCP,Storage,Cloud Storage,937.78,937.78
 2026-10,Corporate Technology,Data Platform,TEST,cc-data-platform-test,data-platform-test,GCP,Compute,Compute Engine,3899.39,3899.39
 2026-10,Corporate Technology,Data Platform,TEST,cc-data-platform-test,data-platform-test,GCP,Analytics,BigQuery,3246.81,3246.81

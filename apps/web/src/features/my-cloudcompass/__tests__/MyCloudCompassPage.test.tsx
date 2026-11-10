@@ -52,17 +52,67 @@ describe('My CloudCompass page', () => {
     expect(within(cards[0]!).getByText(/^Why:/).parentElement).toHaveTextContent(
       /Critical severity/,
     );
-    // Fixed order; emphasis follows the signals. Trading Platform has no AI usage.
-    const ids = [...document.querySelectorAll('[data-section]')].map((el) =>
-      el.getAttribute('data-section'),
-    );
-    expect(ids).toEqual(['cost', 'utilization', 'ai', 'optimization', 'anomalies']);
-    expect(section('anomalies')).toHaveAttribute('data-state', 'attention');
-    expect(section('ai')).toHaveAttribute('data-state', 'quiet');
-    expect(within(section('ai') as HTMLElement).getByText(/No AI usage/)).toBeInTheDocument();
+    // Fixed tab order; a pillar tab is flagged when it has signals in the band.
+    const tabs = screen.getAllByRole('tab');
+    expect(tabs.map((t) => t.textContent)).toEqual([
+      'Overview',
+      expect.stringMatching(/^Cost & Usage/),
+      expect.stringMatching(/^Utilization/),
+      expect.stringMatching(/^Optimization/),
+      'AI Spend',
+      'Anomalies' + 'Needs attention (2)',
+    ]);
+    expect(tabs[0]).toHaveAttribute('aria-selected', 'true');
   });
 
-  it('mutes an alert type and pins a quiet section open, per application', async () => {
+  it('opens a pillar tab from a signal card and keeps it in the URL', async () => {
+    window.history.pushState({}, '', '/?app=app-trading-platform');
+    const user = userEvent.setup();
+    render(<App />);
+    const band = (await screen.findByRole('heading', { name: 'Needs attention' })).closest(
+      '.cc-attention',
+    ) as HTMLElement;
+    const [first] = within(band).getAllByRole('listitem');
+    await user.click(within(first!).getByRole('button', { name: 'Go to Anomalies tab' }));
+    expect(window.location.search).toBe('?app=app-trading-platform&tab=anomalies');
+    const anomaliesTab = screen.getByRole('tab', { name: /^Anomalies/ });
+    expect(anomaliesTab).toHaveAttribute('aria-selected', 'true');
+    expect(anomaliesTab).toHaveFocus();
+    expect(section('anomalies')).toHaveAttribute('data-state', 'attention');
+    expect(screen.queryByRole('heading', { name: 'Needs attention' })).not.toBeInTheDocument();
+    // A banner under the header lists what needs attention in this tab.
+    const banner = within(section('anomalies') as HTMLElement).getByRole('list', {
+      name: 'Anomalies: needs attention',
+    });
+    const items = within(banner).getAllByRole('listitem');
+    expect(items).toHaveLength(2);
+    expect(items[0]).toHaveTextContent(/^CriticalCritical anomaly on/); // icon label + title
+    expect(within(items[0]!).getByRole('button', { name: 'Open in Anomalies' })).toBeVisible();
+    expect(anomaliesTab).toHaveFocus(); // the banner doesn't take focus
+    // Trading Platform has no AI usage: the tab is quiet and says so.
+    await user.click(screen.getByRole('tab', { name: 'AI Spend' }));
+    expect(window.location.search).toBe('?app=app-trading-platform&tab=ai');
+    expect(section('ai')).toHaveAttribute('data-state', 'quiet');
+    expect(within(section('ai') as HTMLElement).getByText('All clear')).toBeInTheDocument();
+    expect(
+      within(section('ai') as HTMLElement).getByText('No AI usage for this application'),
+    ).toBeInTheDocument();
+    await user.click(screen.getByRole('tab', { name: 'Overview' }));
+    expect(window.location.search).toBe('?app=app-trading-platform');
+  });
+
+  it('opens on the tab in the link and falls back to Overview for an unknown one', async () => {
+    window.history.pushState({}, '', '/?app=app-trading-platform&tab=optimization');
+    const { unmount } = render(<App />);
+    expect(await screen.findByRole('heading', { name: 'Optimization' })).toBeInTheDocument();
+    expect(section('optimization')).toBeInTheDocument();
+    unmount();
+    window.history.pushState({}, '', '/?app=app-trading-platform&tab=nope');
+    render(<App />);
+    expect(await screen.findByRole('heading', { name: 'Needs attention' })).toBeInTheDocument();
+  });
+
+  it('mutes an alert type per application', async () => {
     window.history.pushState({}, '', '/?app=app-trading-platform');
     const user = userEvent.setup();
     render(<App />);
@@ -72,9 +122,7 @@ describe('My CloudCompass page', () => {
     );
     expect(screen.getByText('Muted for this application:')).toBeInTheDocument();
     expect(screen.queryByRole('link', { name: 'Budget at risk' })).not.toBeInTheDocument();
-    await user.click(screen.getByRole('button', { name: 'Pin AI Spend open' }));
-    expect(section('ai')).toHaveAttribute('data-state', 'steady');
-    expect(stored().prefs['app-trading-platform']).toEqual({ pinned: ['ai'], muted: ['budget'] });
+    expect(stored().prefs['app-trading-platform']).toEqual({ muted: ['budget'] });
     // Opening a deep link doesn't change My applications or the default.
     expect(stored().apps).toEqual([]);
   });
@@ -92,11 +140,9 @@ describe('My CloudCompass page', () => {
     ]) {
       expect(await screen.findByText(label, { selector: 'p' })).toBeInTheDocument();
     }
-    // Data Platform's cost section is quiet: expand it to see the details.
     const user = userEvent.setup();
+    await user.click(screen.getByRole('tab', { name: /^Cost & Usage/ }));
     const cost = section('cost') as HTMLElement;
-    if (cost.getAttribute('data-state') === 'quiet')
-      await user.click(within(cost).getByRole('button', { name: 'Show details' }));
     const table = within(cost).getByRole('table', { name: 'Top 5 services' });
     const header = (name: RegExp) => within(table).getByRole('columnheader', { name });
     expect(header(/Service/)).toHaveClass('cc-cell--start');
@@ -106,6 +152,15 @@ describe('My CloudCompass page', () => {
     const rows = within(table).getAllByRole('row');
     expect(rows.length).toBeGreaterThan(1);
     expect(rows.length).toBeLessThanOrEqual(6);
+  });
+
+  it('lists Data Platform anomalies that need triage', async () => {
+    window.history.pushState({}, '', '/?app=app-data-platform&tab=anomalies');
+    render(<App />);
+    const table = await screen.findByRole('table', { name: 'Anomalies that need triage' });
+    // Header + 2 open and 1 acknowledged anomaly (mock data).
+    expect(within(table).getAllByRole('row')).toHaveLength(4);
+    expect(screen.getByRole('tab', { name: /^Anomalies/ })).toHaveTextContent('Needs attention');
   });
 
   it('warns about an unknown application in the link', async () => {

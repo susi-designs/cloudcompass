@@ -1,5 +1,4 @@
 import { createContext, useContext } from 'react';
-import type { SectionId } from './myCloudCompass';
 import type { MyCloudCompassStore } from './myCloudCompassStore';
 import type { PagePrefs, SignalKind, VisitMemory } from './signals';
 
@@ -11,7 +10,6 @@ export interface MyCloudCompassValue {
   addApp: (appId: string) => void;
   removeApp: (appId: string) => void;
   setDefaultApp: (appId: string) => void;
-  togglePin: (appId: string, section: SectionId) => void;
   toggleMute: (appId: string, kind: SignalKind) => void;
   /** Visit memory as stored (read once per visit; see useAppVisit). */
   readVisit: (appId: string) => VisitMemory | undefined;

@@ -1,10 +1,19 @@
-import { InlineNotification, Layer, Tile } from '@carbon/react';
-import { useCallback } from 'react';
+import {
+  InlineNotification,
+  Layer,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  Tile,
+} from '@carbon/react';
+import { useCallback, useEffect, useRef, type ReactNode } from 'react';
 import { PageHeader } from '../../../components/PageHeader';
 import { PageLayout } from '../../../components/PageLayout';
-import type { AppSnapshot, SectionId } from '../../../data/myCloudCompass';
+import { SECTION_LABELS, type AppSnapshot, type SectionId } from '../../../data/myCloudCompass';
 import { useMyCloudCompass } from '../../../data/myCloudCompassContext';
-import type { SectionLayout, Signal } from '../../../data/signals';
+import type { Signal } from '../../../data/signals';
 import { useAdaptiveLayout, useAppSnapshot } from '../../../data/useAppSnapshot';
 import {
   formatCurrency,
@@ -22,9 +31,10 @@ import { CostSection } from '../components/CostSection';
 import { NeedsAttention } from '../components/NeedsAttention';
 import { OptimizationSection } from '../components/OptimizationSection';
 import { UtilizationSection } from '../components/UtilizationSection';
-import { signalTitle } from '../components/signalCopy';
+import { SECTION_ATTENTION_TONE, signalTitle } from '../components/signalCopy';
 import { useOpenInPillar } from '../hooks/useOpenInPillar';
 import { useSelectedApp } from '../hooks/useSelectedApp';
+import { TAB_IDS, useSelectedTab, type TabId } from '../hooks/useSelectedTab';
 
 /** One line per section for its quiet ("All clear") state. */
 function quietSummary(id: SectionId, s: AppSnapshot): string {
@@ -55,20 +65,38 @@ function quietSummary(id: SectionId, s: AppSnapshot): string {
 const titleOf = (signal: Signal) => signalTitle(signal);
 
 /**
- * My CloudCompass (PRODUCT.md §5.1): the landing page for one application, with an adaptive
- * "Needs attention" band and pillar sections whose emphasis follows the application's signals.
+ * My CloudCompass (PRODUCT.md §5.1): the landing page for one application. An Overview tab with
+ * the KPI strip and the adaptive "Needs attention" band, then one tab per pillar; a pillar tab
+ * is flagged when the application's signals put it in the band.
  */
 export function MyCloudCompassPage() {
   const { appId, selectApp, unknownApp } = useSelectedApp();
+  const { tab, selectTab } = useSelectedTab();
   const { snapshot, signals, isPending, error } = useAppSnapshot(appId);
   const layout = useAdaptiveLayout(appId, signals, titleOf);
-  const { togglePin, toggleMute } = useMyCloudCompass();
+  const { toggleMute } = useMyCloudCompass();
   const openInPillar = useOpenInPillar(appId);
   const loading = isPending || !snapshot;
+  const tabsRef = useRef<HTMLDivElement>(null);
+  const focusTab = useRef(false);
 
-  const onTogglePin = useCallback(
-    (section: SectionId) => appId && togglePin(appId, section),
-    [appId, togglePin],
+  // "Go to … tab" on a signal card removes the card, so move focus to the newly selected tab.
+  useEffect(() => {
+    if (!focusTab.current) return;
+    focusTab.current = false;
+    const selected = tabsRef.current?.querySelector<HTMLElement>(
+      '[role="tab"][aria-selected="true"]',
+    );
+    selected?.focus();
+    selected?.scrollIntoView?.({ block: 'nearest' });
+  }, [tab]);
+
+  const showTab = useCallback(
+    (section: SectionId) => {
+      focusTab.current = true;
+      selectTab(section);
+    },
+    [selectTab],
   );
 
   if (!appId) {
@@ -100,14 +128,32 @@ export function MyCloudCompassPage() {
     );
   }
 
-  const section = (id: SectionId): SectionLayout | undefined => layout?.sections[id];
-  const sectionProps = (id: SectionId) => ({
-    id,
-    layout: section(id),
-    quietSummary: snapshot ? quietSummary(id, snapshot) : '',
-    onTogglePin: () => onTogglePin(id),
-    onOpen: (pathname: string) => openInPillar(pathname),
-  });
+  const sectionContent = (id: SectionId, s: AppSnapshot): ReactNode => {
+    switch (id) {
+      case 'cost':
+        return <CostSection snapshot={s} />;
+      case 'utilization':
+        return <UtilizationSection snapshot={s} />;
+      case 'optimization':
+        return <OptimizationSection snapshot={s} onOpen={openInPillar} />;
+      case 'ai':
+        return <AiSection snapshot={s} />;
+      case 'anomalies':
+        return <AnomaliesSection snapshot={s} onOpen={openInPillar} />;
+    }
+  };
+
+  /** "Needs attention (n)" under a pillar tab's label, in the section's tone. */
+  const tabLabel = (id: TabId) => {
+    if (id === 'overview') return { label: 'Overview' };
+    const s = layout?.sections[id];
+    if (s?.state !== 'attention') return { label: SECTION_LABELS[id] };
+    return {
+      label: SECTION_LABELS[id],
+      secondaryLabel: `Needs attention (${s.bandCount})`,
+      className: `cc-app-tabs__tab--${SECTION_ATTENTION_TONE[id]}`,
+    };
+  };
 
   return (
     <PageLayout
@@ -133,32 +179,63 @@ export function MyCloudCompassPage() {
           hideCloseButton
         />
       )}
-      <AppKpiStrip snapshot={snapshot} loading={loading} />
-      <NeedsAttention
-        snapshot={snapshot}
-        layout={layout}
-        onOpen={openInPillar}
-        onToggleMute={(kind) => toggleMute(appId, kind)}
-      />
-      {snapshot && (
-        <>
-          <AdaptiveSection {...sectionProps('cost')}>
-            <CostSection snapshot={snapshot} />
-          </AdaptiveSection>
-          <AdaptiveSection {...sectionProps('utilization')} attentionTone="blue">
-            <UtilizationSection snapshot={snapshot} />
-          </AdaptiveSection>
-          <AdaptiveSection {...sectionProps('ai')}>
-            <AiSection snapshot={snapshot} />
-          </AdaptiveSection>
-          <AdaptiveSection {...sectionProps('optimization')} attentionTone="blue">
-            <OptimizationSection snapshot={snapshot} onOpen={openInPillar} />
-          </AdaptiveSection>
-          <AdaptiveSection {...sectionProps('anomalies')}>
-            <AnomaliesSection snapshot={snapshot} onOpen={openInPillar} />
-          </AdaptiveSection>
-        </>
-      )}
+      <div className="cc-app-tabs" ref={tabsRef}>
+        <Tabs
+          selectedIndex={TAB_IDS.indexOf(tab)}
+          onChange={({ selectedIndex }) => selectTab(TAB_IDS[selectedIndex] ?? 'overview')}
+        >
+          <TabList contained fullWidth aria-label="My CloudCompass sections">
+            {TAB_IDS.map((id) => {
+              const { label, ...rest } = tabLabel(id);
+              return (
+                <Tab key={id} {...rest}>
+                  {label}
+                </Tab>
+              );
+            })}
+          </TabList>
+          <TabPanels>
+            {TAB_IDS.map((id) => (
+              <TabPanel key={id} className="cc-app-tabs__panel">
+                {/* Only the selected tab renders, so hidden charts don't lay out at zero size. */}
+                {id === tab && (
+                  <Layer className="cc-stack">
+                    {id === 'overview' ? (
+                      <>
+                        <AppKpiStrip snapshot={snapshot} loading={loading} />
+                        <NeedsAttention
+                          snapshot={snapshot}
+                          layout={layout}
+                          onOpen={openInPillar}
+                          onToggleMute={(kind) => toggleMute(appId, kind)}
+                          onShowTab={showTab}
+                        />
+                      </>
+                    ) : (
+                      snapshot && (
+                        <AdaptiveSection
+                          id={id}
+                          layout={layout?.sections[id]}
+                          attention={
+                            layout?.band
+                              .filter((b) => b.signal.section === id)
+                              .map((b) => b.signal) ?? []
+                          }
+                          currency={snapshot.overview.currency}
+                          quietSummary={quietSummary(id, snapshot)}
+                          onOpen={openInPillar}
+                        >
+                          {sectionContent(id, snapshot)}
+                        </AdaptiveSection>
+                      )
+                    )}
+                  </Layer>
+                )}
+              </TabPanel>
+            ))}
+          </TabPanels>
+        </Tabs>
+      </div>
     </PageLayout>
   );
 }

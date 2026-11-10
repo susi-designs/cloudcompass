@@ -1,9 +1,8 @@
-import { SECTION_IDS, type SectionId } from './myCloudCompass';
 import { SIGNAL_KINDS, type PagePrefs, type SignalKind, type VisitMemory } from './signals';
 
 /**
  * Until the API and SSO user profile exist, My CloudCompass preferences live in this browser
- * (PRODUCT.md §5.1): My applications, the default application, per-application pins / mutes
+ * (PRODUCT.md §5.1): My applications, the default application, per-application mutes
  * and the visit memory used for "New" / "Resolved" tags.
  */
 export const MY_CLOUDCOMPASS_STORAGE_KEY = 'cloudcompass.myCloudCompass.v1';
@@ -40,10 +39,8 @@ export function parseStore(raw: unknown): MyCloudCompassStore {
   if (isObject(raw.prefs)) {
     for (const [app, p] of Object.entries(raw.prefs)) {
       if (!isObject(p)) continue;
+      // Pins from before the tabbed layout (2026-10-25) are dropped.
       prefs[app] = {
-        pinned: strings(p.pinned).filter((s): s is SectionId =>
-          (SECTION_IDS as readonly string[]).includes(s),
-        ),
         muted: strings(p.muted).filter((s): s is SignalKind =>
           (SIGNAL_KINDS as readonly string[]).includes(s),
         ),
@@ -104,24 +101,12 @@ export function setDefaultApp(store: MyCloudCompassStore, appId: string): MyClou
 const toggle = <T>(list: readonly T[], value: T): T[] =>
   list.includes(value) ? list.filter((v) => v !== value) : [...list, value];
 
-export function togglePin(
-  store: MyCloudCompassStore,
-  appId: string,
-  section: SectionId,
-): MyCloudCompassStore {
-  const p = store.prefs[appId] ?? { pinned: [], muted: [] };
-  return {
-    ...store,
-    prefs: { ...store.prefs, [appId]: { ...p, pinned: toggle(p.pinned, section) } },
-  };
-}
-
 export function toggleMute(
   store: MyCloudCompassStore,
   appId: string,
   kind: SignalKind,
 ): MyCloudCompassStore {
-  const p = store.prefs[appId] ?? { pinned: [], muted: [] };
+  const p = store.prefs[appId] ?? { muted: [] };
   return {
     ...store,
     prefs: { ...store.prefs, [appId]: { ...p, muted: toggle(p.muted, kind) } },

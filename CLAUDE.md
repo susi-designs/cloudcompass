@@ -122,7 +122,7 @@ If the repo has no `package.json` yet, bootstrap in this order. Finish and verif
 - **M6 Anomalies** ✅ (done 2026-10-12): anomaly feed with triage (acknowledge, mark expected, resolve, reopen), severity indicators, anomaly timeline, detail side panel with root-cause hints.
 
 ### M7: My CloudCompass ✅ (done 2026-10-12)
-- Landing page at `/` for one application (Overview moved to `/overview`): application switcher with My applications and a default, KPI strip, adaptive **Needs attention** band, and the five pillar sections in a fixed order whose emphasis follows the application's signals (PRODUCT.md §5.1).
+- Landing page at `/` for one application (Overview moved to `/overview`): application switcher with My applications and a default, KPI strip, adaptive **Needs attention** band, and the five pillar sections in a fixed order whose emphasis follows the application's signals (PRODUCT.md §5.1). Since 2026-10-25 the page is tabbed: Overview (KPIs + Needs attention) and one tab per pillar, flagged when it needs attention, with the tab in the URL (`?tab=`).
 
 Scope details for each pillar are in `PRODUCT.md` §4–5.
 
@@ -157,8 +157,8 @@ Scope details for each pillar are in `PRODUCT.md` §4–5.
 - `components/KpiTile.tsx`, `components/CostDelta.tsx`, `components/PageLayout.tsx` (header + global filters).
 - `data/forecast.ts`: the single month-end forecast formula (MTD + trailing 7-day run-rate). Don't re-implement it.
 - Pages are lazy-loaded in `app/App.tsx`; add new pillar pages the same way.
-- `data/myCloudCompass.ts` (`computeAppSnapshot`): every data set for one application, computed with the pillar functions so numbers match. `data/signals.ts`: the adaptive layout engine: `buildSignals` (scores, PRODUCT.md §5.1 table), `composeLayout` (band, hysteresis, section states, mutes/pins) and visit memory (`advanceVisit` / `recordSeen`). Pure and unit tested; words for signals live in `features/my-cloudcompass/components/signalCopy.ts`.
-- `data/MyCloudCompassProvider.tsx` + `data/myCloudCompassStore.ts`: My applications, default application, per-application pins/mutes and visit memory, stored in this browser (`cloudcompass.myCloudCompass.v1`) until the API exists.
+- `data/myCloudCompass.ts` (`computeAppSnapshot`): every data set for one application, computed with the pillar functions so numbers match. `data/signals.ts`: the adaptive layout engine: `buildSignals` (scores, PRODUCT.md §5.1 table), `composeLayout` (band, hysteresis, section states, mutes) and visit memory (`advanceVisit` / `recordSeen`). Pure and unit tested; words for signals live in `features/my-cloudcompass/components/signalCopy.ts`.
+- `data/MyCloudCompassProvider.tsx` + `data/myCloudCompassStore.ts`: My applications, default application, per-application mutes and visit memory, stored in this browser (`cloudcompass.myCloudCompass.v1`) until the API exists.
 - `ScopeFilterBar` / `PageLayout` take `variant` / `filters="application"` to show only date range and environment on pages fixed to one application.
 - My CloudCompass reuses pillar components (charts, KPI rows, status indicators) from other `features/` folders, so the snapshot always looks and reads like the pillar page it links to.
 

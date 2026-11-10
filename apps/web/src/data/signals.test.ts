@@ -154,13 +154,11 @@ describe('composeLayout', () => {
     expect(composeLayout([sig('fresh', 70)]).band[0]?.isNew).toBe(false);
   });
 
-  it('lets mutes and pins win over scores', () => {
+  it('lets mutes win over scores', () => {
     const signals = [sig('budget', 80), sig('anom', 70, 'anomaly')];
-    const layout = composeLayout(signals, { pinned: ['ai'], muted: ['budget'] });
+    const layout = composeLayout(signals, { muted: ['budget'] });
     expect(layout.band.map((b) => b.signal.id)).toEqual(['anom']);
     expect(layout.sections.cost.state).toBe('quiet');
-    expect(layout.sections.ai.state).toBe('steady');
-    expect(layout.sections.ai.pinned).toBe(true);
     expect(layout.muted).toEqual([{ kind: 'budget', hidden: 1 }]);
   });
 });

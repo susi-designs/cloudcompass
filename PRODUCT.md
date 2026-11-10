@@ -1,4 +1,4 @@
-# CloudCompass — Product Brief
+Q# CloudCompass — Product Brief
 
 > **CloudCompass** is an enterprise FinOps portal that gives engineering, finance, and leadership one trusted view of cloud and AI spend, and helps them act on it.
 
@@ -119,24 +119,24 @@ Catch cost surprises early.
 - Changing the application on this page does not change the global scope used by the pillar pages.
 - Date range and environment stay the same when the user switches applications.
 
-**Page layout (top to bottom, fixed order).**
+**Page layout.** The application header and the filter bar (date range, environment) sit on top. Below them, contained tabs in a fixed order: **Overview** (the default) and one tab per pillar. Only the selected tab's content is shown, so the page doesn't scroll through every pillar. The selected tab is kept in the URL (`?tab=cost`, `utilization`, `optimization`, `ai`, `anomalies`; Overview leaves it out), so links and Back land on the same tab.
 
-| # | Section | Contents | Source pillar |
+| # | Tab / area | Contents | Source pillar |
 |---|---|---|---|
-| 1 | **Application header** | Application name, LOB, cloud provider, the 3 accounts (DEV / TEST / PROD, with IDs), monthly budget, and "as of" date | Hierarchy |
-| 2 | **KPI strip** | MTD spend (vs. same point last month), month-end forecast, budget status (On track / At risk / Over budget, forecast as % of budget), AI spend for the selected period (vs. the previous period, as on the AI Spend page), open savings (sum of open recommendations, per month), open anomalies (count by severity) | All |
-| 2a | **Needs attention** | Adaptive band: a one-sentence summary and up to 5 ranked signal cards (see *Adaptive layout*) | All |
-| 3 | **Cost & Usage** | Daily spend trend for the selected date range, stacked by environment; top 5 services by spend with change vs. prior period; 6-month budget vs. actual | Cost & Usage |
-| 4 | **Utilization** | Average CPU and memory utilization, idle and orphaned resources (count and monthly cost), commitment coverage and utilization meters | Utilization |
-| 5 | **AI Spend** | AI spend trend, spend by model/provider, input/output/cached tokens, top features by cost. AI usage sits in the application's PROD account (§4.3) | AI Spend |
-| 6 | **Optimization** | Top 5 open recommendations by estimated monthly savings (type, savings, effort, owner, status); projected vs. realized savings | Optimization |
-| 7 | **Anomalies** | Open and acknowledged anomalies, newest first (date, severity, impact, service, status); count of anomalies resolved in the last 30 days | Anomalies |
+| 1 | **Application header** (above the tabs) | Application name, LOB, cloud provider, the 3 accounts (DEV / TEST / PROD, with IDs), monthly budget, and "as of" date | Hierarchy |
+| 2 | **Overview tab: KPI strip** | MTD spend (vs. same point last month), month-end forecast, budget status (On track / At risk / Over budget, forecast as % of budget), AI spend for the selected period (vs. the previous period, as on the AI Spend page), open savings (sum of open recommendations, per month), open anomalies (count by severity) | All |
+| 2a | **Overview tab: Needs attention** | Adaptive band: a one-sentence summary and up to 5 ranked signal cards (see *Adaptive layout*) | All |
+| 3 | **Cost & Usage tab** | Daily spend trend for the selected date range, stacked by environment; top 5 services by spend with change vs. prior period; 6-month budget vs. actual | Cost & Usage |
+| 4 | **Utilization tab** | Average CPU and memory utilization, idle and orphaned resources (count and monthly cost), commitment coverage and utilization meters | Utilization |
+| 5 | **Optimization tab** | Top 5 open recommendations by estimated monthly savings (type, savings, effort, owner, status); projected vs. realized savings | Optimization |
+| 6 | **AI Spend tab** | AI spend trend, spend by model/provider, input/output/cached tokens, top features by cost. AI usage sits in the application's PROD account (§4.3) | AI Spend |
+| 7 | **Anomalies tab** | Open and acknowledged anomalies, newest first (date, severity, impact, service, status); count of anomalies resolved in the last 30 days | Anomalies |
 
 **Behavior.**
-- Every section has a **"View in <pillar>"** link that opens that pillar page with the global scope set to this application (and the same date range and environment).
+- Every pillar tab has a **"View in <pillar>"** link that opens that pillar page with the global scope set to this application (and the same date range and environment).
 - Numbers match the pillar pages exactly. The page reuses the existing data hooks and formulas (for example `data/forecast.ts`, `useEffectiveRecommendations()`, `useEffectiveAnomalies()`), so recommendation and triage state changed elsewhere shows here too.
 - The page is a **read-only snapshot**. Workflow actions (accept, snooze, acknowledge, resolve, and so on) happen on the pillar pages. Clicking an anomaly opens it on the Anomalies page with its detail panel open; clicking a recommendation opens the Optimization inbox scoped to the application.
-- A section with no data for the application (for example, no AI usage) shows a short empty state instead of an empty chart.
+- A pillar tab with no data for the application (for example, no AI usage) shows a short empty state instead of an empty chart.
 - Every chart follows the standard rules: title, text summary, and "View as table" (`DESIGN.md`).
 
 **Adaptive layout (generative UI).**
@@ -162,12 +162,12 @@ The page composes itself from the application's current state instead of showing
 
 *Needs attention band* (under the KPI strip):
 - A one-sentence summary built from the top signals, e.g. "Trading Platform needs attention: 2 critical anomalies (+$5.8K) and the budget forecast is at 100%." When nothing qualifies: "All clear for Payment Gateway. Nothing needs attention right now."
-- Up to **5 signal cards**, highest score first. Each card shows a status indicator, a title, the key numbers, **why it is shown** (e.g. "Critical · $5.8K above expected · detected 4 days ago"), and a link to the item on its pillar page. More qualifying signals show as "+ N more" and still affect the sections below.
+- Up to **5 signal cards**, highest score first. Each card shows a status indicator, a title, the key numbers, **why it is shown** (e.g. "Critical · $5.8K above expected · detected 4 days ago"), a link to the item on its pillar page, and **"Go to <pillar> tab"**, which selects that tab on this page. More qualifying signals show as "+ N more" and still affect the pillar tabs.
 
-*Section emphasis* (order never changes):
-- **Needs attention:** the section has a signal in the band. It is expanded and its header shows a "Needs attention" tag with the count.
-- **Steady:** the section has signals below the band threshold. It is expanded.
-- **Quiet:** the section has no signals. It collapses to a one-line "All clear" summary with its key number and a "Show details" button.
+*Tab emphasis* (tab order never changes):
+- **Needs attention:** the pillar has a signal in the band. Its tab shows "Needs attention (n)" under the label (red for risks, blue for savings opportunities), the tab's heading shows the same tag, and a banner under the heading lists each of those signals (title, key numbers, and a link to the item on its pillar page).
+- **Steady:** the pillar has signals below the band threshold. No flag.
+- **Quiet:** the pillar has no signals. Its heading shows a green "All clear" tag and a one-line summary with its key number, above the details.
 
 *Stability (avoid a page that jumps around):*
 - **Hysteresis.** A signal enters the band at score ≥ 40 and only leaves when it drops below 30.
@@ -175,23 +175,30 @@ The page composes itself from the application's current state instead of showing
 - **Since your last visit.** A visit ends after 30 minutes away. Signals that weren't in the band last visit are tagged **New**. Signals that were in the band and are now handled stay for the rest of the visit and the next one, tagged **Resolved**, then drop off, so nothing silently disappears.
 
 *User control (always beats the scoring):*
-- **Pin** a section open, so it never collapses to its quiet summary.
-- **Mute** a signal type for an application (e.g. budget alerts while a planned migration runs). Muted types leave the band and the section emphasis; the band lists what's muted with an "Unmute" action.
-- Pins and mutes are per application and stored with My applications.
+- **Mute** a signal type for an application (e.g. budget alerts while a planned migration runs). Muted types leave the band and the tab emphasis; the band lists what's muted with an "Unmute" action.
+- Mutes are per application and stored with My applications.
 
 *Later phase:* an LLM-written narrative summary (needs the API, a new dependency and the Carbon AI label). Numbers in it would still be filled in from data, never written by the model.
 
 **Out of scope for this version.**
 - More than one application on the same screen, or comparing applications side by side.
-- Freely rearranging, hiding or adding sections (a drag-and-drop widget layout). The adaptive layout and pins cover emphasis.
+- Freely rearranging, hiding or adding sections (a drag-and-drop widget layout). The adaptive layout covers emphasis.
 - Saving the home application on the server or across devices (comes with the API and SSO user profile).
 - Automatically choosing the application from the user's identity or team ownership (needs the API and RBAC).
 
 **Decisions (2026-10-12).**
 - `/` opens My CloudCompass for every user; Overview moves to `/overview`.
-- Section order stays as listed above.
+- Section order stays as listed above (now the tab order, see 2026-10-25).
 - Users can keep several applications and switch between them.
 - The page uses the rule-based adaptive layout above; the LLM narrative is a later phase.
+
+**Decisions (2026-10-25).**
+- The page moves from stacked sections to tabs (Overview, Cost & Usage, Utilization, Optimization, AI Spend, Anomalies) to cut vertical scrolling. Optimization now comes before AI Spend.
+- A tab that needs attention is flagged with Carbon's tab secondary label, not a Tag in the tab.
+- Pinning sections and the quiet-section collapse are removed: tabs already hide what isn't needed.
+- The selected tab is kept in the URL.
+- The tabs span the page width, and a flagged tab opens with a banner of what needs attention.
+- Mock data gives Data Platform a few anomalies (3 to triage, 2 resolved) so its Anomalies tab has content.
 
 > UI must follow **DESIGN.md**, the design-system source of truth. The product puts data, tables, and data visualization first.
 

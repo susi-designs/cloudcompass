@@ -6,7 +6,6 @@ import {
   removeApp,
   setDefaultApp,
   toggleMute,
-  togglePin,
 } from './myCloudCompassStore';
 
 describe('My applications store', () => {
@@ -37,12 +36,11 @@ describe('My applications store', () => {
     expect(s.defaultApp).toBe('app-b');
   });
 
-  it('toggles pins and mutes per application', () => {
-    let s = togglePin(EMPTY_STORE, 'app-a', 'ai');
+  it('toggles mutes per application', () => {
+    let s = toggleMute(EMPTY_STORE, 'app-a', 'budget');
+    expect(s.prefs['app-a']).toEqual({ muted: ['budget'] });
     s = toggleMute(s, 'app-a', 'budget');
-    expect(s.prefs['app-a']).toEqual({ pinned: ['ai'], muted: ['budget'] });
-    s = togglePin(s, 'app-a', 'ai');
-    expect(s.prefs['app-a']?.pinned).toEqual([]);
+    expect(s.prefs['app-a']?.muted).toEqual([]);
     expect(s.prefs['app-b']).toBeUndefined();
   });
 
@@ -56,7 +54,8 @@ describe('My applications store', () => {
     });
     expect(s.apps).toEqual(['app-a']);
     expect(s.defaultApp).toBeNull();
-    expect(s.prefs['app-a']).toEqual({ pinned: ['ai'], muted: ['budget'] });
+    // Pins from before the tabbed layout are dropped.
+    expect(s.prefs['app-a']).toEqual({ muted: ['budget'] });
     expect(Object.keys(s.visits)).toEqual(['app-a']);
   });
 });

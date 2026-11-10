@@ -1,12 +1,14 @@
 import {
+  Button,
   IconButton,
   Link,
   Tag,
   Tile,
   preview__IconIndicator as IconIndicator,
 } from '@carbon/react';
-import { NotificationOff } from '@carbon/icons-react';
+import { ArrowRight, NotificationOff } from '@carbon/icons-react';
 import { SeverityIndicator } from '../../../components/SeverityIndicator';
+import { SECTION_LABELS, type SectionId } from '../../../data/myCloudCompass';
 import type { Signal } from '../../../data/signals';
 import {
   SIGNAL_KIND_LABELS,
@@ -23,13 +25,15 @@ interface Props {
   currency: string;
   onOpen: (pathname: string, search: string) => void;
   onMute: (signal: Signal) => void;
+  /** Switch to the signal's pillar tab on this page. */
+  onShowTab: (section: SectionId) => void;
 }
 
 /**
  * One item in the "Needs attention" band: status indicator, title (link to the item on its
- * pillar page), key numbers and why it is shown (DESIGN.md §9).
+ * pillar page), key numbers, why it is shown, and a way to its tab (DESIGN.md §9).
  */
-export function SignalCard({ signal, isNew, currency, onOpen, onMute }: Props) {
+export function SignalCard({ signal, isNew, currency, onOpen, onMute, onShowTab }: Props) {
   const indicator = signalIndicator(signal);
   const target = signalTarget(signal);
   const href = `${target.pathname}${target.search}`;
@@ -74,6 +78,15 @@ export function SignalCard({ signal, isNew, currency, onOpen, onMute }: Props) {
         <span className="cc-signal__why">Why: </span>
         {signalReasons(signal, currency).join(' · ')}
       </p>
+      <Button
+        kind="ghost"
+        size="sm"
+        renderIcon={ArrowRight}
+        className="cc-signal__tab"
+        onClick={() => onShowTab(signal.section)}
+      >
+        Go to {SECTION_LABELS[signal.section]} tab
+      </Button>
     </Tile>
   );
 }

@@ -55,10 +55,16 @@ test.describe('My CloudCompass', () => {
     await page.getByRole('option', { name: /Trading Platform/ }).click();
     const band = page.locator('.cc-attention');
     await expect(band).toContainText('Trading Platform needs attention: 2 critical anomalies');
+    // The Anomalies tab is flagged; the selected tab is kept in the URL.
+    const anomaliesTab = page.getByRole('tab', { name: /^Anomalies/ });
+    await expect(anomaliesTab).toContainText('Needs attention');
+    await anomaliesTab.click();
+    await expect(page).toHaveURL(/tab=anomalies/);
     await expect(page.locator('[data-section="anomalies"]')).toHaveAttribute(
       'data-state',
       'attention',
     );
+    await page.getByRole('tab', { name: /^Cost & Usage/ }).click();
     await expect(page.locator('.cc-chart-card svg').first()).toBeVisible();
     // The default is remembered: a fresh visit to / opens the same application.
     await page.goto('/');

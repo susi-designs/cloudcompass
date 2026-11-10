@@ -23,11 +23,20 @@ export interface ChartTableColumn {
   kind: ColumnKind;
 }
 
+export interface ChartView {
+  name: string;
+  /** Accessible label of the switch, e.g. "View as stacked area". */
+  text: string;
+  icon: ReactNode;
+  chart: ReactNode;
+}
+
 interface ChartCardProps {
   title: string;
   /** One-sentence text summary of what the chart shows (accessibility, DESIGN.md §6). */
   summary: string;
-  chart: ReactNode;
+  /** A single chart, or several alternate views of the same data (first is the default). */
+  chart: ReactNode | ChartView[];
   table: { columns: ChartTableColumn[]; rows: Record<string, string | number>[] };
   loading?: boolean;
 }
@@ -37,8 +46,13 @@ interface ChartCardProps {
  * so the data is available without the visualization (CLAUDE.md §7, DESIGN.md §6).
  */
 export function ChartCard({ title, summary, chart, table, loading = false }: ChartCardProps) {
-  const [view, setView] = useState<'chart' | 'table'>('chart');
+  const views: ChartView[] = Array.isArray(chart)
+    ? chart
+    : [{ name: 'chart', text: 'View as chart', icon: <ChartLineData />, chart }];
+  const [view, setView] = useState<string>(views[0]?.name ?? 'table');
   const headingId = useId();
+  const active = views.find((v) => v.name === view);
+  const selectedIndex = active ? views.indexOf(active) : views.length;
 
   return (
     <Tile className="cc-chart-card" aria-labelledby={headingId}>
@@ -51,22 +65,26 @@ export function ChartCard({ title, summary, chart, table, loading = false }: Cha
         </div>
         <ContentSwitcher
           size="sm"
-          selectedIndex={view === 'chart' ? 0 : 1}
-          onChange={({ name }) => setView(name === 'table' ? 'table' : 'chart')}
+          selectedIndex={selectedIndex}
+          onChange={({ name }) => setView(String(name ?? 'table'))}
           className="cc-chart-card__switcher"
         >
-          <IconSwitch name="chart" text="View as chart">
-            <ChartLineData />
-          </IconSwitch>
-          <IconSwitch name="table" text="View as table">
-            <DataTableIcon />
-          </IconSwitch>
+          {[
+            ...views.map((v) => (
+              <IconSwitch key={v.name} name={v.name} text={v.text}>
+                {v.icon}
+              </IconSwitch>
+            )),
+            <IconSwitch key="table" name="table" text="View as table">
+              <DataTableIcon />
+            </IconSwitch>,
+          ]}
         </ContentSwitcher>
       </div>
       {loading ? (
         <SkeletonPlaceholder className="cc-chart-card__skeleton" />
-      ) : view === 'chart' ? (
-        <div className="cc-chart-card__chart">{chart}</div>
+      ) : active ? (
+        <div className="cc-chart-card__chart">{active.chart}</div>
       ) : (
         <DataTable
           rows={table.rows.map((r, i) => ({ id: String(i), ...r }))}

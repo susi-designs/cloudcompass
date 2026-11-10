@@ -15,8 +15,8 @@ import { EMPTY_DIMENSIONS, inScope, type Scope } from './scope';
 import type { MockDataset } from './source';
 import { computeUtilization, type UtilizationData } from './utilization';
 
-/** Sections of My CloudCompass, in their fixed display order (PRODUCT.md §5.1). */
-export const SECTION_IDS = ['cost', 'utilization', 'ai', 'optimization', 'anomalies'] as const;
+/** Sections of My CloudCompass, in their fixed tab order (PRODUCT.md §5.1). */
+export const SECTION_IDS = ['cost', 'utilization', 'optimization', 'ai', 'anomalies'] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
 export const SECTION_LABELS: Record<SectionId, string> = {

@@ -36,7 +36,7 @@ describe('App shell', () => {
     expect(await screen.findByRole('heading', { level: 1, name: 'Overview' })).toBeInTheDocument();
     expect(await screen.findByText('Month-to-date spend')).toBeInTheDocument();
     expect(await screen.findByRole('table', { name: 'Top movers' })).toBeInTheDocument();
-    expect(await screen.findByTestId('StackedAreaChart')).toBeInTheDocument();
+    expect(await screen.findByTestId('LineChart')).toBeInTheDocument();
     expect(screen.getByTestId('SimpleBarChart')).toBeInTheDocument();
   });
 

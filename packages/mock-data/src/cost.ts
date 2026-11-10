@@ -142,6 +142,76 @@ export function buildExtraSpikes(
   })).filter((s) => s.startIndex >= 0);
 }
 
+/** Fixed spikes on one application, so its Anomalies tab always has something to show. */
+const SHOWCASE_SPIKES: readonly {
+  applicationId: string;
+  environment: 'PROD' | 'TEST';
+  /** Index into the application's services in that environment (wraps). */
+  service: number;
+  daysAgo: number;
+  durationDays: number;
+  multiplier: number;
+}[] = [
+  {
+    applicationId: 'app-data-platform',
+    environment: 'PROD',
+    service: 0,
+    daysAgo: 1,
+    durationDays: 2,
+    multiplier: 3.2,
+  },
+  {
+    applicationId: 'app-data-platform',
+    environment: 'PROD',
+    service: 1,
+    daysAgo: 4,
+    durationDays: 2,
+    multiplier: 2.4,
+  },
+  {
+    applicationId: 'app-data-platform',
+    environment: 'TEST',
+    service: 0,
+    daysAgo: 9,
+    durationDays: 3,
+    multiplier: 2.1,
+  },
+  {
+    applicationId: 'app-data-platform',
+    environment: 'PROD',
+    service: 2,
+    daysAgo: 35,
+    durationDays: 2,
+    multiplier: 2.6,
+  },
+  {
+    applicationId: 'app-data-platform',
+    environment: 'PROD',
+    service: 1,
+    daysAgo: 70,
+    durationDays: 1,
+    multiplier: 3,
+  },
+];
+
+/**
+ * Hand-placed spikes (no RNG), appended after the random ones so existing anomaly ids and
+ * statuses don't change. Recent ones become open anomalies; older ones are already handled.
+ */
+export function buildShowcaseSpikes(workloads: readonly Workload[], days: number): Spike[] {
+  return SHOWCASE_SPIKES.flatMap((s) => {
+    const candidates = workloads.filter(
+      (w) => w.application.id === s.applicationId && w.environment === s.environment,
+    );
+    const w = candidates[s.service % Math.max(1, candidates.length)];
+    const startIndex = days - 1 - s.daysAgo;
+    if (!w || startIndex < 0) return [];
+    return [
+      { workloadId: w.id, startIndex, durationDays: s.durationDays, multiplier: s.multiplier },
+    ];
+  });
+}
+
 export function spikeMultiplier(
   spikes: readonly Spike[],
   workloadId: string,
@@ -190,6 +260,7 @@ export function generateCostRecords(
   const spikes = [
     ...buildSpikes(rng, workloads, days),
     ...buildExtraSpikes(seed + 101, workloads, days),
+    ...buildShowcaseSpikes(workloads, days),
   ];
   const dates = dayRange(parseDay(endDate), days);
   const records: FocusCostRecord[] = [];
